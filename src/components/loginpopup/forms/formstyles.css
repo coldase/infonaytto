@@ -1,0 +1,36 @@
+.formitem input:focus {
+  outline: none;
+}
+
+.formitem input {
+  width: 60%;
+  border: none;
+  font-size: 18px;
+  padding: 5px 0px;
+  margin-bottom: 25px;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+}
+
+.loginpopup-logintab-container {
+  margin: 50px 20px;
+}
+
+.loginpopup-signin-container {
+  margin: 50px 20px;
+}
+
+.loginpopup-logintab-header {
+  margin-bottom: 50px;
+  font-size: 35px;
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 666px) {
+  .formitem {
+    width: 100%;
+  }
+  .formitem input {
+    width: 100%;
+  }
+}
