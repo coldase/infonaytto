@@ -34,3 +34,22 @@
     width: 100%;
   }
 }
+
+.login-btn {
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 0px;
+  display: flex;
+  background-color: royalblue;
+  width: 130px;
+  height: 40px;
+  justify-content: center;
+}
+.login-btn p {
+  align-self: center;
+  color: #fff;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}

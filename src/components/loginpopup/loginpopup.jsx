@@ -5,7 +5,12 @@ import { useState } from "react";
 import LoginForm from "./forms/loginform";
 import SigninForm from "./forms/signinform";
 
-const LoginPopup = ({ isLoginPopup, setIsLoginPopup }) => {
+const LoginPopup = ({
+  isLoginPopup,
+  setIsLoginPopup,
+  currentUser,
+  setCurrentUser,
+}) => {
   const [loginTab, setLoginTab] = useState(true);
   return (
     <div className="loginpopup-container">
@@ -36,7 +41,11 @@ const LoginPopup = ({ isLoginPopup, setIsLoginPopup }) => {
       </div>
 
       {/* Logintab */}
-      {loginTab ? <LoginForm /> : <SigninForm />}
+      {loginTab ? (
+        <LoginForm setCurrentUser={setCurrentUser} />
+      ) : (
+        <SigninForm />
+      )}
     </div>
   );
 };

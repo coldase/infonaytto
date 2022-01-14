@@ -3,7 +3,7 @@ import "./homescreen.css";
 import { useState } from "react";
 import LoginPopup from "../../components/loginpopup/loginpopup";
 
-const HomeScreen = () => {
+const HomeScreen = ({ currentUser, setCurrentUser }) => {
   const [isLoginPopup, setIsLoginPopup] = useState(true);
   return (
     <div className="homescreen-container">
@@ -22,6 +22,8 @@ const HomeScreen = () => {
         <LoginPopup
           isLoginPopup={isLoginPopup}
           setIsLoginPopup={(val) => setIsLoginPopup(val)}
+          currentUser={currentUser}
+          setCurrentUser={setCurrentUser}
         />
       ) : null}
     </div>
