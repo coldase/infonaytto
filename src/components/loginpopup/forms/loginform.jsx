@@ -1,7 +1,7 @@
 import "./formstyles.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-// import { Redirect } from "react-router-dom";
+import { AiFillWindows } from "react-icons/ai";
 
 const LoginForm = ({ currentUser, setCurrentUser }) => {
   const [myemail, setmyemail] = useState("jari@mail.com");
@@ -23,8 +23,10 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
 
   const makeLogin = (userid) => {
     if (userid) {
+      console.log("Loggin in");
       localStorage.setItem("userid", userid);
       setCurrentUser(userid);
+      window.location.href = "/user";
     } else {
       console.log("Wrong username or password");
     }

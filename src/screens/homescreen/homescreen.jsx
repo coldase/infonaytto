@@ -2,9 +2,15 @@
 import "./homescreen.css";
 import { useState } from "react";
 import LoginPopup from "../../components/loginpopup/loginpopup";
+import { Navigate } from "react-router-dom";
 
 const HomeScreen = ({ currentUser, setCurrentUser }) => {
-  const [isLoginPopup, setIsLoginPopup] = useState(true);
+  const [isLoginPopup, setIsLoginPopup] = useState(false);
+
+  if (currentUser) {
+    return <Navigate to="/user" />;
+  }
+
   return (
     <div className="homescreen-container">
       <div className="homescreen-content">
