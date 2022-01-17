@@ -15,7 +15,6 @@
 .homescreen-section {
   justify-content: center;
   width: 100%;
-  /* height: 1500px; */
   background-color: #000;
   margin: 0;
   padding-bottom: 100px;
@@ -26,12 +25,10 @@
   display: flex;
   justify-content: center;
   align-self: center;
-  /* background-color: red; */
 }
 
 .homescreen-header {
   margin-top: 200px;
-  /* font-weight: 800; */
   font-size: 60px;
   font-family: "PT Serif", serif;
   color: #fff;
@@ -84,7 +81,6 @@
 
   justify-content: center;
   flex-direction: column;
-  /* background-color: red; */
 }
 .question-header {
   justify-content: center;
@@ -96,7 +92,6 @@
   margin: 0;
   color: #fff;
   font-size: 30px;
-  /* align-self: center; */
 }
 .question-container {
   display: flex;
@@ -115,7 +110,6 @@
   background-color: grey;
   padding: 10px 10px;
   font-size: 20px;
-  /* background-color: red; */
   color: #fff;
 }
 
@@ -130,7 +124,6 @@
     height: 700px;
   }
   .homescreen-header {
-    /* margin-top: -200px; */
     font-size: 40px;
   }
   .homescreen-login-btn {

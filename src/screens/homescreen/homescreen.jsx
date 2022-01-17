@@ -6,7 +6,7 @@ import { Navigate, Link } from "react-router-dom";
 
 const HomeScreen = ({ currentUser, setCurrentUser }) => {
   const [isLoginPopup, setIsLoginPopup] = useState(false);
-  const [questions, setquestions] = useState([
+  const [questions] = useState([
     "Kuinka kirjaudun sisään?",
     "Mitä tämä kaikki tarkoittaa ja minne minun tiedot menee?",
     "Miksi käyttäisin tätä palvelua?",
