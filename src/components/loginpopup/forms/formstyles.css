@@ -53,3 +53,7 @@
 .login-btn:hover {
   opacity: 0.9;
 }
+
+.login-errmsg {
+  color: red;
+}

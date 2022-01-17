@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 import "./userscreen.css";
 
 const UserScreen = ({ currentUser }) => {
+  //if user is not logged in, redirect back to homepage
   if (!localStorage.getItem("userid")) {
     return <Navigate to="/" />;
   }
