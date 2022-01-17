@@ -44,7 +44,7 @@ const LoginPopup = ({
       {loginTab ? (
         <LoginForm setCurrentUser={setCurrentUser} />
       ) : (
-        <SigninForm />
+        <SigninForm setLoginTab={(val) => setLoginTab(val)} />
       )}
     </div>
   );

@@ -7,7 +7,8 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
   const [myemail, setmyemail] = useState("jari@mail.com");
   const [mypwd, setmypwd] = useState("asd");
 
-  const [errMsg, setErrMsg] = useState(false);
+  const [errMsg, setErrMsg] = useState("Invalid username or password");
+  const [isErrMsg, setIsErrMsg] = useState(false);
 
   const handleLogin = async (email, pwd) => {
     let formdata = new FormData();
@@ -16,7 +17,7 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
 
     await axios({
       method: "POST",
-      url: "http://192.168.0.100/infonaytto_project/api/login.php",
+      url: process.env.REACT_APP_BACK_URL + "api/login.php",
       data: formdata,
     })
       .then((res) => makeLogin(res.data))
@@ -30,7 +31,7 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
       setCurrentUser(userid);
       window.location.href = "/user";
     } else {
-      setErrMsg(true);
+      setIsErrMsg(true);
     }
   };
 
@@ -41,6 +42,7 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
       <div className="loginpopup-logintab-form-container">
         <div className="formitem">
           <input
+            required
             type="text"
             name="email"
             placeholder="Sähköposti"
@@ -53,6 +55,7 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
         </div>
         <div className="formitem">
           <input
+            required
             type="password"
             name="password"
             placeholder="Salasana"
@@ -63,13 +66,12 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
             }
           />
         </div>
-
+        <div className="login-errmsg-container">
+          {isErrMsg ? <p className="login-errmsg">{errMsg}</p> : null}
+        </div>
         <div onClick={() => handleLogin(myemail, mypwd)} className="login-btn">
           <p>Kirjaudu</p>
         </div>
-        {errMsg ? (
-          <p className="login-errmsg">Invalid username or password</p>
-        ) : null}
       </div>
     </div>
   );

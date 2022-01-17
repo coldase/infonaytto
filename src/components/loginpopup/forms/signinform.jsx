@@ -1,11 +1,42 @@
 import "./formstyles.css";
 import { useState } from "react";
+import axios from "axios";
 
-const SigninForm = () => {
+const SigninForm = ({ setLoginTab }) => {
   const [fname, setfname] = useState("");
   const [lname, setlname] = useState("");
   const [email, setemail] = useState("");
   const [pwd, setpwd] = useState("");
+
+  const [isErrMsg, setIsErrMsg] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
+
+  const handleSignup = async (myfname, mylname, myemail, mypassword) => {
+    let formdata = new FormData();
+    formdata.append("firstname", myfname);
+    formdata.append("lastname", mylname);
+    formdata.append("email", myemail);
+    formdata.append("password", mypassword);
+
+    await axios({
+      method: "POST",
+      url: process.env.REACT_APP_BACK_URL + "api/add_user.php",
+      data: formdata,
+    })
+      .then((res) => {
+        if (res.data !== "") {
+          setErrMsg(res.data);
+          setIsErrMsg(true);
+          console.log(res);
+        } else {
+          setLoginTab(true);
+          setIsErrMsg(false);
+          console.log(res);
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="loginpopup-signin-container">
       <h1 className="loginpopup-logintab-header">Luo käyttäjä</h1>
@@ -29,7 +60,7 @@ const SigninForm = () => {
         <div className="formitem">
           <input
             onChange={(e) => setemail(e.target.value)}
-            type="text"
+            type="email"
             name="email"
             placeholder={"Sähköposti"}
           />
@@ -42,7 +73,13 @@ const SigninForm = () => {
             placeholder={"Salasana"}
           />
         </div>
-        <div className="login-btn">
+        <div className="login-errmsg-container">
+          {isErrMsg ? <p className="login-errmsg">{errMsg}</p> : null}
+        </div>
+        <div
+          className="login-btn"
+          onClick={() => handleSignup(fname, lname, email, pwd)}
+        >
           <p>Rekisteröidy</p>
         </div>
       </div>

@@ -7,7 +7,7 @@
   border: none;
   font-size: 18px;
   padding: 5px 0px;
-  margin-bottom: 25px;
+  margin-top: 25px;
   font-weight: 500;
   border-bottom: 1px solid black;
 }
@@ -21,7 +21,7 @@
 }
 
 .loginpopup-logintab-header {
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   font-size: 35px;
   opacity: 0.7;
 }
@@ -56,4 +56,12 @@
 
 .login-errmsg {
   color: red;
+  font-size: 16px;
+  position: relative;
+  margin: 0;
+}
+
+.login-errmsg-container {
+  margin: 10px 0px;
+  height: 20px;
 }
