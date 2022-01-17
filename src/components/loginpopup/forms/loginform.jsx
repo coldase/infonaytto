@@ -7,7 +7,7 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
   const [myemail, setmyemail] = useState("jari@mail.com");
   const [mypwd, setmypwd] = useState("asd");
 
-  const [errMsg, setErrMsg] = useState("Invalid username or password");
+  const [errMsg, setErrMsg] = useState("Väärä sähköposti tai salasana");
   const [isErrMsg, setIsErrMsg] = useState(false);
 
   const handleLogin = async (email, pwd) => {

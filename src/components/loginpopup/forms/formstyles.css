@@ -33,6 +33,9 @@
   .formitem input {
     width: 100%;
   }
+  .loginpopup-logintab-header {
+    font-size: 28px;
+  }
 }
 
 .login-btn {

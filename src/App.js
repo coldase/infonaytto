@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 //import screens
 import HomeScreen from "./screens/homescreen/homescreen";
 import UserScreen from "./screens/userscreen/userscreen";
+import QuestionScreen from "./screens/questionscreen/questionscreen";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState("");
@@ -43,6 +44,7 @@ const App = () => {
             />
           }
         />
+        <Route path="/questions" element={<QuestionScreen />} />
       </Routes>
     </div>
   );
