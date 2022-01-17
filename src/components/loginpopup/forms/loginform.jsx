@@ -1,13 +1,12 @@
 import "./formstyles.css";
 import axios from "axios";
-import { useState, useEffect } from "react";
-import { AiFillWindows } from "react-icons/ai";
+import { useState } from "react";
 
 const LoginForm = ({ currentUser, setCurrentUser }) => {
-  const [myemail, setmyemail] = useState("jari@mail.com");
-  const [mypwd, setmypwd] = useState("asd");
+  const [myemail, setmyemail] = useState("");
+  const [mypwd, setmypwd] = useState("");
 
-  const [errMsg, setErrMsg] = useState("Väärä sähköposti tai salasana");
+  const [errMsg, setErrMsg] = useState("Tarkista sähköposti tai salasana");
   const [isErrMsg, setIsErrMsg] = useState(false);
 
   const handleLogin = async (email, pwd) => {
@@ -49,7 +48,7 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
             value={myemail}
             onChange={(e) => setmyemail(e.target.value)}
             onKeyPress={(e) =>
-              e.key == "Enter" ? handleLogin(myemail, mypwd) : null
+              e.key === "Enter" ? handleLogin(myemail, mypwd) : null
             }
           />
         </div>
@@ -62,7 +61,7 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
             value={mypwd}
             onChange={(e) => setmypwd(e.target.value)}
             onKeyPress={(e) =>
-              e.key == "Enter" ? handleLogin(myemail, mypwd) : null
+              e.key === "Enter" ? handleLogin(myemail, mypwd) : null
             }
           />
         </div>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const SigninForm = ({ setLoginTab }) => {
+  const [ytunnus, setytunnus] = useState("");
   const [fname, setfname] = useState("");
   const [lname, setlname] = useState("");
   const [email, setemail] = useState("");
@@ -11,8 +12,15 @@ const SigninForm = ({ setLoginTab }) => {
   const [isErrMsg, setIsErrMsg] = useState(false);
   const [errMsg, setErrMsg] = useState("");
 
-  const handleSignup = async (myfname, mylname, myemail, mypassword) => {
+  const handleSignup = async (
+    myytunnus,
+    myfname,
+    mylname,
+    myemail,
+    mypassword
+  ) => {
     let formdata = new FormData();
+    formdata.append("ytunnus", myytunnus);
     formdata.append("firstname", myfname);
     formdata.append("lastname", mylname);
     formdata.append("email", myemail);
@@ -27,11 +35,11 @@ const SigninForm = ({ setLoginTab }) => {
         if (res.data !== "") {
           setErrMsg(res.data);
           setIsErrMsg(true);
-          console.log(res);
+          // console.log(res);
         } else {
           setLoginTab(true);
-          setIsErrMsg(false);
-          console.log(res);
+          // setIsErrMsg(false);
+          // console.log(res);
         }
       })
       .catch((err) => console.log(err));
@@ -42,6 +50,12 @@ const SigninForm = ({ setLoginTab }) => {
       <h1 className="loginpopup-logintab-header">Luo käyttäjä</h1>
       <div className="loginpopup-logintab-form-container">
         <div className="formitem">
+          <input
+            onChange={(e) => setytunnus(e.target.value)}
+            type="text"
+            name="ytunnus"
+            placeholder={"Y-tunnus"}
+          />
           <input
             onChange={(e) => setfname(e.target.value)}
             type="text"
@@ -78,7 +92,7 @@ const SigninForm = ({ setLoginTab }) => {
         </div>
         <div
           className="login-btn"
-          onClick={() => handleSignup(fname, lname, email, pwd)}
+          onClick={() => handleSignup(ytunnus, fname, lname, email, pwd)}
         >
           <p>Rekisteröidy</p>
         </div>

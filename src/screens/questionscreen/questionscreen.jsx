@@ -1,5 +1,5 @@
 //Import styles
-import { Navigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
 import "./questionscreen.css";
 
 const QuestionScreen = ({ currentUser }) => {
