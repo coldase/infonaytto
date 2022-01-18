@@ -1,10 +1,4 @@
-import SideNav, {
-  Toggle,
-  Nav,
-  NavItem,
-  NavIcon,
-  NavText,
-} from "@trendmicro/react-sidenav";
+import SideNav, { NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 
 //Icons
@@ -24,6 +18,7 @@ const UserNav = ({ isnav, setisnav, setTab }) => {
     <div>
       <SideNav
         expanded={isnav}
+        onToggle={() => setisnav(!isnav)}
         style={{ backgroundColor: "#11324D" }}
         onSelect={(selected) => {
           setisnav(false);
@@ -55,10 +50,13 @@ const UserNav = ({ isnav, setisnav, setTab }) => {
             case "asetukset":
               setTab(7);
               break;
+            default:
+              setTab(0);
+              break;
           }
         }}
       >
-        <SideNav.Toggle onClick={() => setisnav(!isnav)} />
+        <SideNav.Toggle />
         <SideNav.Nav defaultSelected="omasivu">
           <NavItem eventKey="omasivu">
             <NavIcon
