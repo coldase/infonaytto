@@ -50,9 +50,9 @@ const QuestionSection = () => {
     questionStates.forEach(() => {
       newl.push(false);
     });
-
     setQuestionStates(newl);
   };
+
   return (
     <div className="question-section">
       <div className="question-header">

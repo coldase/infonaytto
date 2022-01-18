@@ -38,7 +38,7 @@ const HomeScreen = ({ currentUser, setCurrentUser }) => {
       <div className="homescreen-section">
         <QuestionSection />
       </div>
-      <Link to="/questions" className="homescreen-question-btn">
+      <Link to="/help" className="homescreen-question-btn">
         <div className="homescreen-question-btn-text">Tarvitsetko apua</div>
       </Link>
     </div>

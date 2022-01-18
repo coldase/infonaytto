@@ -17,7 +17,7 @@
   width: 100%;
   background-color: #000;
   margin: 0;
-  padding-bottom: 250px;
+  padding-bottom: 50px;
   box-shadow: 0 0 100px 100px black;
 }
 .homescreen-content {
@@ -28,7 +28,7 @@
 }
 
 .homescreen-header {
-  margin-top: 200px;
+  margin-top: 100px;
   font-size: 60px;
   font-family: "PT Serif", serif;
   color: #fff;
