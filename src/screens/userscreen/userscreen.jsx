@@ -15,7 +15,7 @@ import Asetukset from "./tabs/asetukset/asetukset";
 
 const UserScreen = ({ currentUser }) => {
   const [isnav, setisnav] = useState(false);
-  const [currentTab, setCurrentTab] = useState(2);
+  const [currentTab, setCurrentTab] = useState(0);
   //if user is not logged in, redirect back to homepage
   if (!localStorage.getItem("userid")) {
     return <Navigate to="/" />;
@@ -39,6 +39,8 @@ const UserScreen = ({ currentUser }) => {
         return <Nayttojenhallinta />;
       case 7:
         return <Asetukset />;
+      default:
+        return <Omasivu />;
     }
   };
 
