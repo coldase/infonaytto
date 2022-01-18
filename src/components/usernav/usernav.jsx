@@ -15,7 +15,7 @@ import { BsPinMap } from "react-icons/bs";
 import { FiMonitor, FiSettings } from "react-icons/fi";
 import { MdOutlineScreenSearchDesktop } from "react-icons/md";
 
-const UserNav = ({ isnav, setisnav }) => {
+const UserNav = ({ isnav, setisnav, setTab }) => {
   const handleLogout = () => {
     localStorage.removeItem("userid");
     window.location.href = "/";
@@ -27,8 +27,34 @@ const UserNav = ({ isnav, setisnav }) => {
         style={{ backgroundColor: "#11324D" }}
         onSelect={(selected) => {
           setisnav(false);
-          if (selected === "logout") {
-            handleLogout();
+          switch (selected) {
+            case "logout":
+              handleLogout();
+              break;
+            case "omasivu":
+              setTab(0);
+              break;
+            case "mainospohjat":
+              setTab(1);
+              break;
+            case "mainosajat":
+              setTab(2);
+              break;
+            case "mainospaikat":
+              setTab(3);
+              break;
+            case "omattiedot":
+              setTab(4);
+              break;
+            case "naytot":
+              setTab(5);
+              break;
+            case "nayttojenhallinta":
+              setTab(6);
+              break;
+            case "asetukset":
+              setTab(7);
+              break;
           }
         }}
       >
@@ -47,7 +73,7 @@ const UserNav = ({ isnav, setisnav }) => {
             </NavIcon>
             <NavText>Oma sivu</NavText>
           </NavItem>
-          <NavItem eventKey="mainostemplaatit">
+          <NavItem eventKey="mainospohjat">
             <NavIcon
               style={{
                 display: "flex",
@@ -56,7 +82,7 @@ const UserNav = ({ isnav, setisnav }) => {
             >
               <CgTemplate style={{ fontSize: "1.45em", alignSelf: "center" }} />
             </NavIcon>
-            <NavText>Mainos templaatit</NavText>
+            <NavText>Mainos pohjat</NavText>
           </NavItem>
           <NavItem eventKey="mainosajat">
             <NavIcon style={{ display: "flex", justifyContent: "center" }}>
