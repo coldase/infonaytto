@@ -50,11 +50,11 @@ const HomeScreen = ({ currentUser, setCurrentUser }) => {
       <div className="homescreen-footer">
         <h1>asiakaspalvelu@infonaytto.fi</h1>
         <div>
-          <BsLinkedin size={35} />
-          <BsFacebook size={35} />
-          <BsInstagram size={35} />
-          <BsTwitter size={35} />
-          <BsYoutube size={35} />
+          <BsLinkedin className="some-icon" size={35} />
+          <BsFacebook className="some-icon" size={35} />
+          <BsInstagram className="some-icon" size={35} />
+          <BsTwitter className="some-icon" size={35} />
+          <BsYoutube className="some-icon" size={35} />
         </div>
       </div>
       {/* <Link to="/help" className="homescreen-question-btn">

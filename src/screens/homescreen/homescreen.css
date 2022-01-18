@@ -99,6 +99,11 @@
   margin-bottom: 20px;
 }
 
+.homescreen-footer div .some-icon:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
 /* for question section */
 
 @media only screen and (max-width: 666px) {
