@@ -3,15 +3,10 @@ import "./homescreen.css";
 import { useState } from "react";
 import LoginPopup from "../../components/loginpopup/loginpopup";
 import { Navigate, Link } from "react-router-dom";
+import QuestionSection from "../../components/ukk/question-section/questionsection";
 
 const HomeScreen = ({ currentUser, setCurrentUser }) => {
   const [isLoginPopup, setIsLoginPopup] = useState(false);
-  const [questions] = useState([
-    "Kuinka kirjaudun sisään?",
-    "Mitä tämä kaikki tarkoittaa ja minne minun tiedot menee?",
-    "Miksi käyttäisin tätä palvelua?",
-    "asdasa",
-  ]);
 
   if (currentUser) {
     return <Navigate to="/user" />;
@@ -41,20 +36,7 @@ const HomeScreen = ({ currentUser, setCurrentUser }) => {
         ) : null}
       </div>
       <div className="homescreen-section">
-        <div className="question-section">
-          <div className="question-header">
-            <h1>Usein kysyt kysymykset</h1>
-          </div>
-          <div className="question-container">
-            {questions.map((item) => {
-              return (
-                <div className="question-item">
-                  <p>{item}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <QuestionSection />
       </div>
       <Link to="/questions" className="homescreen-question-btn">
         <div className="homescreen-question-btn-text">Tarvitsetko apua</div>
