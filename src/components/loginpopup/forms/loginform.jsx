@@ -3,8 +3,8 @@ import axios from "axios";
 import { useState } from "react";
 
 const LoginForm = ({ currentUser, setCurrentUser }) => {
-  const [myemail, setmyemail] = useState("");
-  const [mypwd, setmypwd] = useState("");
+  const [myemail, setmyemail] = useState("jari@mail.com");
+  const [mypwd, setmypwd] = useState("asd");
 
   const [errMsg, setErrMsg] = useState("Tarkista sähköposti tai salasana");
   const [isErrMsg, setIsErrMsg] = useState(false);

@@ -18,7 +18,7 @@
   background-color: #000;
   margin: 0;
   padding-bottom: 50px;
-  box-shadow: 0 0 100px 100px black;
+  box-shadow: 0 -100px 50px 50px black;
 }
 .homescreen-content {
   flex-direction: column;
@@ -71,6 +71,32 @@
   font-weight: 500;
   font-size: 15px;
   padding: 10px 20px;
+}
+
+.homescreen-footer {
+  display: flex;
+  background-color: #000;
+  /* border-top: 1px solid rgb(48, 48, 48); */
+  margin: 0;
+  color: white;
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+.homescreen-footer h1 {
+  align-self: center;
+  font-size: 18px;
+  margin: 30px 0 20px 0;
+  font-weight: 400;
+}
+
+.homescreen-footer div {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  align-self: center;
+  margin-bottom: 20px;
 }
 
 /* for question section */

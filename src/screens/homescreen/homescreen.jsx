@@ -5,6 +5,15 @@ import LoginPopup from "../../components/loginpopup/loginpopup";
 import { Navigate, Link } from "react-router-dom";
 import QuestionSection from "../../components/ukk/question-section/questionsection";
 
+//icons
+import {
+  BsLinkedin,
+  BsFacebook,
+  BsInstagram,
+  BsTwitter,
+  BsYoutube,
+} from "react-icons/bs";
+
 const HomeScreen = ({ currentUser, setCurrentUser }) => {
   const [isLoginPopup, setIsLoginPopup] = useState(false);
 
@@ -38,9 +47,19 @@ const HomeScreen = ({ currentUser, setCurrentUser }) => {
       <div className="homescreen-section">
         <QuestionSection />
       </div>
-      <Link to="/help" className="homescreen-question-btn">
-        <div className="homescreen-question-btn-text">Tarvitsetko apua</div>
-      </Link>
+      <div className="homescreen-footer">
+        <h1>asiakaspalvelu@infonaytto.fi</h1>
+        <div>
+          <BsLinkedin size={35} />
+          <BsFacebook size={35} />
+          <BsInstagram size={35} />
+          <BsTwitter size={35} />
+          <BsYoutube size={35} />
+        </div>
+      </div>
+      {/* <Link to="/help" className="homescreen-question-btn">
+        <div className="homescreen-question-btn-text">Apua</div>
+      </Link> */}
     </div>
   );
 };
