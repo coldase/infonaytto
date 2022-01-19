@@ -53,7 +53,7 @@ const UserScreen = ({ currentUser, userData }) => {
       />
       <div
         onClick={() => setisnav(false)}
-        style={{ display: "flex", justifyContent: "center" }}
+        style={{ display: "flex", justifyContent: "center", marginLeft: 64 }}
       >
         {getRightUserTab(currentTab, userData)}
       </div>

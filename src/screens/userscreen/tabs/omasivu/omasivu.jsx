@@ -11,13 +11,12 @@ const Omasivu = ({ userData }) => {
         <div className="omatmainokset-container">
           <h2>Omat mainokset</h2>
           <div className="omatmainokset-card-container">
-            <div className="omatmainokset-card1"></div>
             {userData.user_ads.map((item) => {
               return (
-                <div className="omatmainokset-card">
+                <div key={item.ad_id} className="omatmainokset-card">
                   <img
-                    key={item.image}
                     src={`data:image/png;base64, ${item.image}`}
+                    alt={"Kuva" + item.ad_id}
                   />
                 </div>
               );

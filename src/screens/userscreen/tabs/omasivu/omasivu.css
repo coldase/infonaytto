@@ -37,7 +37,8 @@
 }
 
 .omatmainokset-container h2 {
-  margin-left: 115px;
+  margin-left: 25px;
+  margin-bottom: 5px;
 }
 
 .omatmainokset-card-container::-webkit-scrollbar {
@@ -67,12 +68,4 @@
 .omatmainokset-card img {
   width: 100%;
   border-radius: 5px;
-}
-.omatmainokset-card1 {
-  align-self: center;
-  display: flex;
-  height: 90%;
-  min-width: 50px;
-  /* background-color: blue; */
-  margin: 0 20px;
 }

@@ -1,4 +1,86 @@
 .mainospohjat-container {
   display: flex;
+  width: 100%;
   justify-content: center;
+  flex-direction: column;
+}
+
+.mainospohjat-header {
+  display: flex;
+  justify-content: center;
+  /* background-color: red; */
+  width: 100%;
+}
+
+.mainospohjat-content {
+  display: flex;
+  flex-direction: column;
+  /* background-color: blue; */
+  justify-content: center;
+}
+.mainospohjat-content h2 {
+  align-self: center;
+}
+
+.mainospohjat-footer {
+  display: flex;
+  /* background-color: yellow; */
+  justify-content: center;
+}
+
+.template-card-container {
+  display: flex;
+  /* padding-bottom: 10px; */
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  max-height: 550px;
+  overflow-y: scroll;
+  /* height: 100%; */
+  /* background-color: ; */
+  /* border: 1px solid #000; */
+  align-self: center;
+}
+.template-card {
+  width: 250px;
+  height: 250px;
+  background-color: crimson;
+  margin: 10px;
+}
+
+.luo-mainos-container {
+  display: flex;
+  /* background-color: red; */
+  justify-content: center;
+  flex-direction: column;
+}
+.luomainosinputs {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#valittutext {
+  font-size: 20px;
+  margin: 10px 0 0 0;
+}
+
+.luomainosinputs p {
+  align-self: center;
+}
+
+.lisaa-oma-mainos-btn {
+  display: flex;
+  justify-content: center;
+  background-color: #11324d;
+  border-radius: 5px;
+  margin: 10px;
+  width: 100px;
+  align-self: center;
+  padding: 0px 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.lisaa-oma-mainos-btn:hover {
+  opacity: 0.8;
 }
