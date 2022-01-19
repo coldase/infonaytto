@@ -1,0 +1,13 @@
+.map-container {
+  display: flex;
+  height: 500px;
+  width: 100%;
+}
+
+.mymapcontainer {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  background-color: red;
+  width: 100%;
+}

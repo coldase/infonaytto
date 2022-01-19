@@ -11,7 +11,7 @@ import { MdOutlineScreenSearchDesktop } from "react-icons/md";
 
 const UserNav = ({ isnav, setisnav, setTab }) => {
   const handleLogout = () => {
-    localStorage.removeItem("userid");
+    sessionStorage.removeItem("userid");
     window.location.href = "/";
   };
   return (

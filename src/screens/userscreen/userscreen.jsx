@@ -13,18 +13,18 @@ import Naytot from "./tabs/naytot/naytot";
 import Nayttojenhallinta from "./tabs/nayttojenhallinta/nayttojenhallinta";
 import Asetukset from "./tabs/asetukset/asetukset";
 
-const UserScreen = ({ currentUser }) => {
+const UserScreen = ({ currentUser, userData }) => {
   const [isnav, setisnav] = useState(false);
   const [currentTab, setCurrentTab] = useState(0);
   //if user is not logged in, redirect back to homepage
-  if (!localStorage.getItem("userid")) {
+  if (!sessionStorage.getItem("userid")) {
     return <Navigate to="/" />;
   }
 
-  const getRightUserTab = (tabnum) => {
+  const getRightUserTab = (tabnum, userData) => {
     switch (tabnum) {
       case 0:
-        return <Omasivu />;
+        return <Omasivu userData={userData} />;
       case 1:
         return <MainosPohjat />;
       case 2:
@@ -55,7 +55,7 @@ const UserScreen = ({ currentUser }) => {
         onClick={() => setisnav(false)}
         style={{ display: "flex", justifyContent: "center" }}
       >
-        {getRightUserTab(currentTab)}
+        {getRightUserTab(currentTab, userData)}
       </div>
     </>
   );

@@ -23,10 +23,10 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
       .catch((err) => console.log(err));
   };
 
-  const makeLogin = (userid) => {
+  const makeLogin = async (userid) => {
     if (userid) {
       setErrMsg(false);
-      localStorage.setItem("userid", userid);
+      sessionStorage.setItem("userid", userid);
       setCurrentUser(userid);
       window.location.href = "/user";
     } else {

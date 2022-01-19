@@ -18,7 +18,7 @@
   background-color: #000;
   margin: 0;
   padding-bottom: 50px;
-  box-shadow: 0 -100px 50px 50px black;
+  box-shadow: 0 -100px 50px 50px #000;
 }
 .homescreen-content {
   flex-direction: column;
@@ -32,7 +32,7 @@
   font-size: 60px;
   font-family: "PT Serif", serif;
   color: #fff;
-  text-shadow: 3px 3px 5px black;
+  text-shadow: 3px 3px 5px #000;
   opacity: 0.9;
 }
 
@@ -78,7 +78,7 @@
   background-color: #000;
   /* border-top: 1px solid rgb(48, 48, 48); */
   margin: 0;
-  color: white;
+  color: #fff;
   justify-content: center;
 
   flex-direction: column;

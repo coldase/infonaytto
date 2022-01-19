@@ -57,9 +57,9 @@ const HomeScreen = ({ currentUser, setCurrentUser }) => {
           <BsYoutube className="some-icon" size={35} />
         </div>
       </div>
-      {/* <Link to="/help" className="homescreen-question-btn">
+      <Link to="/help" className="homescreen-question-btn">
         <div className="homescreen-question-btn-text">Apua</div>
-      </Link> */}
+      </Link>
     </div>
   );
 };
