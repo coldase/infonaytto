@@ -1,14 +1,14 @@
 .question-item {
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 2px;
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 700px;
   display: flex;
   justify-content: center;
   align-self: center;
   margin: 10px 0px;
-  background-color: rgb(48, 48, 48);
+  background-color: rgb(52, 76, 100);
   padding: 10px 10px;
   font-size: 20px;
   color: #fff;
@@ -16,16 +16,16 @@
 
 .question-item p {
   margin: 5px 0px;
-  text-align: center;
+  /* text-align: center; */
 }
 #questiontext {
   padding: 5px;
 }
 #answertext {
-  border-top: 1px solid black;
+  border-top: 1px solid #fff;
   padding-top: 20px;
   font-size: 18px;
-  width: 90%;
+  width: 98%;
   align-self: center;
 }
 

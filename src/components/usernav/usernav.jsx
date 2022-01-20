@@ -80,7 +80,7 @@ const UserNav = ({ isnav, setisnav, setTab }) => {
             >
               <CgTemplate style={{ fontSize: "1.45em", alignSelf: "center" }} />
             </NavIcon>
-            <NavText>Mainos pohjat</NavText>
+            <NavText>Luo mainos</NavText>
           </NavItem>
           <NavItem eventKey="mainosajat">
             <NavIcon style={{ display: "flex", justifyContent: "center" }}>

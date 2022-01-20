@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import axios from "axios";
 
 const MainosPohjat = () => {
+  let mainkosia = 2;
   const inputFile = useRef(null);
   const [myimg, setmyimg] = useState(null);
 
@@ -31,17 +32,15 @@ const MainosPohjat = () => {
   return (
     <div className="mainospohjat-container">
       <div className="mainospohjat-header">
-        <h1>Mainospohjat</h1>
+        <h1>Luo mainos</h1>
       </div>
       <div className="mainospohjat-content">
         <h2>Valitse valmis pohja</h2>
         <div className="template-card-container">
-          <div className="template-card"></div>
-          <div className="template-card"></div>
-          <div className="template-card"></div>
-          <div className="template-card"></div>
-          <div className="template-card"></div>
-          <div className="template-card"></div>
+          {[...Array(mainkosia - 1)].map(() => (
+            <div className="template-card"></div>
+          ))}
+
           <div className="template-card"></div>
         </div>
         <h2>Tai lisää omalla kuvalla</h2>

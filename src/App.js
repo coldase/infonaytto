@@ -15,7 +15,7 @@ const App = () => {
     user_info: [],
   });
 
-  // Check if user is logged in
+  // Get user data from api (ads only atm)
   const get_data = async (userid) => {
     let formdata = new FormData();
     formdata.append("userid", userid);
@@ -26,17 +26,16 @@ const App = () => {
       data: formdata,
     })
       .then((res) => setUserData({ ...userData, user_ads: res.data }))
-      // .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
   };
   useEffect(() => {
     if (sessionStorage.getItem("userid")) {
       get_data(sessionStorage.getItem("userid"));
     }
-  }, [currentUser]); //eslint-disable-line react-hooks/exhaustive-deps
+  }, []); //eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route
           index

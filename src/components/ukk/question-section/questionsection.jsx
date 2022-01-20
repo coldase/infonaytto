@@ -6,11 +6,11 @@ const QuestionSection = () => {
   const [questions] = useState([
     [
       "Kuinka kirjaudun sisään?",
-      " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled iLorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.t to make a type specimen book.",
     ],
 
     [
-      "Mitä tämä kaikki tarkoittaa ja minne minun tiedot menee?",
+      "Missä minun tietoja käytetään?",
       "Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English",
     ],
     [
@@ -18,7 +18,7 @@ const QuestionSection = () => {
       "It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
     ],
     [
-      "Mitäs muuta?",
+      "Kuinka paljon mainokset maksaa?",
       "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33",
     ],
   ]);
@@ -56,7 +56,7 @@ const QuestionSection = () => {
   return (
     <div className="question-section">
       <div className="question-header">
-        <h1>Usein kysyt kysymykset</h1>
+        <h1>USEIN KYSYTYT KYSYMYKSET</h1>
       </div>
       <div className="question-container">
         {questions.map((item, inx) => {

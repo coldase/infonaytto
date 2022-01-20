@@ -5,6 +5,8 @@ import LoginPopup from "../../components/loginpopup/loginpopup";
 import { Navigate, Link } from "react-router-dom";
 import QuestionSection from "../../components/ukk/question-section/questionsection";
 
+import papers from "../../assets/images/etusivubg.jpg";
+
 //icons
 import {
   BsLinkedin,
@@ -22,45 +24,28 @@ const HomeScreen = ({ currentUser, setCurrentUser }) => {
   }
 
   return (
-    <div className="homescreen">
+    <>
+      {isLoginPopup ? (
+        <LoginPopup
+          isLoginPopup={isLoginPopup}
+          setIsLoginPopup={(val) => setIsLoginPopup(val)}
+          currentUser={currentUser}
+          setCurrentUser={setCurrentUser}
+        />
+      ) : null}
       <div className="homescreen-container">
-        <div className="homescreen-content">
-          <h1 className="homescreen-header">InfoNäyttö</h1>
-          <div className="homescreen-login-btn">
-            <div
-              onClick={() => setIsLoginPopup(true)}
-              className="homescreen-login-btn-text"
-            >
-              Aloita tästä
-            </div>
+        <h1 className="mainheader">SALON KAUPUNGIN MAINOSNÄYTÖT</h1>
+        <div className="paper-container">
+          <h1 className="paperheader">INFONÄYTÖT</h1>
+          <div onClick={() => setIsLoginPopup(true)} className="aloita-btn">
+            <p>Aloita tästä</p>
           </div>
+          <QuestionSection />
         </div>
-        {isLoginPopup ? (
-          <LoginPopup
-            isLoginPopup={isLoginPopup}
-            setIsLoginPopup={(val) => setIsLoginPopup(val)}
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          />
-        ) : null}
+        <div className="feedback-container"></div>
+        <div className="homescreen-footer"></div>
       </div>
-      <div className="homescreen-section">
-        <QuestionSection />
-      </div>
-      <div className="homescreen-footer">
-        <h1>asiakaspalvelu@infonaytto.fi</h1>
-        <div>
-          <BsLinkedin className="some-icon" size={35} />
-          <BsFacebook className="some-icon" size={35} />
-          <BsInstagram className="some-icon" size={35} />
-          <BsTwitter className="some-icon" size={35} />
-          <BsYoutube className="some-icon" size={35} />
-        </div>
-      </div>
-      <Link to="/help" className="homescreen-question-btn">
-        <div className="homescreen-question-btn-text">Apua</div>
-      </Link>
-    </div>
+    </>
   );
 };
 
