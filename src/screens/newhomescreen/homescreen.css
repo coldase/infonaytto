@@ -33,7 +33,7 @@ body {
 .homescreen-content-1 {
   display: flex;
   margin-top: 50px;
-  /* justify-content: center; */
+  justify-content: center;
   align-self: center;
   width: 65%;
   /* height: 700px; */
