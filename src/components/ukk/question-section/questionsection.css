@@ -1,9 +1,11 @@
 .question-section {
   /* position: absolute; */
   align-self: center;
-  margin-top: 50%;
-  /* background-color: #000; */
+  margin-top: 500px;
+  margin-bottom: 100px;
   display: flex;
+  /* background-color: red; */
+  width: 80%;
 
   justify-content: center;
   flex-direction: column;
