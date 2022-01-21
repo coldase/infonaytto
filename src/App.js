@@ -1,16 +1,15 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-//import screens
-// import HomeScreen from "./screens/homescreen/homescreen";
-import HomeScreen from "./screens/newhomescreen/homescreen";
-import UserScreen from "./screens/userscreen/userscreen";
-import HelpScreen from "./screens/helpscreen/helpscreen";
+import HomeScreen from "./screens/homescreen/homescreen";
+import Mainokset from "./screens/mainokset/mainokset";
+import Esittely from "./screens/esittely/esittely";
+import Profile from "./screens/profile/profile";
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState("");
+  // const [currentUser, setCurrentUser] = useState("");
   const [userData, setUserData] = useState({
     user_ads: [],
     user_info: [],
@@ -29,39 +28,28 @@ const App = () => {
       .then((res) => setUserData({ ...userData, user_ads: res.data }))
       .catch((err) => console.log(err));
   };
-  useEffect(() => {
-    if (sessionStorage.getItem("userid")) {
-      get_data(sessionStorage.getItem("userid"));
-    }
-  }, []); //eslint-disable-line react-hooks/exhaustive-deps
+  // useEffect(() => {
+  //   if (sessionStorage.getItem("userid")) {
+  //     get_data(sessionStorage.getItem("userid"));
+  //   }
+  // }, []); //eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div>
-      <Routes>
-        <Route
-          index
-          element={
-            <HomeScreen
-              userData={userData}
-              setUserData={setUserData}
-              currentUser={currentUser}
-              setCurrentUser={(val) => setCurrentUser(val)}
-            />
-          }
-        />
-        <Route
-          path="/user"
-          element={
-            <UserScreen
-              userData={userData}
-              currentUser={currentUser}
-              setCurrentUser={(val) => setCurrentUser(val)}
-            />
-          }
-        />
-        <Route path="/help" element={<HelpScreen />} />
-      </Routes>
-    </div>
+    <>
+      <div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HomeScreen userData={userData} setUserData={setUserData} />
+            }
+          />
+          <Route path="/esittely" element={<Esittely />} />
+          <Route path="/mainokset" element={<Mainokset />} />
+          <Route path="/profiili" element={<Profile />} />
+        </Routes>
+      </div>
+    </>
   );
 };
 export default App;

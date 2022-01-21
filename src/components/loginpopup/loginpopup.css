@@ -1,7 +1,9 @@
 .loginpopup-container {
+  top: 25%;
   position: fixed;
   align-self: center;
   width: 650px;
+  align-self: center;
   background-color: #fff;
   border-radius: 5px;
   opacity: 1;

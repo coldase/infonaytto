@@ -1,59 +1,69 @@
-@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap");
-
-/* body {
-  background-color: rgb(249, 144, 138);
-} */
-
 .homescreen-container {
   display: flex;
-  background: url("../../assets/images/etusivubg2.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  justify-content: center;
   flex-direction: column;
-  /* max-width: 100%; */
-  /* height: auto; */
-}
-.feedback-container {
-  position: relative;
-  margin-top: 35%;
-  margin-bottom: 10%;
-  background-color: red;
-  height: 250px;
-  width: 100%;
-  /* width: auto; */
 }
 
-.paper-container {
-  position: relative;
-  /* top: 18%; */
+.homescreen-header {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  margin-left: -12%;
-  margin-top: 10%;
+  background-color: rgb(255, 136, 128);
+  height: 200px;
+  width: 100%;
+}
+
+.homescreen-header h1 {
   align-self: center;
-  /* background-color: red; */
-  width: 50%;
+  color: rgb(52, 76, 100);
+  font-size: 4vw;
+}
+
+.homescreen-content {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 136, 128);
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  /* height: 2000px; */
+}
+
+.homescreen-content-1 {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-self: center;
+  width: 65%;
+  /* height: 700px; */
+  background-color: rgb(240, 214, 198);
+  flex-direction: column;
+}
+.homescreen-content-1 h1 {
+  color: rgb(52, 76, 100);
+  align-self: center;
+  font-size: 4vw;
+}
+
+.homescreen-content-2 {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  height: 200px;
+  background-color: red;
 }
 
 .homescreen-footer {
-  position: relative;
-  /* left: 0px; */
-  /* bottom: 0px; */
-  height: 140px;
-  /* width: auto; */
-  background: #999;
-}
-.mainheader {
-  color: rgb(52, 76, 100);
-  font-size: 4vw;
-  margin-top: 15%;
-  margin-bottom: 0;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
   align-self: center;
+  width: 100%;
+  height: 100px;
+  background-color: blue;
 }
 
-.aloita-btn {
+.homescreen-aloita-btn {
   display: flex;
   justify-content: center;
   align-self: center;
@@ -65,35 +75,15 @@
   color: rgb(52, 76, 100);
 }
 
-.aloita-btn:hover {
+.homescreen-aloita-btn:hover {
   background-color: rgb(52, 76, 100);
   color: #fff;
   opacity: 0.8;
 }
 
-.aloita-btn p {
+.homescreen-aloita-btn p {
   align-self: center;
+
   font-size: 20px;
   font-weight: 600;
-}
-
-.paperheader {
-  opacity: 0.9;
-  color: rgb(52, 76, 100);
-  font-size: 60px;
-  /* margin-top: 150px; */
-  align-self: center;
-}
-.image-container {
-  /* position: relative; */
-  height: 100%;
-}
-/* .papers-image {
-  position: absolute;
-  z-index: -1;
-  top: -15%;
-  width: 100%;
-} */
-
-@media only screen and (max-width: 550px) {
 }

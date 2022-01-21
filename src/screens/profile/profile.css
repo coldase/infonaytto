@@ -1,0 +1,28 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  /* background-color: red; */
+  width: 100%;
+  flex-direction: column;
+}
+
+.profile-header {
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+}
+.profile-content h1 {
+  align-self: center;
+}
+.profile-content {
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 100px;
+}
+.profile-footer {
+  /* background-color: green; */
+  display: flex;
+  justify-content: center;
+}

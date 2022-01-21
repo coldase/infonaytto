@@ -1,0 +1,49 @@
+@import "../../config/main.css";
+
+.mynav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  color: #fff;
+  background-color: #384c65;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.navseparator {
+  height: 110px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #fff;
+}
+
+.navheader p {
+  /* font-family: var(--headerfont); */
+  font-weight: 500;
+  margin: 0;
+  padding-left: 5px;
+  margin-bottom: 50px;
+  font-size: 45px;
+  letter-spacing: -4px;
+}
+
+.navlink {
+  height: 50px;
+  cursor: pointer;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.navlink:hover {
+  opacity: 0.5;
+}
+
+.navlink p {
+  align-self: center;
+  font-size: 25px;
+  margin-left: 20px;
+}

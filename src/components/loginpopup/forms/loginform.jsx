@@ -27,8 +27,7 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
     if (userid) {
       setErrMsg(false);
       sessionStorage.setItem("userid", userid);
-      setCurrentUser(userid);
-      window.location.href = "/user";
+      window.location.href = "/esittely";
     } else {
       setIsErrMsg(true);
     }
