@@ -1,34 +1,151 @@
-.esittely-container {
-  display: flex;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  flex-direction: column;
-}
+@import url("../../config/main.css");
 
-.esittelybg {
-  max-width: 100%;
+.esittely-container {
   position: absolute;
-  z-index: -1;
+  background: url("../../assets/images/esittelybg.jpg");
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .esittely-header {
+  /* display: flex; */
+  font-size: 80px;
+  color: #fff;
+  font-family: var(--headerfont);
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+.esittely-header2 {
+  /* display: flex; */
+  font-size: 80px;
+  color: #fff;
+  font-family: var(--headerfont);
+  font-weight: 200;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.katsonaytot-kartalta-btn {
   display: flex;
   justify-content: center;
+  width: 230px;
+  border: 2px solid var(--main-blue);
+  /* margin-left: 150px; */
+  margin-top: 20px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  height: 50px;
+  cursor: pointer;
+  color: rgb(52, 76, 100);
+}
+
+.katsonaytot-kartalta-btn p {
+  align-self: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+.katsonaytot-kartalta-btn:hover {
+  color: #fff;
+  opacity: 0.8;
+  background-color: rgb(52, 76, 100);
+}
+.aloitatasta-btn {
+  display: flex;
+  justify-content: center;
+  width: 230px;
+  border: 2px solid #fff;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  height: 50px;
+  cursor: pointer;
+  color: #fff;
+}
+.aloitatasta-btn p {
+  align-self: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+.aloitatasta-btn:hover {
+  color: var(--main-blue);
+  opacity: 0.8;
+  background-color: #fff;
+}
+
+.esittely-text {
+  margin-bottom: 40px;
+  width: 85%;
+  font-size: 22px;
+  color: var(--main-blue);
+  font-weight: 500;
+}
+.esittely-text2 {
+  margin-bottom: 40px;
+  width: 85%;
+  text-shadow: 1px 1px 3px black;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 400;
 }
 
 .esittely-content {
+  margin-left: 150px;
   /* background-color: red; */
-  margin-top: 50px;
+  margin-top: 20px;
+  width: 45%;
+}
+.esittely-content2 {
+  margin-left: 150px;
+  /* background-color: red; */
+  margin-top: 30%;
+  margin-bottom: 150px;
+  width: 45%;
 }
 .esittely-footer {
   position: absolute;
-  bottom: 0;
-  background-color: green;
+  background-color: var(--main-blue);
+  width: 100%;
+  height: 150px;
+}
 
-  display: flex;
-  justify-content: center;
+@media only screen and (max-width: 1050px) {
+  .esittely-content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    /* background-color: red; */
+    width: 80%;
+    justify-content: center;
+  }
+  .esittely-text {
+    align-self: center;
+    text-align: center;
+  }
+  .esittely-header {
+    text-align: center;
+    margin-left: 0;
+  }
+  .esittely-content2 {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    /* background-color: red; */
+    width: 80%;
+    justify-content: center;
+  }
+  .esittely-text2 {
+    align-self: center;
+    text-align: center;
+  }
+  .esittely-header2 {
+    text-align: center;
+    margin-left: 0;
+  }
+  .aloitatasta-btn {
+    align-self: center;
+    /* justify-content: center; */
+  }
+  .katsonaytot-kartalta-btn {
+    align-self: center;
+  }
 }

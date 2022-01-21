@@ -8,10 +8,11 @@
 
   /* Highlights */
   --darker-grey-highlight: rgb(43, 49, 55);
+  --main-blue: #384c65;
   --hover-color: rgb(226, 186, 156);
 
   /* Top navigation bar */
   /* Colors */
-  --navbar-top-bg-color: rgb(52, 58, 64);
-  --navbar-top-font-color: #fff;
+  --navbar-bg-color: #384c65;
+  --navbar-font-color: #fff;
 }

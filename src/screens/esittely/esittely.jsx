@@ -1,7 +1,7 @@
 import "./esittely.css";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
-import esittelybg from "../../assets/images/esittelybg.jpg";
+// import esittelybg from "../../assets/images/esittelybg.jpg";
 const Esittely = () => {
   if (!sessionStorage.getItem("userid")) {
     return <Navigate to="/" />;
@@ -9,12 +9,55 @@ const Esittely = () => {
   return (
     <>
       <div className="esittely-container">
-        <img className="esittelybg" src={esittelybg} />
+        {/* <img
+          className="esittelybg"
+          src={esittelybg}
+          alt="esittelybackgroundimage"
+        /> */}
         <div className="esittely-content">
-          <div className="esittely-text-container">
-            <h1>ESITTELY</h1>
+          <h1 className="esittely-header">ESITTELY</h1>
+          <p className="esittely-text">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
+            humour, or randomised words which don't look even slightly
+            believable. If you are going to use a passage of Lorem Ipsum, you
+            need to be sure there isn't anything embarrassing hidden in the
+            middle of text All the Lorem Ipsum generators on the Internet tend
+            to repeat predefined chunks as necessary, making this the first true
+            generator
+          </p>
+          <p className="esittely-text">
+            It uses a dictionary of over 200 Latin words, combined with a
+            handful of model sentence structures, to generate Lorem Ipsum which
+            looks reasonable. The generated Lorem Ipsum is therefore always free
+            from repetition, injected humour, or non-characteristic words etc
+            contrary to popular belief, Lorem Ipsum is not simply random text.
+          </p>
+          <p className="esittely-text">
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+            It has roots in a piece of classical Latin literature from 45 BC,
+            making it over 2000 years old. Richard McClintock, a Latin professor
+            at Hampden-Sydney College in Virginia.
+          </p>
+          <div className="katsonaytot-kartalta-btn">
+            <p>Katso näytöt kartalta</p>
           </div>
         </div>
+        <div className="esittely-content2">
+          <h1 className="esittely-header2">OTSIKKO</h1>
+          <p className="esittely-text2">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
+            humour, or randomised words which don't look even slightly
+            believable. If you are going to use a passage of Lorem Ipsum, you
+            need to be sure there isn't anything embarrassing hidden in the
+            middle of text
+          </p>
+          <Link className="aloitatasta-btn" to="/mainokset">
+            <p>Aloita tästä</p>
+          </Link>
+        </div>
+        <div className="esittely-footer"></div>
       </div>
       <MyNav />
     </>
