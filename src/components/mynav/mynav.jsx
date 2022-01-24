@@ -1,4 +1,4 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./mynav.css";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { MdShoppingCart } from "react-icons/md";

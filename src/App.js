@@ -37,7 +37,6 @@ const App = () => {
 
   return (
     <>
-      {/* <div> */}
       <Routes>
         <Route
           path="/"
@@ -48,7 +47,6 @@ const App = () => {
         <Route path="/profiili" element={<Profile />} />
         <Route path="/uusimainos" element={<UusiMainos />} />
       </Routes>
-      {/* </div> */}
     </>
   );
 };
