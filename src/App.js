@@ -7,6 +7,7 @@ import HomeScreen from "./screens/homescreen/homescreen";
 import Mainokset from "./screens/mainokset/mainokset";
 import Esittely from "./screens/esittely/esittely";
 import Profile from "./screens/profile/profile";
+import UusiMainos from "./screens/uusimainos/uusimainos";
 
 const App = () => {
   // const [currentUser, setCurrentUser] = useState("");
@@ -45,6 +46,7 @@ const App = () => {
         <Route path="/esittely" element={<Esittely />} />
         <Route path="/mainokset" element={<Mainokset />} />
         <Route path="/profiili" element={<Profile />} />
+        <Route path="/uusimainos" element={<UusiMainos />} />
       </Routes>
       {/* </div> */}
     </>
