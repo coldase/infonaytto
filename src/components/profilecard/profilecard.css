@@ -1,0 +1,48 @@
+.mainokset-profile-container {
+  height: 100%;
+  margin-right: 50px;
+}
+
+.mainokset-profile-card-header {
+  font-size: 80px;
+  margin: 0;
+  color: #fff;
+  font-family: var(--headerfont);
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: #343a40;
+}
+
+.mainokset-profile-card {
+  background-color: #343a40;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.mainokset-profile-card-header-container {
+  margin: 0;
+}
+.mainokset-profile-card-header-container h1 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 30px;
+  color: white;
+  border-bottom: 2px solid white;
+}
+.mainokset-profile-card-header-container p {
+  color: white;
+  margin: 0;
+  font-size: 25px;
+}
+.mainokset-profile-card-header-container .grp {
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+.mainokset-profile-card-header-container .grp1 {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+/* TOGGLE */
+.mainokset-profile-card-data-container {
+  /* display: none; */
+}

@@ -15,7 +15,11 @@ const MyNav = () => {
   };
 
   return (
-    <div onClick={() => setNavOpen(!navOpen)}>
+    <div
+      onClick={() => setNavOpen(!navOpen)}
+      onMouseEnter={() => setNavOpen(true)}
+      onMouseLeave={() => setNavOpen(false)}
+    >
       {navOpen ? (
         <div className="mynav">
           <div className="navheader">
@@ -30,7 +34,7 @@ const MyNav = () => {
           <Link to={"/mainokset"}>
             <div className="navlink">
               <MdShoppingCart style={{ alignSelf: "center" }} size={50} />
-              <p>Jätä mainos</p>
+              <p>Mainokset</p>
             </div>
           </Link>
           <div className="navseparator"></div>

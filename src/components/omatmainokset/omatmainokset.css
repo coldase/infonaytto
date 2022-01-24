@@ -1,0 +1,45 @@
+.omatmainokset-container {
+  height: 100%;
+  width: 100%;
+}
+
+.omatmainokset-header {
+  font-size: 80px;
+  color: #fff;
+  font-family: var(--headerfont);
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: #343a40;
+  padding-left: 5px;
+  margin: 0;
+}
+
+.omatmainokset-card-container {
+  width: 100%;
+  display: flex;
+}
+
+.omatmainokset-card {
+  border-radius: 10px;
+  margin-right: 50px;
+  width: 300px;
+  height: 350px;
+  background-color: #343a40;
+}
+
+.omatmainokset-uusimainos-btn {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  background-color: #343a40;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+.omatmainokset-uusimainos-btn p {
+  font-size: 28px;
+  align-self: center;
+  color: #fff;
+}
