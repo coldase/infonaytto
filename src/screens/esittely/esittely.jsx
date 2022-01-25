@@ -9,11 +9,6 @@ const Esittely = () => {
   return (
     <>
       <div className="esittely-container">
-        {/* <img
-          className="esittelybg"
-          src={esittelybg}
-          alt="esittelybackgroundimage"
-        /> */}
         <div className="esittely-content">
           <h1 className="esittely-header">ESITTELY</h1>
           <p className="esittely-text">
