@@ -14,7 +14,6 @@ const UusiMainos = () => {
   const [currentStep, setCurrentStep] = useState(0);
 
   const [myimg, setmyimg] = useState(null);
-  const [preview, setpreview] = useState(null);
 
   useEffect(() => {
     console.log(myimg);

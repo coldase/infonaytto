@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 import ProfileCard from "../../components/profilecard/profilecard";
 import OmatMainokset from "../../components/omatmainokset/omatmainokset";
-import Footer from "../../components/footer/footer";
+// import Footer from "../../components/footer/footer";
 
 const Mainokset = ({ userData }) => {
   if (!sessionStorage.getItem("userid")) {

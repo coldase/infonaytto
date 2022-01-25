@@ -1,5 +1,5 @@
 import "./uusimainoskuva.css";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 const UusiMainosKuva = ({ setmyimg, myimg }) => {
   const inputFile = useRef(null);
@@ -30,14 +30,12 @@ const UusiMainosKuva = ({ setmyimg, myimg }) => {
         <h1>Tai lisää oma kuva</h1>
         {myimg ? (
           <img
+            alt="mainoskuva-preview"
             className="uusimainoskuva-omakuva-preview"
             src={URL.createObjectURL(myimg)}
           />
         ) : null}
-        <div
-          onClick={() => handle_btn()}
-          className="uusimainoskuva-omakuva-lisaa-btn"
-        >
+        <div onClick={handle_btn} className="uusimainoskuva-omakuva-lisaa-btn">
           {myimg !== null ? <p>Vaihda kuva</p> : <p>Valitse kuva</p>}
         </div>
 
