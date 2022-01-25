@@ -10,6 +10,8 @@ const LoginPopup = ({
   setIsLoginPopup,
   currentUser,
   setCurrentUser,
+  isLoggedIn,
+  setIsLoggedIn,
 }) => {
   const [loginTab, setLoginTab] = useState(true);
   return (
@@ -42,7 +44,11 @@ const LoginPopup = ({
 
       {/* Logintab */}
       {loginTab ? (
-        <LoginForm setCurrentUser={setCurrentUser} />
+        <LoginForm
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          setCurrentUser={setCurrentUser}
+        />
       ) : (
         <SigninForm setLoginTab={(val) => setLoginTab(val)} />
       )}

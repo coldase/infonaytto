@@ -5,8 +5,8 @@ import ProfileCard from "../../components/profilecard/profilecard";
 import OmatMainokset from "../../components/omatmainokset/omatmainokset";
 // import Footer from "../../components/footer/footer";
 
-const Mainokset = ({ userData }) => {
-  if (!sessionStorage.getItem("userid")) {
+const Mainokset = ({ isLoggedIn, logout }) => {
+  if (!isLoggedIn) {
     return <Navigate to="/" />;
   }
   return (
@@ -19,7 +19,7 @@ const Mainokset = ({ userData }) => {
 
         {/* <Footer /> */}
       </div>
-      <MyNav />
+      <MyNav logout={logout} />
     </>
   );
 };

@@ -15,10 +15,10 @@ import Footer from "../../components/footer/footer";
 //   BsYoutube,
 // } from "react-icons/bs";
 
-const HomeScreen = ({ currentUser, setCurrentUser }) => {
+const HomeScreen = ({ isLoggedIn, setIsLoggedIn }) => {
   const [isLoginPopup, setIsLoginPopup] = useState(false);
 
-  if (sessionStorage.getItem("userid")) {
+  if (isLoggedIn) {
     return <Navigate to="/esittely" />;
   }
 
@@ -43,8 +43,8 @@ const HomeScreen = ({ currentUser, setCurrentUser }) => {
             <LoginPopup
               isLoginPopup={isLoginPopup}
               setIsLoginPopup={(val) => setIsLoginPopup(val)}
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
             />
           ) : null}
           <div className="homescreen-content-2">

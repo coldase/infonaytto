@@ -6,12 +6,11 @@ import { FaUserCircle } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { useState } from "react";
 
-const MyNav = () => {
+const MyNav = ({ logout }) => {
   const [navOpen, setNavOpen] = useState(false);
 
   const handleLogout = () => {
-    sessionStorage.removeItem("userid");
-    window.location.href = "/";
+    logout(); // window.location.href = "/";
   };
 
   return (

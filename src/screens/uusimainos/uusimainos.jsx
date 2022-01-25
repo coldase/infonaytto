@@ -10,7 +10,7 @@ import UusiMainosAika from "../../components/uusimainos-contents/uusimainosaika"
 import UusiMainosJulkaisu from "../../components/uusimainos-contents/uusimainosjulkaisu";
 import Footer from "../../components/footer/footer";
 
-const UusiMainos = () => {
+const UusiMainos = ({ isLoggedIn, logout }) => {
   const [currentStep, setCurrentStep] = useState(0);
 
   const [myimg, setmyimg] = useState(null);
@@ -19,7 +19,7 @@ const UusiMainos = () => {
     console.log(myimg);
   }, [myimg]);
 
-  if (!sessionStorage.getItem("userid")) {
+  if (!isLoggedIn) {
     return <Navigate to="/" />;
   }
   return (
@@ -42,7 +42,7 @@ const UusiMainos = () => {
         </div>
         <Footer />
       </div>
-      <MyNav />
+      <MyNav logout={logout} />
     </>
   );
 };

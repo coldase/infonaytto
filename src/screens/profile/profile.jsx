@@ -1,13 +1,13 @@
 import "./profile.css";
 import { Navigate } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
-const Profile = () => {
-  if (!sessionStorage.getItem("userid")) {
+
+const Profile = ({ isLoggedIn, logout }) => {
+  if (!isLoggedIn) {
     return <Navigate to="/" />;
   }
   return (
     <>
-      <MyNav />
       <div className="profile-container">
         <div className="profile-header">
           <h1>Profiili</h1>
@@ -18,6 +18,7 @@ const Profile = () => {
           <h1>footer</h1>
         </div>
       </div>
+      <MyNav logout={logout} />
     </>
   );
 };

@@ -10,42 +10,46 @@ import Profile from "./screens/profile/profile";
 import UusiMainos from "./screens/uusimainos/uusimainos";
 
 const App = () => {
-  // const [currentUser, setCurrentUser] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [authToken, setAuthToken] = useState("");
   const [userData, setUserData] = useState({
     user_ads: [],
     user_info: [],
   });
 
-  // Get user data from api (ads only atm)
-  // const get_data = async (userid) => {
-  //   let formdata = new FormData();
-  //   formdata.append("userid", userid);
-
-  //   await axios({
-  //     method: "POST",
-  //     url: process.env.REACT_APP_BACK_URL + "api/get_ads_by_user.php",
-  //     data: formdata,
-  //   })
-  //     .then((res) => setUserData({ ...userData, user_ads: res.data }))
-  //     .catch((err) => console.log(err));
-  // };
-  // useEffect(() => {
-  //   if (sessionStorage.getItem("userid")) {
-  //     get_data(sessionStorage.getItem("userid"));
-  //   }
-  // }, []); //eslint-disable-line react-hooks/exhaustive-deps
+  const logout = () => {
+    setIsLoggedIn(false);
+  };
 
   return (
     <>
       <Routes>
         <Route
           path="/"
-          element={<HomeScreen userData={userData} setUserData={setUserData} />}
+          element={
+            <HomeScreen
+              userData={userData}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={(val) => setIsLoggedIn(val)}
+            />
+          }
         />
-        <Route path="/esittely" element={<Esittely />} />
-        <Route path="/mainokset" element={<Mainokset />} />
-        <Route path="/profiili" element={<Profile />} />
-        <Route path="/uusimainos" element={<UusiMainos />} />
+        <Route
+          path="/esittely"
+          element={<Esittely isLoggedIn={isLoggedIn} logout={logout} />}
+        />
+        <Route
+          path="/mainokset"
+          element={<Mainokset isLoggedIn={isLoggedIn} logout={logout} />}
+        />
+        <Route
+          path="/profiili"
+          element={<Profile isLoggedIn={isLoggedIn} logout={logout} />}
+        />
+        <Route
+          path="/uusimainos"
+          element={<UusiMainos isLoggedIn={isLoggedIn} logout={logout} />}
+        />
       </Routes>
     </>
   );

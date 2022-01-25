@@ -2,7 +2,7 @@ import "./formstyles.css";
 import axios from "axios";
 import { useState } from "react";
 
-const LoginForm = ({ currentUser, setCurrentUser }) => {
+const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
   const [myemail, setmyemail] = useState("jari@mail.com");
   const [mypwd, setmypwd] = useState("asd");
 
@@ -26,8 +26,7 @@ const LoginForm = ({ currentUser, setCurrentUser }) => {
   const makeLogin = async (userid) => {
     if (userid) {
       setErrMsg(false);
-      sessionStorage.setItem("userid", userid);
-      window.location.href = "/esittely";
+      setIsLoggedIn(true);
     } else {
       setIsErrMsg(true);
     }

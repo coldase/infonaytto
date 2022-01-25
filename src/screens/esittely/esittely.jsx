@@ -2,8 +2,9 @@ import "./esittely.css";
 import { Navigate, Link } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 import Footer from "../../components/footer/footer";
-const Esittely = () => {
-  if (!sessionStorage.getItem("userid")) {
+
+const Esittely = ({ isLoggedIn, logout }) => {
+  if (!isLoggedIn) {
     return <Navigate to="/" />;
   }
   return (
@@ -54,7 +55,7 @@ const Esittely = () => {
         </div>
         <Footer />
       </div>
-      <MyNav />
+      <MyNav logout={logout} />
     </>
   );
 };
