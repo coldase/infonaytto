@@ -1,0 +1,5 @@
+.footer-container {
+  width: 100%;
+  background-color: var(--main-blue);
+  height: 150px;
+}

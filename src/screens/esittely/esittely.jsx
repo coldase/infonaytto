@@ -1,7 +1,7 @@
 import "./esittely.css";
 import { Navigate, Link } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
-// import esittelybg from "../../assets/images/esittelybg.jpg";
+import Footer from "../../components/footer/footer";
 const Esittely = () => {
   if (!sessionStorage.getItem("userid")) {
     return <Navigate to="/" />;
@@ -57,7 +57,7 @@ const Esittely = () => {
             <p>Aloita tästä</p>
           </Link>
         </div>
-        <div className="esittely-footer"></div>
+        <Footer />
       </div>
       <MyNav />
     </>

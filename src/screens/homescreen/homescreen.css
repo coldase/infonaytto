@@ -44,13 +44,25 @@
 }
 
 .homescreen-content-2 {
-  margin-top: 50px;
+  margin: 100px 0 50px 0;
   display: flex;
   justify-content: center;
   align-self: center;
-  width: 100%;
-  height: 200px;
-  background-color: red;
+  width: 80%;
+}
+.homescreen-kokemus-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 50px;
+}
+.homescreen-kokemus-container p {
+  font-size: 22px;
+  margin: 0;
+  color: #fff;
+}
+.homescreen-kokemus-container p:first-child {
+  margin-bottom: 20px;
 }
 
 .homescreen-footer {

@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 import ProfileCard from "../../components/profilecard/profilecard";
 import OmatMainokset from "../../components/omatmainokset/omatmainokset";
+import Footer from "../../components/footer/footer";
 
 const Mainokset = ({ userData }) => {
   if (!sessionStorage.getItem("userid")) {
@@ -16,9 +17,7 @@ const Mainokset = ({ userData }) => {
           <OmatMainokset />
         </div>
 
-        <div className="mainokset-footer">
-          <h1>footer</h1>
-        </div>
+        {/* <Footer /> */}
       </div>
       <MyNav />
     </>

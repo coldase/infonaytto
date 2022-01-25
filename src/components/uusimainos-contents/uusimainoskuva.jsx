@@ -1,6 +1,12 @@
 import "./uusimainoskuva.css";
+import { useRef, useState } from "react";
 
-const UusiMainosKuva = () => {
+const UusiMainosKuva = ({ setmyimg, myimg }) => {
+  const inputFile = useRef(null);
+  const handle_btn = () => {
+    inputFile.current.click();
+  };
+
   return (
     <div className="uusimainoskuva-container">
       <div className="uusimainoskuva-pohja-container">
@@ -15,10 +21,35 @@ const UusiMainosKuva = () => {
           <div className="uusimainoskuva-pohja-card"></div>
           <div className="uusimainoskuva-pohja-card"></div>
           <div className="uusimainoskuva-pohja-card"></div>
+          <div className="uusimainoskuva-pohja-card"></div>
+          <div className="uusimainoskuva-pohja-card"></div>
+          <div className="uusimainoskuva-pohja-card"></div>
         </div>
       </div>
       <div className="uusimainoskuva-omakuva-container">
         <h1>Tai lisää oma kuva</h1>
+        {myimg ? (
+          <img
+            className="uusimainoskuva-omakuva-preview"
+            src={URL.createObjectURL(myimg)}
+          />
+        ) : null}
+        <div
+          onClick={() => handle_btn()}
+          className="uusimainoskuva-omakuva-lisaa-btn"
+        >
+          {myimg !== null ? <p>Vaihda kuva</p> : <p>Valitse kuva</p>}
+        </div>
+
+        <input
+          ref={inputFile}
+          type="file"
+          onChange={(e) => {
+            setmyimg(e.target.files[0]);
+          }}
+          name="image"
+          style={{ display: "none" }}
+        />
       </div>
     </div>
   );
