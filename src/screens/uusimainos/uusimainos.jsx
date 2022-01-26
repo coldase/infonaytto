@@ -8,10 +8,10 @@ import UusiMainosKuva from "../../components/uusimainos-contents/uusimainoskuva"
 import UusiMainosPaikka from "../../components/uusimainos-contents/uusimainospaikka";
 import UusiMainosAika from "../../components/uusimainos-contents/uusimainosaika";
 import UusiMainosJulkaisu from "../../components/uusimainos-contents/uusimainosjulkaisu";
-import Footer from "../../components/footer/footer";
-import MyMap from "../../components/map/map";
+// import Footer from "../../components/footer/footer";
+import MyMapContainer from "../../components/map/map-container";
 
-const UusiMainos = ({ isLoggedIn, logout }) => {
+const UusiMainos = ({ isLoggedIn, logout, isshowmap, setisshowmap }) => {
   let mainospaikat = [
     "Koulutus",
     "Liikuntapaikat",
@@ -23,14 +23,9 @@ const UusiMainos = ({ isLoggedIn, logout }) => {
   ];
 
   const [currentStep, setCurrentStep] = useState(1);
-  const [showmap, setshowmap] = useState(false);
 
   const [myimg, setmyimg] = useState(null);
   const [mybuttons, setmybuttons] = useState([]);
-
-  useEffect(() => {
-    console.log(myimg);
-  }, [myimg]);
 
   if (!isLoggedIn) {
     return <Navigate to="/" />;
@@ -54,29 +49,20 @@ const UusiMainos = ({ isLoggedIn, logout }) => {
               mainospaikat={mainospaikat}
               mybuttons={mybuttons}
               setmybuttons={setmybuttons}
-              setshowmap={setshowmap}
+              setisshowmap={setisshowmap}
             />
           ) : null}
           {currentStep === 2 ? <UusiMainosAika /> : null}
           {currentStep === 3 ? <UusiMainosJulkaisu /> : null}
         </div>
-        <Footer />
-        {showmap ? (
-          <div className="uusimainos-map-container">
-            <div className="map-alue-btn-container">
-              {mainospaikat.map((paikka) => (
-                <div key={paikka} className="map-alue-btn">
-                  <p>{paikka}</p>
-                </div>
-              ))}
-            </div>
-            <MyMap />
-            <div onClick={() => setshowmap(false)} className="closemap-btn">
-              <p>Sulje kartta</p>
-            </div>
-          </div>
-        ) : null}
+        {/* <Footer /> */}
       </div>
+      {isshowmap ? (
+        <MyMapContainer
+          setisshowmap={setisshowmap}
+          mainospaikat={mainospaikat}
+        />
+      ) : null}
       <MyNav logout={logout} />
     </>
   );

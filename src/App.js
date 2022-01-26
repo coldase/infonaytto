@@ -12,6 +12,7 @@ import Arkisto from "./screens/arkisto/arkisto";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isshowmap, setisshowmap] = useState(false);
   const [authToken, setAuthToken] = useState("");
   const [userData, setUserData] = useState({
     user_ads: [],
@@ -22,6 +23,9 @@ const App = () => {
     setIsLoggedIn(false);
   };
 
+  // useEffect(() => {
+  //   console.log(isshowmap);
+  // }, [isshowmap]);
   return (
     <>
       <Routes>
@@ -37,7 +41,14 @@ const App = () => {
         />
         <Route
           path="/uusimainos"
-          element={<UusiMainos isLoggedIn={isLoggedIn} logout={logout} />}
+          element={
+            <UusiMainos
+              isLoggedIn={isLoggedIn}
+              logout={logout}
+              isshowmap={isshowmap}
+              setisshowmap={setisshowmap}
+            />
+          }
         />
         <Route
           path="/mainokset"

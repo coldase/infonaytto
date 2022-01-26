@@ -1,5 +1,6 @@
 import "./profileomatmainokset.css";
 import { Link } from "react-router-dom";
+import { BsPlusLg } from "react-icons/bs";
 
 const ProfileOmatMainokset = () => {
   return (
@@ -11,10 +12,12 @@ const ProfileOmatMainokset = () => {
         </div>
         <div className="profileomatmainokset-card2">
           <h1>TULEVAT</h1>
+          <BsPlusLg className="profileomatmainokset-plus-icon" />
         </div>
-        <div className="profileomatmainokset-card3">
+        <Link to="/uusimainos" className="profileomatmainokset-card3">
           <h1>UUSI MAINOS</h1>
-        </div>
+          <BsPlusLg className="profileomatmainokset-plus-icon" />
+        </Link>
       </div>
 
       <Link to="/arkisto" className="profileomatmainokset-arkisto-btn">

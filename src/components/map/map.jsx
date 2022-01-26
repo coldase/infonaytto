@@ -22,11 +22,7 @@ const MyMap = () => {
       zoom: zoom,
     });
   });
-  return (
-    <div className="mymapcontainer">
-      <div ref={mapContainer} className="map-container" />
-    </div>
-  );
+  return <div ref={mapContainer} className="mymap" />;
 };
 
 export default MyMap;

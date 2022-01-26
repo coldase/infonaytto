@@ -4,7 +4,7 @@ import { useState } from "react";
 const UusiMainosPaikka = ({
   mybuttons,
   setmybuttons,
-  setshowmap,
+  setisshowmap,
   mainospaikat,
 }) => {
   const handleCardClick = (item) => {
@@ -37,7 +37,7 @@ const UusiMainosPaikka = ({
           ))}
         </div>
         <div className="uusimainos-mapbtn-container">
-          <div onClick={() => setshowmap(true)} className="uusimainos-mapbtn">
+          <div onClick={() => setisshowmap(true)} className="uusimainos-mapbtn">
             <p>Näytä alueet kartalla</p>
           </div>
         </div>
