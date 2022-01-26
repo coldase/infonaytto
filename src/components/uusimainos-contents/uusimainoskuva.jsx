@@ -2,6 +2,7 @@ import "./uusimainoskuva.css";
 import { useRef } from "react";
 
 const UusiMainosKuva = ({ setmyimg, myimg }) => {
+  let mainostemplates = 12;
   const inputFile = useRef(null);
   const handle_btn = () => {
     inputFile.current.click();
@@ -12,18 +13,9 @@ const UusiMainosKuva = ({ setmyimg, myimg }) => {
       <div className="uusimainoskuva-pohja-container">
         <h1>Valitse valmis pohja</h1>
         <div className="uusimainoskuva-pohjat">
-          <div className="uusimainoskuva-pohja-card"></div>
-          <div className="uusimainoskuva-pohja-card"></div>
-          <div className="uusimainoskuva-pohja-card"></div>
-          <div className="uusimainoskuva-pohja-card"></div>
-          <div className="uusimainoskuva-pohja-card"></div>
-          <div className="uusimainoskuva-pohja-card"></div>
-          <div className="uusimainoskuva-pohja-card"></div>
-          <div className="uusimainoskuva-pohja-card"></div>
-          <div className="uusimainoskuva-pohja-card"></div>
-          <div className="uusimainoskuva-pohja-card"></div>
-          <div className="uusimainoskuva-pohja-card"></div>
-          <div className="uusimainoskuva-pohja-card"></div>
+          {[...Array(mainostemplates)].map((item) => (
+            <div key={item} className="uusimainoskuva-pohja-card"></div>
+          ))}
         </div>
       </div>
       <div className="uusimainoskuva-omakuva-container">

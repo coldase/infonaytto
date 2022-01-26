@@ -1,11 +1,11 @@
-.omatmainokset-container {
+.profileomatmainokset-container {
   height: 100%;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
 }
 
-.omatmainokset-header {
+.profileomatmainokset-header {
   font-size: 80px;
   color: #fff;
   font-family: var(--headerfont);
@@ -16,31 +16,31 @@
   margin: 0;
 }
 
-.omatmainokset-card-container {
+.profileomatmainokset-card-container {
   display: flex;
 }
-.omatmainokset-card-container h1 {
+.profileomatmainokset-card-container h1 {
   color: white;
   text-align: center;
   font-size: 30px;
   font-weight: 400;
 }
 
-.omatmainokset-card {
+.profileomatmainokset-card {
   border-radius: 10px;
   margin-right: 50px;
   width: 300px;
   height: 350px;
   background-color: #343a40;
 }
-.omatmainokset-card2 {
+.profileomatmainokset-card2 {
   border-radius: 10px;
   margin-right: 50px;
   width: 300px;
   height: 350px;
   background-color: #fe7224;
 }
-.omatmainokset-card3 {
+.profileomatmainokset-card3 {
   border-radius: 10px;
   margin-right: 50px;
   width: 300px;
@@ -48,7 +48,7 @@
   background-color: #7ea2ae;
 }
 
-.omatmainokset-uusimainos-btn {
+.profileomatmainokset-arkisto-btn {
   background-color: red;
   display: flex;
   justify-content: center;
@@ -60,12 +60,12 @@
   cursor: pointer;
 }
 
-.omatmainokset-uusimainos-btn p {
+.profileomatmainokset-arkisto-btn p {
   font-size: 28px;
   align-self: center;
   color: #fff;
 }
 
-.omatmainokset-uusimainos-btn:hover {
+.profileomatmainokset-arkisto-btn:hover {
   opacity: 0.8;
 }

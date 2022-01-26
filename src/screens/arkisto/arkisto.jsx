@@ -1,16 +1,16 @@
-import "./mainokset.css";
+import "./arkisto.css";
 import { Navigate } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 import Footer from "../../components/footer/footer";
 
-const Mainokset = ({ isLoggedIn, logout }) => {
+const Arkisto = ({ isLoggedIn, logout }) => {
   if (!isLoggedIn) {
     return <Navigate to="/" />;
   }
   return (
     <>
-      <div className="mainokset-container">
-        <h1>mainokseni</h1>
+      <div className="arkisto-container">
+        <h1>Arkisto</h1>
         {/* <Footer /> */}
       </div>
       <MyNav logout={logout} />
@@ -18,4 +18,4 @@ const Mainokset = ({ isLoggedIn, logout }) => {
   );
 };
 
-export default Mainokset;
+export default Arkisto;

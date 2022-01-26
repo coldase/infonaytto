@@ -1,28 +1,29 @@
+@import url("../../config/main.css");
+
 .profile-container {
-  display: flex;
-  justify-content: center;
-  /* background-color: red; */
+  position: absolute;
+  height: 100%;
   width: 100%;
+  display: flex;
   flex-direction: column;
+  background-color: rgb(238, 238, 238);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.profile-header {
-  /* background-color: blue; */
-  display: flex;
-  justify-content: center;
-}
-.profile-content h1 {
-  align-self: center;
-}
 .profile-content {
-  /* background-color: yellow; */
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  margin-top: 100px;
+  align-self: center;
+  margin-left: 50px;
+  margin-top: 20px;
+  /* width: 84%; */
 }
+
 .profile-footer {
-  /* background-color: green; */
-  display: flex;
-  justify-content: center;
+  /* position: absolute; */
+  background-color: green;
+  width: 100%;
+  height: 150px;
+  /* bottom: 0; */
 }

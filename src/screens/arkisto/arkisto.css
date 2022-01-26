@@ -1,6 +1,6 @@
 @import url("../../config/main.css");
 
-.mainokset-container {
+.arkisto-container {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -10,7 +10,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.mainokset-container h1 {
+.arkisto-container h1 {
   align-self: center;
 }

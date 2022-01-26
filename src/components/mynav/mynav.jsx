@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import "./mynav.css";
 import { AiFillInfoCircle } from "react-icons/ai";
-import { MdShoppingCart } from "react-icons/md";
+import { MdShoppingCart, MdCollections } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
+
 import { FiLogOut } from "react-icons/fi";
 import { useState } from "react";
 
@@ -24,16 +25,23 @@ const MyNav = ({ logout }) => {
           <div className="navheader">
             <p>infoNÄYTÖT</p>
           </div>
+
+          <Link to={"/uusimainos"}>
+            <div className="navlink">
+              <MdShoppingCart style={{ alignSelf: "center" }} size={50} />
+              <p>Uusi mainos</p>
+            </div>
+          </Link>
+          <Link to="/mainokset">
+            <div className="navlink">
+              <MdCollections style={{ alignSelf: "center" }} size={50} />
+              <p>Mainokseni</p>
+            </div>
+          </Link>
           <Link to="/esittely">
             <div className="navlink">
               <AiFillInfoCircle style={{ alignSelf: "center" }} size={50} />
               <p>Esittely</p>
-            </div>
-          </Link>
-          <Link to={"/mainokset"}>
-            <div className="navlink">
-              <MdShoppingCart style={{ alignSelf: "center" }} size={50} />
-              <p>Mainokset</p>
             </div>
           </Link>
           <div className="navseparator"></div>
@@ -54,10 +62,13 @@ const MyNav = ({ logout }) => {
             <p>iN</p>
           </div>
           <div className="navlink">
-            <AiFillInfoCircle style={{ alignSelf: "center" }} size={50} />
+            <MdShoppingCart style={{ alignSelf: "center" }} size={50} />
           </div>
           <div className="navlink">
-            <MdShoppingCart style={{ alignSelf: "center" }} size={50} />
+            <MdCollections style={{ alignSelf: "center" }} size={50} />
+          </div>
+          <div className="navlink">
+            <AiFillInfoCircle style={{ alignSelf: "center" }} size={50} />
           </div>
           <div className="navseparator"></div>
           <div className="navlink">

@@ -9,11 +9,24 @@ import UusiMainosPaikka from "../../components/uusimainos-contents/uusimainospai
 import UusiMainosAika from "../../components/uusimainos-contents/uusimainosaika";
 import UusiMainosJulkaisu from "../../components/uusimainos-contents/uusimainosjulkaisu";
 import Footer from "../../components/footer/footer";
+import MyMap from "../../components/map/map";
 
 const UusiMainos = ({ isLoggedIn, logout }) => {
-  const [currentStep, setCurrentStep] = useState(0);
+  let mainospaikat = [
+    "Koulutus",
+    "Liikuntapaikat",
+    "Terveyspalvelut",
+    "Ruokakaupat",
+    "Liikenne",
+    "Yleisötapahtumat",
+    "Puistot",
+  ];
+
+  const [currentStep, setCurrentStep] = useState(1);
+  const [showmap, setshowmap] = useState(false);
 
   const [myimg, setmyimg] = useState(null);
+  const [mybuttons, setmybuttons] = useState([]);
 
   useEffect(() => {
     console.log(myimg);
@@ -36,11 +49,33 @@ const UusiMainos = ({ isLoggedIn, logout }) => {
           {currentStep === 0 ? (
             <UusiMainosKuva setmyimg={(img) => setmyimg(img)} myimg={myimg} />
           ) : null}
-          {currentStep === 1 ? <UusiMainosPaikka /> : null}
+          {currentStep === 1 ? (
+            <UusiMainosPaikka
+              mainospaikat={mainospaikat}
+              mybuttons={mybuttons}
+              setmybuttons={setmybuttons}
+              setshowmap={setshowmap}
+            />
+          ) : null}
           {currentStep === 2 ? <UusiMainosAika /> : null}
           {currentStep === 3 ? <UusiMainosJulkaisu /> : null}
         </div>
         <Footer />
+        {showmap ? (
+          <div className="uusimainos-map-container">
+            <div className="map-alue-btn-container">
+              {mainospaikat.map((paikka) => (
+                <div key={paikka} className="map-alue-btn">
+                  <p>{paikka}</p>
+                </div>
+              ))}
+            </div>
+            <MyMap />
+            <div onClick={() => setshowmap(false)} className="closemap-btn">
+              <p>Sulje kartta</p>
+            </div>
+          </div>
+        ) : null}
       </div>
       <MyNav logout={logout} />
     </>
