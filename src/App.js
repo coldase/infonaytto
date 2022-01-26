@@ -8,9 +8,9 @@ import Esittely from "./screens/esittely/esittely";
 import Profile from "./screens/profile/profile";
 import UusiMainos from "./screens/uusimainos/uusimainos";
 import Mainokset from "./screens/mainokset/mainokset";
-import Arkisto from "./screens/arkisto/arkisto";
 
 const App = () => {
+  const [currentMainosTab, setCurrentMainosTab] = useState(0);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [isshowmap, setisshowmap] = useState(false);
   const [authToken, setAuthToken] = useState("");
@@ -18,6 +18,16 @@ const App = () => {
     user_ads: [],
     user_info: [],
   });
+
+  let mainospaikat = [
+    "Koulutus",
+    "Liikuntapaikat",
+    "Terveyspalvelut",
+    "Ruokakaupat",
+    "Liikenne",
+    "Yleisötapahtumat",
+    "Puistot",
+  ];
 
   const logout = () => {
     setIsLoggedIn(false);
@@ -47,26 +57,43 @@ const App = () => {
               logout={logout}
               isshowmap={isshowmap}
               setisshowmap={setisshowmap}
+              mainospaikat={mainospaikat}
             />
           }
         />
         <Route
           path="/mainokset"
-          element={<Mainokset isLoggedIn={isLoggedIn} logout={logout} />}
+          element={
+            <Mainokset
+              isLoggedIn={isLoggedIn}
+              logout={logout}
+              currentMainosTab={currentMainosTab}
+              setCurrentMainosTab={setCurrentMainosTab}
+            />
+          }
         />
 
         <Route
           path="/esittely"
-          element={<Esittely isLoggedIn={isLoggedIn} logout={logout} />}
+          element={
+            <Esittely
+              isshowmap={isshowmap}
+              setisshowmap={setisshowmap}
+              isLoggedIn={isLoggedIn}
+              logout={logout}
+              mainospaikat={mainospaikat}
+            />
+          }
         />
         <Route
           path="/profiili"
-          element={<Profile isLoggedIn={isLoggedIn} logout={logout} />}
-        />
-
-        <Route
-          path="/arkisto"
-          element={<Arkisto isLoggedIn={isLoggedIn} logout={logout} />}
+          element={
+            <Profile
+              isLoggedIn={isLoggedIn}
+              logout={logout}
+              setCurrentMainosTab={setCurrentMainosTab}
+            />
+          }
         />
       </Routes>
     </>

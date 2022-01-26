@@ -11,18 +11,14 @@ import UusiMainosJulkaisu from "../../components/uusimainos-contents/uusimainosj
 // import Footer from "../../components/footer/footer";
 import MyMapContainer from "../../components/map/map-container";
 
-const UusiMainos = ({ isLoggedIn, logout, isshowmap, setisshowmap }) => {
-  let mainospaikat = [
-    "Koulutus",
-    "Liikuntapaikat",
-    "Terveyspalvelut",
-    "Ruokakaupat",
-    "Liikenne",
-    "Yleisötapahtumat",
-    "Puistot",
-  ];
-
-  const [currentStep, setCurrentStep] = useState(1);
+const UusiMainos = ({
+  isLoggedIn,
+  logout,
+  isshowmap,
+  setisshowmap,
+  mainospaikat,
+}) => {
+  const [currentStep, setCurrentStep] = useState(0);
 
   const [myimg, setmyimg] = useState(null);
   const [mybuttons, setmybuttons] = useState([]);

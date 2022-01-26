@@ -4,13 +4,69 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  display: flex;
   flex-direction: column;
   background-color: rgb(238, 238, 238);
-  background-repeat: no-repeat;
-  background-size: cover;
+  justify-content: center;
 }
 
-.mainokset-container h1 {
+.mainokset-header {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.mainokset-header h1 {
+  font-size: 80px;
+  color: #fff;
+  font-family: var(--headerfont);
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: #343a40;
+  padding-left: 5px;
+  margin: 0;
+}
+
+.mainokset-tabs {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.mainokset-tabs > div {
+  cursor: pointer;
+  display: flex;
   align-self: center;
+  justify-content: center;
+  margin: 0 30px;
+  height: 90px;
+  padding: 0 20px;
+}
+
+.mainokset-tabs h1 {
+  align-self: center;
+  font-weight: 100;
+  margin: 0;
+  align-self: center;
+
+  font-family: var(--headerfont);
+}
+
+.mainokset-tab-tyonalla-btn h1 {
+  font-size: 40px;
+  margin-top: 10px;
+}
+.mainokset-tab-nakyvilla-btn h1 {
+  font-size: 60px;
+  color: var(--main-light-blue);
+}
+.mainokset-tab-tulossa-btn h1 {
+  font-size: 60px;
+  color: var(--main-light-blue);
+}
+.mainokset-tab-arkisto-btn h1 {
+  font-size: 40px;
+  margin-top: 10px;
+  color: var(--main-light-blue);
 }

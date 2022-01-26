@@ -1,0 +1,9 @@
+.tyonalla-container {
+  align-self: center;
+  justify-content: center;
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 10%;
+  height: 600px;
+  background-color: red;
+}

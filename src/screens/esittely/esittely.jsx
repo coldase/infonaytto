@@ -2,8 +2,15 @@ import "./esittely.css";
 import { Navigate, Link } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 import Footer from "../../components/footer/footer";
+import MyMapContainer from "../../components/map/map-container";
 
-const Esittely = ({ isLoggedIn, logout }) => {
+const Esittely = ({
+  isLoggedIn,
+  logout,
+  isshowmap,
+  setisshowmap,
+  mainospaikat,
+}) => {
   if (!isLoggedIn) {
     return <Navigate to="/" />;
   }
@@ -35,7 +42,10 @@ const Esittely = ({ isLoggedIn, logout }) => {
             making it over 2000 years old. Richard McClintock, a Latin professor
             at Hampden-Sydney College in Virginia.
           </p>
-          <div className="katsonaytot-kartalta-btn">
+          <div
+            onClick={() => setisshowmap(true)}
+            className="katsonaytot-kartalta-btn"
+          >
             <p>Katso näytöt kartalta</p>
           </div>
         </div>
@@ -49,12 +59,18 @@ const Esittely = ({ isLoggedIn, logout }) => {
             need to be sure there isn't anything embarrassing hidden in the
             middle of text
           </p>
-          <Link className="aloitatasta-btn" to="/mainokset">
+          <Link className="aloitatasta-btn" to="/profiili">
             <p>Aloita tästä</p>
           </Link>
         </div>
         <Footer />
       </div>
+      {isshowmap ? (
+        <MyMapContainer
+          setisshowmap={setisshowmap}
+          mainospaikat={mainospaikat}
+        />
+      ) : null}
       <MyNav logout={logout} />
     </>
   );

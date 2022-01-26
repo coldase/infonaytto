@@ -31,7 +31,7 @@ const UusiMainosPaikka = ({
               }`}
             >
               <p>{item}</p>
-              <p>lkm.</p>
+              <p>Näyttöjä</p>
               <p>12</p>
             </div>
           ))}
