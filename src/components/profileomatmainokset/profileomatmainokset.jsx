@@ -7,9 +7,13 @@ const ProfileOmatMainokset = ({ setCurrentMainosTab }) => {
     <div className="profileomatmainokset-container">
       <h1 className="profileomatmainokset-header">OMAT MAINOKSET</h1>
       <div className="profileomatmainokset-card-container">
-        <div className="profileomatmainokset-card">
+        <Link
+          to="/mainokset"
+          onClick={() => setCurrentMainosTab(1)}
+          className="profileomatmainokset-card"
+        >
           <h1>MENOSSA</h1>
-        </div>
+        </Link>
         <Link
           to="/mainokset"
           onClick={() => setCurrentMainosTab(2)}
