@@ -1,6 +1,6 @@
 import "./profilecard.css";
 
-const ProfileCard = () => {
+const ProfileCard = ({ userinfodata }) => {
   return (
     <div className="mainokset-profile-container">
       <h1 className="mainokset-profile-card-header">PROFIILI</h1>
@@ -9,25 +9,25 @@ const ProfileCard = () => {
           {/* <h1>Asiakastiedot</h1> */}
           <div className="mainokset-profile-card-data-container">
             <div className="grp1">
-              <p>Asiakasnumero:</p>
-              <p>0012345</p>
+              <p>Y-tunnus:</p>
+              <p>{userinfodata.ytunnus}</p>
             </div>
             <p>Yhteyshenkilön tiedot:</p>
             <div className="grp">
               <p>Etunimi:</p>
-              <p>Maija</p>
+              <p>{userinfodata.firstname}</p>
             </div>
             <div className="grp">
               <p>Sukunimi:</p>
-              <p>Meikäläinen</p>
+              <p>{userinfodata.lastname}</p>
             </div>
             <div className="grp">
               <p>Sähköposti:</p>
-              <p>maijameikäläinen@yritys.fi</p>
+              <p>{userinfodata.email}</p>
             </div>
             <div className="grp">
               <p>Puhelin:</p>
-              <p>0401234567</p>
+              <p>{userinfodata.phone}</p>
             </div>
           </div>
         </div>

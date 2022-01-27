@@ -5,7 +5,7 @@ import ProfileCard from "../../components/profilecard/profilecard";
 import ProfileOmatMainokset from "../../components/profileomatmainokset/profileomatmainokset";
 // import Footer from "../../components/footer/footer";
 
-const Profile = ({ isLoggedIn, logout, setCurrentMainosTab }) => {
+const Profile = ({ isLoggedIn, logout, setCurrentMainosTab, userinfodata }) => {
   if (!isLoggedIn) {
     return <Navigate to="/" />;
   }
@@ -13,7 +13,7 @@ const Profile = ({ isLoggedIn, logout, setCurrentMainosTab }) => {
     <>
       <div className="profile-container">
         <div className="profile-content">
-          <ProfileCard />
+          <ProfileCard userinfodata={userinfodata} />
           <ProfileOmatMainokset setCurrentMainosTab={setCurrentMainosTab} />
         </div>
 

@@ -8,6 +8,7 @@ const SigninForm = ({ setLoginTab }) => {
   const [lname, setlname] = useState("");
   const [email, setemail] = useState("");
   const [pwd, setpwd] = useState("");
+  const [phone, setphone] = useState("");
 
   const [isErrMsg, setIsErrMsg] = useState(false);
   const [errMsg, setErrMsg] = useState("");
@@ -17,7 +18,8 @@ const SigninForm = ({ setLoginTab }) => {
     myfname,
     mylname,
     myemail,
-    mypassword
+    mypassword,
+    myphone
   ) => {
     let formdata = new FormData();
     formdata.append("ytunnus", myytunnus);
@@ -25,6 +27,7 @@ const SigninForm = ({ setLoginTab }) => {
     formdata.append("lastname", mylname);
     formdata.append("email", myemail);
     formdata.append("password", mypassword);
+    formdata.append("phone", myphone);
 
     await axios({
       method: "POST",
@@ -81,6 +84,14 @@ const SigninForm = ({ setLoginTab }) => {
         </div>
         <div className="formitem">
           <input
+            onChange={(e) => setphone(e.target.value)}
+            type="text"
+            name="phone"
+            placeholder={"Puhelin"}
+          />
+        </div>
+        <div className="formitem">
+          <input
             onChange={(e) => setpwd(e.target.value)}
             type="password"
             name="password"
@@ -92,7 +103,7 @@ const SigninForm = ({ setLoginTab }) => {
         </div>
         <div
           className="login-btn"
-          onClick={() => handleSignup(ytunnus, fname, lname, email, pwd)}
+          onClick={() => handleSignup(ytunnus, fname, lname, email, pwd, phone)}
         >
           <p>Rekisteröidy</p>
         </div>

@@ -27,7 +27,7 @@ const UusiMainosJulkaisu = ({
     formdata.append("start_date", mystartdate);
     formdata.append("end_date", myenddate);
     formdata.append("start_time", "00:00:00");
-    formdata.append("end_time", "00:00:00");
+    formdata.append("end_time", "23:59:00");
 
     await axios({
       method: "POST",

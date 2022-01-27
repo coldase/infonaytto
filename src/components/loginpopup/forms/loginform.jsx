@@ -2,7 +2,12 @@ import "./formstyles.css";
 import axios from "axios";
 import { useState } from "react";
 
-const LoginForm = ({ isLoggedIn, setIsLoggedIn, userid, setuserid }) => {
+const LoginForm = ({
+  isLoggedIn,
+  setIsLoggedIn,
+  userinfodata,
+  setuserinfodata,
+}) => {
   const [myemail, setmyemail] = useState("jari@mail.com");
   const [mypwd, setmypwd] = useState("asd");
 
@@ -28,7 +33,7 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn, userid, setuserid }) => {
     if (data) {
       setErrMsg(false);
       setIsLoggedIn(true);
-      setuserid(data);
+      setuserinfodata(data);
     } else {
       setIsErrMsg(true);
     }

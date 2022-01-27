@@ -11,7 +11,7 @@ import Mainokset from "./screens/mainokset/mainokset";
 
 const App = () => {
   const [currentMainosTab, setCurrentMainosTab] = useState(0);
-  const [userid, setuserid] = useState(null);
+  const [userinfodata, setuserinfodata] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isshowmap, setisshowmap] = useState(false);
   const [authToken, setAuthToken] = useState("");
@@ -32,11 +32,13 @@ const App = () => {
 
   const logout = () => {
     setIsLoggedIn(false);
+    setuserinfodata({});
   };
 
   useEffect(() => {
-    console.log("USERID: " + userid);
-  }, [userid]);
+    console.log("USERID: " + userinfodata.userid);
+    console.log("LOGGEDIN: " + isLoggedIn);
+  }, [userinfodata]);
 
   return (
     <>
@@ -45,11 +47,11 @@ const App = () => {
           path="/"
           element={
             <HomeScreen
-              userid={userid}
-              setuserid={setuserid}
+              userinfodata={userinfodata}
+              setuserinfodata={setuserinfodata}
               userData={userData}
               isLoggedIn={isLoggedIn}
-              setIsLoggedIn={(val) => setIsLoggedIn(val)}
+              setIsLoggedIn={setIsLoggedIn}
             />
           }
         />
@@ -57,7 +59,7 @@ const App = () => {
           path="/uusimainos"
           element={
             <UusiMainos
-              userid={userid}
+              userid={userinfodata.userid}
               isLoggedIn={isLoggedIn}
               logout={logout}
               isshowmap={isshowmap}
@@ -94,6 +96,7 @@ const App = () => {
           path="/profiili"
           element={
             <Profile
+              userinfodata={userinfodata}
               isLoggedIn={isLoggedIn}
               logout={logout}
               setCurrentMainosTab={setCurrentMainosTab}
