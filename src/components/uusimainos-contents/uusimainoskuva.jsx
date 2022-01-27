@@ -13,7 +13,7 @@ const UusiMainosKuva = ({ setmyimg, myimg }) => {
       <div className="uusimainoskuva-pohja-container">
         <h1>Valitse valmis pohja</h1>
         <div className="uusimainoskuva-pohjat">
-          {[...Array(10).keys()].map((item) => (
+          {[...Array(mainostemplates).keys()].map((item) => (
             <div key={item} className="uusimainoskuva-pohja-card"></div>
           ))}
         </div>

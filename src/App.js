@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import axios from "axios";
 
 import HomeScreen from "./screens/homescreen/homescreen";
@@ -11,7 +11,8 @@ import Mainokset from "./screens/mainokset/mainokset";
 
 const App = () => {
   const [currentMainosTab, setCurrentMainosTab] = useState(0);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [userid, setuserid] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isshowmap, setisshowmap] = useState(false);
   const [authToken, setAuthToken] = useState("");
   const [userData, setUserData] = useState({
@@ -33,9 +34,10 @@ const App = () => {
     setIsLoggedIn(false);
   };
 
-  // useEffect(() => {
-  //   console.log(isshowmap);
-  // }, [isshowmap]);
+  useEffect(() => {
+    console.log("USERID: " + userid);
+  }, [userid]);
+
   return (
     <>
       <Routes>
@@ -43,6 +45,8 @@ const App = () => {
           path="/"
           element={
             <HomeScreen
+              userid={userid}
+              setuserid={setuserid}
               userData={userData}
               isLoggedIn={isLoggedIn}
               setIsLoggedIn={(val) => setIsLoggedIn(val)}
@@ -53,6 +57,7 @@ const App = () => {
           path="/uusimainos"
           element={
             <UusiMainos
+              userid={userid}
               isLoggedIn={isLoggedIn}
               logout={logout}
               isshowmap={isshowmap}

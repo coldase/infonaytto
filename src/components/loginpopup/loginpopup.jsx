@@ -8,10 +8,11 @@ import SigninForm from "./forms/signinform";
 const LoginPopup = ({
   isLoginPopup,
   setIsLoginPopup,
-  currentUser,
   setCurrentUser,
   isLoggedIn,
   setIsLoggedIn,
+  userid,
+  setuserid,
 }) => {
   const [loginTab, setLoginTab] = useState(true);
   return (
@@ -45,6 +46,8 @@ const LoginPopup = ({
       {/* Logintab */}
       {loginTab ? (
         <LoginForm
+          userid={userid}
+          setuserid={setuserid}
           isLoggedIn={isLoggedIn}
           setIsLoggedIn={setIsLoggedIn}
           setCurrentUser={setCurrentUser}

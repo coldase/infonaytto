@@ -17,11 +17,29 @@ const UusiMainos = ({
   isshowmap,
   setisshowmap,
   mainospaikat,
+  userid,
 }) => {
   const [currentStep, setCurrentStep] = useState(0);
 
   const [myimg, setmyimg] = useState(null);
   const [mybuttons, setmybuttons] = useState([]);
+  const [selectedDayRange, setSelectedDayRange] = useState({
+    from: null,
+    to: null,
+  });
+
+  const clearInputs = () => {
+    setmyimg(null);
+    setmybuttons([]);
+    setSelectedDayRange({
+      from: null,
+      to: null,
+    });
+  };
+
+  // useEffect(() => {
+  //   console.log(selectedDayRange);
+  // }, [selectedDayRange]);
 
   if (!isLoggedIn) {
     return <Navigate to="/" />;
@@ -48,8 +66,21 @@ const UusiMainos = ({
               setisshowmap={setisshowmap}
             />
           ) : null}
-          {currentStep === 2 ? <UusiMainosAika /> : null}
-          {currentStep === 3 ? <UusiMainosJulkaisu /> : null}
+          {currentStep === 2 ? (
+            <UusiMainosAika
+              selectedDayRange={selectedDayRange}
+              setSelectedDayRange={setSelectedDayRange}
+            />
+          ) : null}
+          {currentStep === 3 ? (
+            <UusiMainosJulkaisu
+              userid={userid}
+              clearInputs={clearInputs}
+              myimg={myimg}
+              mybuttons={mybuttons}
+              selectedDayRange={selectedDayRange}
+            />
+          ) : null}
         </div>
         {/* <Footer /> */}
       </div>

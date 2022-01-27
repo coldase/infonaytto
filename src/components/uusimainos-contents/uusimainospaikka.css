@@ -46,10 +46,14 @@
 
 .uusimainos-paikka-card p:first-child {
   margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+}
+.uusimainos-paikka-card p:nth-child(2) {
+  margin-top: 10px;
+  font-size: 15px;
 }
 .uusimainos-paikka-card p:last-child {
-  font-size: 15px;
+  font-size: 13px;
   margin-bottom: 20px;
 }
 

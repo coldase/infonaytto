@@ -1,5 +1,47 @@
 .uusimainosaika-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 80%;
-  background-color: purple;
+  /* background-color: purple; */
   align-self: center;
+}
+
+.paivamaarat-headers {
+  display: flex;
+  align-self: center;
+}
+.paivamaarat {
+  display: flex;
+  align-self: center;
+}
+
+.paivamaarat h1 {
+  margin: 20px 10px;
+}
+.paivamaarat-headers h1 {
+}
+
+.responsive-calendar {
+  font-size: 13px !important; /* default to 10px */
+  /* background-color: rgb(26, 24, 24) !important; */
+  /* color: white !important; */
+}
+
+.DatePicker__input::placeholder {
+  font-size: 22px;
+}
+
+.DatePicker__input {
+  cursor: pointer;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  align-self: center;
+  justify-content: center;
+  height: 30px !important;
+  color: var(--main-blue) !important;
+  background-color: var(--main-blue) !important;
+  border: none !important;
+  border-radius: 10px;
 }

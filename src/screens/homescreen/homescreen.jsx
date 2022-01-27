@@ -15,7 +15,7 @@ import Footer from "../../components/footer/footer";
 //   BsYoutube,
 // } from "react-icons/bs";
 
-const HomeScreen = ({ isLoggedIn, setIsLoggedIn }) => {
+const HomeScreen = ({ isLoggedIn, setIsLoggedIn, userid, setuserid }) => {
   const [isLoginPopup, setIsLoginPopup] = useState(false);
 
   if (isLoggedIn) {
@@ -41,6 +41,8 @@ const HomeScreen = ({ isLoggedIn, setIsLoggedIn }) => {
           </div>
           {isLoginPopup ? (
             <LoginPopup
+              userid={userid}
+              setuserid={setuserid}
               isLoginPopup={isLoginPopup}
               setIsLoginPopup={(val) => setIsLoginPopup(val)}
               isLoggedIn={isLoggedIn}

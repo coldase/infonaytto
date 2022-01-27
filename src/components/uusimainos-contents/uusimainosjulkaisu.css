@@ -1,6 +1,63 @@
 .uusimainosjulkaisu-container {
   width: 80%;
-
-  background-color: crimson;
+  display: flex;
+  flex-direction: row;
   align-self: center;
+}
+
+.uusimainosjulkaisu-image-container {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 500px;
+}
+.uusimainosjulkaisu-image-container img {
+  align-self: center;
+  max-height: 400px;
+}
+
+.uusimainosjulkaisu-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: 50%;
+  height: 100%;
+}
+
+.uusimainosjulkaisu-info-container h2 {
+  align-self: center;
+}
+.uusimainosjulkaisu-paivamaara {
+  display: flex;
+  align-self: center;
+}
+.uusimainosjulkaisu-paivamaara p {
+  font-size: 30px;
+  margin: 0 10px;
+}
+
+.uusimainosjulkaisu-paikat-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.uusimainosjulkaisu-paikat-container p {
+  align-self: center;
+}
+
+.uusimainosjulkaisu-julkaise-btn {
+  border: none;
+  background-color: var(--main-grey);
+  width: 200px;
+  display: flex;
+  border-radius: 5px;
+  justify-content: center;
+  color: #fff;
+  align-self: center;
+  cursor: pointer;
+}
+
+.uusimainosjulkaisu-julkaise-btn:hover {
+  opacity: 0.8;
 }
