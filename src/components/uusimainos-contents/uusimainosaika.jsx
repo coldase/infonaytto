@@ -1,14 +1,9 @@
 import "./uusimainosaika.css";
-import "react-modern-calendar-datepicker/lib/DatePicker.css";
-import DatePicker from "react-modern-calendar-datepicker";
+import "@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css";
+import DatePicker from "@hassanmojab/react-modern-calendar-datepicker";
 import { useState, useEffect, useRef } from "react";
 
 const UusiMainosAika = ({ selectedDayRange, setSelectedDayRange }) => {
-  const calendarRef = useRef(null);
-
-  const test = () => {
-    calendarRef.current.focus();
-  };
   // useEffect(() => {
   //   console.log(selectedDayRange);
   // }, [selectedDayRange]);
