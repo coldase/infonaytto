@@ -24,19 +24,18 @@ const LoginForm = ({
       url: process.env.REACT_APP_BACK_URL + "api/login.php",
       data: formdata,
     })
-      .then((res) => makeLogin(res.data))
+      .then((res) => {
+        if (res.data.token) {
+          localStorage.setItem("token", res.data.token);
+          setuserinfodata(res.data);
+          setIsLoggedIn(true);
+          console.log(res.data);
+          setErrMsg(false);
+        } else {
+          setIsErrMsg(true);
+        }
+      })
       .catch((err) => console.log(err));
-  };
-
-  const makeLogin = async (data) => {
-    console.log(data);
-    if (data) {
-      setErrMsg(false);
-      setIsLoggedIn(true);
-      setuserinfodata(data);
-    } else {
-      setIsErrMsg(true);
-    }
   };
 
   return (

@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 import HomeScreen from "./screens/homescreen/homescreen";
 import Esittely from "./screens/esittely/esittely";
@@ -31,14 +31,28 @@ const App = () => {
   ];
 
   const logout = () => {
-    setIsLoggedIn(false);
-    setuserinfodata({});
+    let formdata = new FormData();
+    formdata.append("token", localStorage.getItem("token"));
+    axios({
+      method: "POST",
+      url: process.env.REACT_APP_BACK_URL + "api/logout.php",
+      data: formdata,
+    })
+      .then((res) => {
+        if (res.data === "success") {
+          setIsLoggedIn(false);
+          setuserinfodata({});
+          localStorage.removeItem("token");
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
-  useEffect(() => {
-    console.log("USERID: " + userinfodata.userid);
-    console.log("LOGGEDIN: " + isLoggedIn);
-  }, [userinfodata]);
+  // useEffect(() => {
+  //   if (localStorage.getItem("token")) {
+  //     setIsLoggedIn(true);
+  //   }
+  // }, []);
 
   return (
     <>

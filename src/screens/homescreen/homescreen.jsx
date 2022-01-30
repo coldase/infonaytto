@@ -5,6 +5,7 @@ import LoginPopup from "../../components/loginpopup/loginpopup";
 import { Navigate } from "react-router-dom";
 import QuestionSection from "../../components/ukk/question-section/questionsection";
 import Footer from "../../components/footer/footer";
+import { useNavigate } from "react-router-dom";
 
 //someicons
 // import {
