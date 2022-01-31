@@ -15,10 +15,9 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isshowmap, setisshowmap] = useState(false);
   const [authToken, setAuthToken] = useState("");
-  const [userData, setUserData] = useState({
-    user_ads: [],
-    user_info: [],
-  });
+  const [userAds, setUserAds] = useState([]);
+
+  const [updatehelper, setupdatehelper] = useState(true);
 
   let mainospaikat = [
     "Koulutus",
@@ -30,10 +29,58 @@ const App = () => {
     "Puistot",
   ];
 
-  const logout = () => {
+  const handleLogin = async (email, pwd) => {
+    let formdata = new FormData();
+    formdata.append("email", email);
+    formdata.append("password", pwd);
+    await axios({
+      method: "POST",
+      url: process.env.REACT_APP_BACK_URL + "api/login.php",
+      data: formdata,
+    })
+      .then((res) => {
+        if (res.data.token) {
+          localStorage.setItem("token", res.data.token);
+          setuserinfodata(res.data);
+          setIsLoggedIn(true);
+          setAuthToken(res.data.token);
+        } else {
+          return false;
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handleGetInfoData = async ($token) => {
+    let formdata = new FormData();
+    formdata.append("token", $token);
+    await axios({
+      method: "POST",
+      url: process.env.REACT_APP_BACK_URL + "api/get_userinfo_data.php",
+      data: formdata,
+    })
+      .then((res) => setuserinfodata(res.data))
+      .catch((err) => console.log(err));
+  };
+
+  const handleGetAdData = async (id, token) => {
+    let formdata = new FormData();
+    formdata.append("userid", id);
+    formdata.append("token", token);
+
+    await axios({
+      method: "POST",
+      url: process.env.REACT_APP_BACK_URL + "api/get_ads_by_user.php",
+      data: formdata,
+    })
+      .then((res) => setUserAds(res.data))
+      .catch((err) => console.log(err));
+  };
+
+  const logout = async () => {
     let formdata = new FormData();
     formdata.append("token", localStorage.getItem("token"));
-    axios({
+    await axios({
       method: "POST",
       url: process.env.REACT_APP_BACK_URL + "api/logout.php",
       data: formdata,
@@ -48,11 +95,17 @@ const App = () => {
       .catch((err) => console.log(err));
   };
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("token")) {
-  //     setIsLoggedIn(true);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      handleGetInfoData(localStorage.getItem("token"));
+      setIsLoggedIn(true);
+      setAuthToken(localStorage.getItem("token"));
+    }
+  }, []);
+
+  useEffect(() => {
+    handleGetAdData(userinfodata.userid, localStorage.getItem("token"));
+  }, [userinfodata, updatehelper]);
 
   return (
     <>
@@ -63,9 +116,9 @@ const App = () => {
             <HomeScreen
               userinfodata={userinfodata}
               setuserinfodata={setuserinfodata}
-              userData={userData}
               isLoggedIn={isLoggedIn}
               setIsLoggedIn={setIsLoggedIn}
+              handleLogin={handleLogin}
             />
           }
         />
@@ -73,6 +126,7 @@ const App = () => {
           path="/uusimainos"
           element={
             <UusiMainos
+              update={() => setupdatehelper(!updatehelper)}
               userid={userinfodata.userid}
               isLoggedIn={isLoggedIn}
               logout={logout}
@@ -86,6 +140,8 @@ const App = () => {
           path="/mainokset"
           element={
             <Mainokset
+              update={() => setupdatehelper(!updatehelper)}
+              userAds={userAds}
               isLoggedIn={isLoggedIn}
               logout={logout}
               currentMainosTab={currentMainosTab}

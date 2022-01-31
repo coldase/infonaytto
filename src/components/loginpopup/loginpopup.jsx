@@ -13,6 +13,7 @@ const LoginPopup = ({
   setIsLoggedIn,
   userinfodata,
   setuserinfodata,
+  handleLogin,
 }) => {
   const [loginTab, setLoginTab] = useState(true);
   return (
@@ -46,6 +47,7 @@ const LoginPopup = ({
       {/* Logintab */}
       {loginTab ? (
         <LoginForm
+          handleLogin={handleLogin}
           userinfodata={userinfodata}
           setuserinfodata={setuserinfodata}
           isLoggedIn={isLoggedIn}

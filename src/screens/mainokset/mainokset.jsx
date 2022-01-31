@@ -1,8 +1,7 @@
 import "./mainokset.css";
 import { Navigate } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
-import Footer from "../../components/footer/footer";
-import { useState } from "react";
+// import Footer from "../../components/footer/footer";
 
 //Tabs
 import Tyonalla from "./tabs/tyonalla";
@@ -12,9 +11,11 @@ import Arkisto from "./tabs/arkisto";
 
 const Mainokset = ({
   isLoggedIn,
+  update,
   logout,
   currentMainosTab,
   setCurrentMainosTab,
+  userAds,
 }) => {
   if (!isLoggedIn) {
     return <Navigate to="/" />;
@@ -73,9 +74,15 @@ const Mainokset = ({
         </div>
 
         {currentMainosTab === 0 ? <Tyonalla /> : null}
-        {currentMainosTab === 1 ? <Nakyvilla /> : null}
-        {currentMainosTab === 2 ? <Tulossa /> : null}
-        {currentMainosTab === 3 ? <Arkisto /> : null}
+        {currentMainosTab === 1 ? (
+          <Nakyvilla userAds={userAds} update={update} />
+        ) : null}
+        {currentMainosTab === 2 ? (
+          <Tulossa userAds={userAds} update={update} />
+        ) : null}
+        {currentMainosTab === 3 ? (
+          <Arkisto userAds={userAds} update={update} />
+        ) : null}
         {/* <Footer /> */}
       </div>
       <MyNav logout={logout} />

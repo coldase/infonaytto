@@ -8,9 +8,12 @@ const UusiMainosJulkaisu = ({
   selectedDayRange,
   clearInputs,
   userid,
+  setadname,
+  adname,
+  update,
 }) => {
   const navigate = useNavigate();
-  const handleSendData = async (image, alueet, pvm, id) => {
+  const handleSendData = async (image, alueet, pvm, id, myadname) => {
     let mystartdate = `${pvm.from.year}-${
       pvm.from.month < 10 ? "0" + pvm.from.month : pvm.from.month
     }-${pvm.from.day < 10 ? "0" + pvm.from.day : pvm.from.day}`;
@@ -28,6 +31,7 @@ const UusiMainosJulkaisu = ({
     formdata.append("end_date", myenddate);
     formdata.append("start_time", "00:00:00");
     formdata.append("end_time", "23:59:59");
+    formdata.append("adname", myadname);
 
     await axios({
       method: "POST",
@@ -37,6 +41,7 @@ const UusiMainosJulkaisu = ({
       .then((res) => {
         if (res.data === "success") {
           clearInputs();
+          update();
           navigate("/profiili", { replace: true });
         } else {
           alert("ERROR");
@@ -47,6 +52,26 @@ const UusiMainosJulkaisu = ({
 
   return (
     <>
+      {selectedDayRange.from === null ||
+      selectedDayRange.to === null ||
+      mybuttons.length === 0 ||
+      myimg === null ? (
+        <div className="jotainputtuu-container">
+          <p>Jotain puuttuu</p>
+        </div>
+      ) : (
+        <div className="adnameinput-container">
+          <h5>Anna mainokselle nimi</h5>
+          <input
+            maxLength={18}
+            onChange={(e) => setadname(e.target.value)}
+            type="text"
+            name="adname"
+            placeholder="max 18 merkkiä"
+          />
+        </div>
+      )}
+
       <div className="uusimainosjulkaisu-container">
         <div className="uusimainosjulkaisu-image-container">
           {myimg ? (
@@ -58,9 +83,9 @@ const UusiMainosJulkaisu = ({
           ) : null}
         </div>
 
-        <div className="uusimainosjulkaisu-info-container">
-          <h2>Mainosta näytetään</h2>
-          {selectedDayRange.from !== null && selectedDayRange.to !== null ? (
+        {selectedDayRange.from !== null && selectedDayRange.to !== null ? (
+          <div className="uusimainosjulkaisu-info-container">
+            <h2>Mainosta näytetään</h2>
             <div className="uusimainosjulkaisu-paivamaara">
               <p>
                 {selectedDayRange.from.day}.{selectedDayRange.from.month}.
@@ -72,22 +97,23 @@ const UusiMainosJulkaisu = ({
                 {selectedDayRange.to.year}
               </p>
             </div>
-          ) : null}
-          <h2>Paikassa</h2>
-          <div className="uusimainosjulkaisu-paikat-container">
-            {mybuttons
-              ? mybuttons.map((item) => {
-                  return <p key={item}>{item}</p>;
-                })
-              : null}
+            <h2>Paikassa</h2>
+            <div className="uusimainosjulkaisu-paikat-container">
+              {mybuttons
+                ? mybuttons.map((item) => {
+                    return <p key={item}>{item}</p>;
+                  })
+                : null}
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
       <button
         onClick={() =>
-          handleSendData(myimg, mybuttons, selectedDayRange, userid)
+          handleSendData(myimg, mybuttons, selectedDayRange, userid, adname)
         }
         disabled={
+          adname === null ||
           selectedDayRange.from === null ||
           selectedDayRange.to === null ||
           mybuttons.length === 0 ||
@@ -97,6 +123,7 @@ const UusiMainosJulkaisu = ({
         }
         className="uusimainosjulkaisu-julkaise-btn"
         style={
+          adname === null ||
           selectedDayRange.from === null ||
           selectedDayRange.to === null ||
           mybuttons.length === 0 ||

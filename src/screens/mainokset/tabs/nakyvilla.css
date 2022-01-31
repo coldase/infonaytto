@@ -1,9 +1,23 @@
 .nakyvilla-container {
+  display: flex;
   align-self: center;
   justify-content: center;
-  width: 80%;
+  width: 90%;
   margin-top: 20px;
-  margin-left: 10%;
-  height: 600px;
-  background-color: yellow;
+  margin-left: 5%;
+}
+
+.nakyvilla-card-container {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  height: 100%;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.nakyvilla-card-container::-webkit-scrollbar {
+  display: none;
 }

@@ -1,7 +1,7 @@
 import "./uusimainos.css";
 import { Navigate } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import UusiMainosProgress from "../../components/uusimainos-progress/uusimainos-progress";
 import UusiMainosKuva from "../../components/uusimainos-contents/uusimainoskuva";
@@ -18,6 +18,7 @@ const UusiMainos = ({
   setisshowmap,
   mainospaikat,
   userid,
+  update,
 }) => {
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -27,6 +28,8 @@ const UusiMainos = ({
     from: null,
     to: null,
   });
+
+  const [adname, setadname] = useState(null);
 
   const clearInputs = () => {
     setmyimg(null);
@@ -74,6 +77,9 @@ const UusiMainos = ({
           ) : null}
           {currentStep === 3 ? (
             <UusiMainosJulkaisu
+              update={update}
+              setadname={setadname}
+              adname={adname}
               userid={userid}
               clearInputs={clearInputs}
               myimg={myimg}

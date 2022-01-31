@@ -1,5 +1,12 @@
 @import url("../../config/main.css");
 
+body {
+  background-color: rgb(238, 238, 238);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
 .mainokset-container {
   position: absolute;
   height: 100%;

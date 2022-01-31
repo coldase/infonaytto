@@ -5,7 +5,6 @@ import LoginPopup from "../../components/loginpopup/loginpopup";
 import { Navigate } from "react-router-dom";
 import QuestionSection from "../../components/ukk/question-section/questionsection";
 import Footer from "../../components/footer/footer";
-import { useNavigate } from "react-router-dom";
 
 //someicons
 // import {
@@ -21,6 +20,7 @@ const HomeScreen = ({
   setIsLoggedIn,
   userinfodata,
   setuserinfodata,
+  handleLogin,
 }) => {
   const [isLoginPopup, setIsLoginPopup] = useState(false);
 
@@ -47,12 +47,9 @@ const HomeScreen = ({
           </div>
           {isLoginPopup ? (
             <LoginPopup
-              userinfodata={userinfodata}
-              setuserinfodata={setuserinfodata}
+              handleLogin={handleLogin}
               isLoginPopup={isLoginPopup}
               setIsLoginPopup={(val) => setIsLoginPopup(val)}
-              isLoggedIn={isLoggedIn}
-              setIsLoggedIn={setIsLoggedIn}
             />
           ) : null}
           <div className="homescreen-content-2">

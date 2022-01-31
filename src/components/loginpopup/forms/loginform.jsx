@@ -1,41 +1,19 @@
 import "./formstyles.css";
-import axios from "axios";
 import { useState } from "react";
 
-const LoginForm = ({
-  isLoggedIn,
-  setIsLoggedIn,
-  userinfodata,
-  setuserinfodata,
-}) => {
+const LoginForm = ({ handleLogin }) => {
   const [myemail, setmyemail] = useState("jari@mail.com");
   const [mypwd, setmypwd] = useState("asd");
 
-  const [errMsg, setErrMsg] = useState("Tarkista sähköposti tai salasana");
+  const errMsg = "Tarkista sähköposti tai salasana";
   const [isErrMsg, setIsErrMsg] = useState(false);
 
-  const handleLogin = async (email, pwd) => {
-    let formdata = new FormData();
-    formdata.append("email", email);
-    formdata.append("password", pwd);
-
-    await axios({
-      method: "POST",
-      url: process.env.REACT_APP_BACK_URL + "api/login.php",
-      data: formdata,
-    })
-      .then((res) => {
-        if (res.data.token) {
-          localStorage.setItem("token", res.data.token);
-          setuserinfodata(res.data);
-          setIsLoggedIn(true);
-          console.log(res.data);
-          setErrMsg(false);
-        } else {
-          setIsErrMsg(true);
-        }
-      })
-      .catch((err) => console.log(err));
+  const handleMessage = (myemail, mypwd) => {
+    if (handleLogin(myemail, mypwd)) {
+      setIsErrMsg(true);
+    } else {
+      setIsErrMsg(false);
+    }
   };
 
   return (
@@ -52,7 +30,7 @@ const LoginForm = ({
             value={myemail}
             onChange={(e) => setmyemail(e.target.value)}
             onKeyPress={(e) =>
-              e.key === "Enter" ? handleLogin(myemail, mypwd) : null
+              e.key === "Enter" ? handleMessage(myemail, mypwd) : null
             }
           />
         </div>
@@ -65,14 +43,17 @@ const LoginForm = ({
             value={mypwd}
             onChange={(e) => setmypwd(e.target.value)}
             onKeyPress={(e) =>
-              e.key === "Enter" ? handleLogin(myemail, mypwd) : null
+              e.key === "Enter" ? handleMessage(myemail, mypwd) : null
             }
           />
         </div>
         <div className="login-errmsg-container">
           {isErrMsg ? <p className="login-errmsg">{errMsg}</p> : null}
         </div>
-        <div onClick={() => handleLogin(myemail, mypwd)} className="login-btn">
+        <div
+          onClick={() => handleMessage(myemail, mypwd)}
+          className="login-btn"
+        >
           <p>Kirjaudu</p>
         </div>
       </div>
