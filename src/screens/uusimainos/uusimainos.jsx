@@ -1,5 +1,4 @@
 import "./uusimainos.css";
-import { Link } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 import { useState } from "react";
 
@@ -20,6 +19,7 @@ const UusiMainos = ({
   userid,
   update,
   setIsLoginPopup,
+  setLoginTab,
 }) => {
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -40,10 +40,6 @@ const UusiMainos = ({
       to: null,
     });
   };
-
-  // useEffect(() => {
-  //   console.log(selectedDayRange);
-  // }, [selectedDayRange]);
 
   return (
     <>
@@ -96,7 +92,13 @@ const UusiMainos = ({
           <div className="uusimainos-empty-container">
             <div className="uusimainos-empty-content">
               <h5>Rekisteröitymällä pääset mainostamaan</h5>
-              <div className="uusimainos-empty-login-btn">
+              <div
+                onClick={() => {
+                  setIsLoginPopup(true);
+                  setLoginTab(false);
+                }}
+                className="uusimainos-empty-login-btn"
+              >
                 <p>Rekisteröidy</p>
               </div>
             </div>
@@ -111,6 +113,7 @@ const UusiMainos = ({
         />
       ) : null}
       <MyNav
+        setLoginTab={setLoginTab}
         isLoggedIn={isLoggedIn}
         logout={logout}
         setIsLoginPopup={setIsLoginPopup}

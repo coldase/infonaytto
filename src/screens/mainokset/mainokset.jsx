@@ -17,6 +17,7 @@ const Mainokset = ({
   setCurrentMainosTab,
   userAds,
   setIsLoginPopup,
+  setLoginTab,
 }) => {
   if (!isLoggedIn) {
     return <Navigate to="/esittely" />;
@@ -90,6 +91,7 @@ const Mainokset = ({
         isLoggedIn={isLoggedIn}
         logout={logout}
         setIsLoginPopup={setIsLoginPopup}
+        setLoginTab={setLoginTab}
       />
     </>
   );

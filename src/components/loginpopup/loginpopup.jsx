@@ -12,8 +12,9 @@ const LoginPopup = ({
   userinfodata,
   setuserinfodata,
   handleLogin,
+  loginTab,
+  setLoginTab,
 }) => {
-  const [loginTab, setLoginTab] = useState(true);
   const [isErrMsg, setIsErrMsg] = useState(false);
   return (
     <div className="loginpopup-container">

@@ -18,6 +18,7 @@ const App = () => {
   const [authToken, setAuthToken] = useState("");
   const [userAds, setUserAds] = useState([]);
   const [isLoginPopup, setIsLoginPopup] = useState(false);
+  const [loginTab, setLoginTab] = useState(true);
   const navigate = useNavigate();
 
   const [updatehelper, setupdatehelper] = useState(true);
@@ -138,6 +139,7 @@ const App = () => {
           path="/uusimainos"
           element={
             <UusiMainos
+              setLoginTab={setLoginTab}
               update={() => setupdatehelper(!updatehelper)}
               userid={userinfodata.userid}
               isLoggedIn={isLoggedIn}
@@ -153,6 +155,7 @@ const App = () => {
           path="/mainokset"
           element={
             <Mainokset
+              setLoginTab={setLoginTab}
               update={() => setupdatehelper(!updatehelper)}
               userAds={userAds}
               isLoggedIn={isLoggedIn}
@@ -168,6 +171,7 @@ const App = () => {
           path="/esittely"
           element={
             <Esittely
+              setLoginTab={setLoginTab}
               isshowmap={isshowmap}
               setisshowmap={setisshowmap}
               isLoggedIn={isLoggedIn}
@@ -192,6 +196,8 @@ const App = () => {
       </Routes>
       {isLoginPopup ? (
         <LoginPopup
+          loginTab={loginTab}
+          setLoginTab={setLoginTab}
           setIsLoginPopup={setIsLoginPopup}
           isLoggedIn={isLoggedIn}
           setIsLoggedIn={setIsLoggedIn}

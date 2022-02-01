@@ -7,7 +7,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { FiLogOut, FiLogIn } from "react-icons/fi";
 import { useState } from "react";
 
-const MyNav = ({ logout, isLoggedIn, setIsLoginPopup }) => {
+const MyNav = ({ logout, isLoggedIn, setIsLoginPopup, setLoginTab }) => {
   const [navOpen, setNavOpen] = useState(false);
 
   const handleLogout = () => {
@@ -66,7 +66,14 @@ const MyNav = ({ logout, isLoggedIn, setIsLoginPopup }) => {
           ) : (
             <div
               className="navlink"
-              onClick={navOpen ? () => setIsLoginPopup(true) : null}
+              onClick={
+                navOpen
+                  ? () => {
+                      setIsLoginPopup(true);
+                      setLoginTab(true);
+                    }
+                  : null
+              }
             >
               <FiLogOut style={{ alignSelf: "center" }} size={50} />
               <p>Kirjaudu sisään</p>
@@ -103,7 +110,14 @@ const MyNav = ({ logout, isLoggedIn, setIsLoginPopup }) => {
           ) : (
             <div
               className="navlink"
-              onClick={navOpen ? setIsLoginPopup(true) : null}
+              onClick={
+                navOpen
+                  ? () => {
+                      setLoginTab(true);
+                      setIsLoginPopup(true);
+                    }
+                  : null
+              }
             >
               <FiLogOut style={{ alignSelf: "center" }} size={50} />
             </div>

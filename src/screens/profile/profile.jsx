@@ -11,6 +11,7 @@ const Profile = ({
   setCurrentMainosTab,
   userinfodata,
   setIsLoginPopup,
+  setLoginTab,
 }) => {
   if (!isLoggedIn) {
     return <Navigate to="/esittely" />;
@@ -26,6 +27,7 @@ const Profile = ({
         {/* <Footer /> */}
       </div>
       <MyNav
+        setLoginTab={setLoginTab}
         isLoggedIn={isLoggedIn}
         logout={logout}
         setIsLoginPopup={setIsLoginPopup}

@@ -1,5 +1,5 @@
 import "./esittely.css";
-import { Navigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 import Footer from "../../components/footer/footer";
 import MyMapContainer from "../../components/map/map-container";
@@ -11,6 +11,7 @@ const Esittely = ({
   setisshowmap,
   mainospaikat,
   setIsLoginPopup,
+  setLoginTab,
 }) => {
   return (
     <>
@@ -70,6 +71,7 @@ const Esittely = ({
         />
       ) : null}
       <MyNav
+        setLoginTab={setLoginTab}
         isLoggedIn={isLoggedIn}
         logout={logout}
         setIsLoginPopup={setIsLoginPopup}
