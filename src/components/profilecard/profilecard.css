@@ -11,7 +11,7 @@
   font-family: var(--headerfont);
   font-weight: 200;
   letter-spacing: 1px;
-  color: #343a40;
+  color: var(--main-grey);
 }
 
 .mainokset-profile-card {
@@ -27,11 +27,11 @@
   margin: 0;
   font-weight: 400;
   font-size: 30px;
-  color: white;
-  border-bottom: 2px solid white;
+  color: #fff;
+  border-bottom: 2px solid #fff;
 }
 .mainokset-profile-card-header-container p {
-  color: white;
+  color: #fff;
   margin: 0;
   font-size: 25px;
 }

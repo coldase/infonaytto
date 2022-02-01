@@ -39,3 +39,47 @@
   width: 100%;
   justify-content: center;
 }
+
+.uusimainos-empty-container {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+}
+.uusimainos-empty-content {
+  display: flex;
+  justify-content: center;
+  width: 550px;
+  flex-direction: column;
+  margin: 0;
+}
+.uusimainos-empty-content h5 {
+  color: var(--main-grey);
+  text-align: center;
+  margin: 100px 0 20px 0;
+  font-weight: 500;
+  font-size: 70px;
+  font-family: var(--headerfont);
+}
+
+.uusimainos-empty-login-btn:hover {
+  opacity: 0.8;
+}
+.uusimainos-empty-login-btn {
+  display: flex;
+  margin: 0;
+  align-self: center;
+  margin: 0;
+  width: 450px;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--main-light-blue);
+}
+.uusimainos-empty-login-btn p {
+  color: #fff;
+  align-self: center;
+  font-family: var(--headerfont);
+  font-size: 70px;
+  padding: 20px 0;
+  margin: 0;
+}

@@ -99,7 +99,7 @@ const SigninForm = ({ setLoginTab }) => {
           />
         </div>
         <div className="login-errmsg-container">
-          {isErrMsg ? <p className="login-errmsg">{errMsg}</p> : null}
+          {isErrMsg ? <p className="login-errmsg">{errMsg} !</p> : null}
         </div>
         <div
           className="login-btn"

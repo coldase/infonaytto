@@ -21,6 +21,7 @@
 .uusimainoskuva-pohja-container h1 {
   align-self: center;
   margin-top: 20px;
+  color: var(--main-grey);
 }
 
 .uusimainoskuva-pohjat {
@@ -58,6 +59,7 @@
 .uusimainoskuva-omakuva-container h1 {
   align-self: center;
   margin-top: 20px;
+  color: var(--main-grey);
 }
 
 .uusimainoskuva-omakuva-lisaa-btn {
@@ -80,6 +82,7 @@
   font-size: 20px;
   margin: 0;
   justify-content: center;
+  color: #fff;
 }
 
 .uusimainoskuva-omakuva-preview {

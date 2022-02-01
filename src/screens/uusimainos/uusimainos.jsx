@@ -1,5 +1,5 @@
 import "./uusimainos.css";
-import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 import { useState } from "react";
 
@@ -19,6 +19,7 @@ const UusiMainos = ({
   mainospaikat,
   userid,
   update,
+  setIsLoginPopup,
 }) => {
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -44,50 +45,63 @@ const UusiMainos = ({
   //   console.log(selectedDayRange);
   // }, [selectedDayRange]);
 
-  if (!isLoggedIn) {
-    return <Navigate to="/" />;
-  }
   return (
     <>
       <div className="uusimainos-container">
         <div className="uusimainos-header">
           <h1>Uusi mainos</h1>
         </div>
-        <UusiMainosProgress
-          currentStep={currentStep}
-          setCurrentStep={setCurrentStep}
-        />
-        <div className="uusimainos-content">
-          {currentStep === 0 ? (
-            <UusiMainosKuva setmyimg={(img) => setmyimg(img)} myimg={myimg} />
-          ) : null}
-          {currentStep === 1 ? (
-            <UusiMainosPaikka
-              mainospaikat={mainospaikat}
-              mybuttons={mybuttons}
-              setmybuttons={setmybuttons}
-              setisshowmap={setisshowmap}
+        {isLoggedIn ? (
+          <div>
+            <UusiMainosProgress
+              currentStep={currentStep}
+              setCurrentStep={setCurrentStep}
             />
-          ) : null}
-          {currentStep === 2 ? (
-            <UusiMainosAika
-              selectedDayRange={selectedDayRange}
-              setSelectedDayRange={setSelectedDayRange}
-            />
-          ) : null}
-          {currentStep === 3 ? (
-            <UusiMainosJulkaisu
-              update={update}
-              setadname={setadname}
-              adname={adname}
-              userid={userid}
-              clearInputs={clearInputs}
-              myimg={myimg}
-              mybuttons={mybuttons}
-              selectedDayRange={selectedDayRange}
-            />
-          ) : null}
-        </div>
+            <div className="uusimainos-content">
+              {currentStep === 0 ? (
+                <UusiMainosKuva
+                  setmyimg={(img) => setmyimg(img)}
+                  myimg={myimg}
+                />
+              ) : null}
+              {currentStep === 1 ? (
+                <UusiMainosPaikka
+                  mainospaikat={mainospaikat}
+                  mybuttons={mybuttons}
+                  setmybuttons={setmybuttons}
+                  setisshowmap={setisshowmap}
+                />
+              ) : null}
+              {currentStep === 2 ? (
+                <UusiMainosAika
+                  selectedDayRange={selectedDayRange}
+                  setSelectedDayRange={setSelectedDayRange}
+                />
+              ) : null}
+              {currentStep === 3 ? (
+                <UusiMainosJulkaisu
+                  update={update}
+                  setadname={setadname}
+                  adname={adname}
+                  userid={userid}
+                  clearInputs={clearInputs}
+                  myimg={myimg}
+                  mybuttons={mybuttons}
+                  selectedDayRange={selectedDayRange}
+                />
+              ) : null}
+            </div>
+          </div>
+        ) : (
+          <div className="uusimainos-empty-container">
+            <div className="uusimainos-empty-content">
+              <h5>Rekisteröitymällä pääset mainostamaan</h5>
+              <div className="uusimainos-empty-login-btn">
+                <p>Rekisteröidy</p>
+              </div>
+            </div>
+          </div>
+        )}
         {/* <Footer /> */}
       </div>
       {isshowmap ? (
@@ -96,7 +110,11 @@ const UusiMainos = ({
           mainospaikat={mainospaikat}
         />
       ) : null}
-      <MyNav logout={logout} />
+      <MyNav
+        isLoggedIn={isLoggedIn}
+        logout={logout}
+        setIsLoginPopup={setIsLoginPopup}
+      />
     </>
   );
 };

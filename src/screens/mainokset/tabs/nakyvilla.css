@@ -36,6 +36,7 @@
 .nakyvilla-empty-container h5 {
   text-align: center;
   font-family: var(--headerfont);
+  color: var(--main-grey);
   font-size: 70px;
   font-weight: 500;
   line-height: 1.1;

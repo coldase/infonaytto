@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -8,6 +8,7 @@ import Esittely from "./screens/esittely/esittely";
 import Profile from "./screens/profile/profile";
 import UusiMainos from "./screens/uusimainos/uusimainos";
 import Mainokset from "./screens/mainokset/mainokset";
+import LoginPopup from "./components/loginpopup/loginpopup";
 
 const App = () => {
   const [currentMainosTab, setCurrentMainosTab] = useState(0);
@@ -16,6 +17,8 @@ const App = () => {
   const [isshowmap, setisshowmap] = useState(false);
   const [authToken, setAuthToken] = useState("");
   const [userAds, setUserAds] = useState([]);
+  const [isLoginPopup, setIsLoginPopup] = useState(false);
+  const navigate = useNavigate();
 
   const [updatehelper, setupdatehelper] = useState(true);
 
@@ -44,12 +47,20 @@ const App = () => {
           setuserinfodata(res.data);
           setIsLoggedIn(true);
           setAuthToken(res.data.token);
+          navigate("/profiili", { replace: true });
+          return true;
         } else {
           return false;
         }
       })
       .catch((err) => console.log(err));
   };
+
+  useEffect(() => {
+    if (isLoggedIn === true) {
+      setIsLoginPopup(false);
+    }
+  }, [isLoggedIn]);
 
   const handleGetInfoData = async ($token) => {
     let formdata = new FormData();
@@ -90,6 +101,7 @@ const App = () => {
           setIsLoggedIn(false);
           setuserinfodata({});
           localStorage.removeItem("token");
+          setupdatehelper(!updatehelper);
         }
       })
       .catch((err) => console.log(err));
@@ -133,6 +145,7 @@ const App = () => {
               isshowmap={isshowmap}
               setisshowmap={setisshowmap}
               mainospaikat={mainospaikat}
+              setIsLoginPopup={setIsLoginPopup}
             />
           }
         />
@@ -146,6 +159,7 @@ const App = () => {
               logout={logout}
               currentMainosTab={currentMainosTab}
               setCurrentMainosTab={setCurrentMainosTab}
+              setIsLoginPopup={setIsLoginPopup}
             />
           }
         />
@@ -158,6 +172,7 @@ const App = () => {
               setisshowmap={setisshowmap}
               isLoggedIn={isLoggedIn}
               logout={logout}
+              setIsLoginPopup={setIsLoginPopup}
               mainospaikat={mainospaikat}
             />
           }
@@ -170,10 +185,21 @@ const App = () => {
               isLoggedIn={isLoggedIn}
               logout={logout}
               setCurrentMainosTab={setCurrentMainosTab}
+              setIsLoginPopup={setIsLoginPopup}
             />
           }
         />
       </Routes>
+      {isLoginPopup ? (
+        <LoginPopup
+          setIsLoginPopup={setIsLoginPopup}
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          userinfodata={userinfodata}
+          setuserinfodata={setuserinfodata}
+          handleLogin={handleLogin}
+        />
+      ) : null}
     </>
   );
 };

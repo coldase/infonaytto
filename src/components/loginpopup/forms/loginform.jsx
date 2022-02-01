@@ -1,15 +1,16 @@
 import "./formstyles.css";
 import { useState } from "react";
 
-const LoginForm = ({ handleLogin }) => {
+const LoginForm = ({ handleLogin, isLoggedIn }) => {
   const [myemail, setmyemail] = useState("jari@mail.com");
   const [mypwd, setmypwd] = useState("asd");
 
   const errMsg = "Tarkista sähköposti tai salasana";
   const [isErrMsg, setIsErrMsg] = useState(false);
 
-  const handleMessage = (myemail, mypwd) => {
-    if (handleLogin(myemail, mypwd)) {
+  const handleLoginBtn = (em, pwd) => {
+    handleLogin(em, pwd);
+    if (!isLoggedIn) {
       setIsErrMsg(true);
     } else {
       setIsErrMsg(false);
@@ -18,7 +19,9 @@ const LoginForm = ({ handleLogin }) => {
 
   return (
     <div className="loginpopup-logintab-container">
-      <h1 className="loginpopup-logintab-header">Kirjaudu sisään</h1>
+      <h1 className="loginpopup-logintab-header" id="kirjaudusisäänheader">
+        Kirjaudu sisään
+      </h1>
 
       <div className="loginpopup-logintab-form-container">
         <div className="formitem">
@@ -30,7 +33,7 @@ const LoginForm = ({ handleLogin }) => {
             value={myemail}
             onChange={(e) => setmyemail(e.target.value)}
             onKeyPress={(e) =>
-              e.key === "Enter" ? handleMessage(myemail, mypwd) : null
+              e.key === "Enter" ? handleLogin(myemail, mypwd) : null
             }
           />
         </div>
@@ -43,7 +46,7 @@ const LoginForm = ({ handleLogin }) => {
             value={mypwd}
             onChange={(e) => setmypwd(e.target.value)}
             onKeyPress={(e) =>
-              e.key === "Enter" ? handleMessage(myemail, mypwd) : null
+              e.key === "Enter" ? handleLoginBtn(myemail, mypwd) : null
             }
           />
         </div>
@@ -51,7 +54,7 @@ const LoginForm = ({ handleLogin }) => {
           {isErrMsg ? <p className="login-errmsg">{errMsg}</p> : null}
         </div>
         <div
-          onClick={() => handleMessage(myemail, mypwd)}
+          onClick={() => handleLoginBtn(myemail, mypwd)}
           className="login-btn"
         >
           <p>Kirjaudu</p>

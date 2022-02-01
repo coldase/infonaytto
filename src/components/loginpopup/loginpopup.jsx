@@ -6,9 +6,7 @@ import LoginForm from "./forms/loginform";
 import SigninForm from "./forms/signinform";
 
 const LoginPopup = ({
-  isLoginPopup,
   setIsLoginPopup,
-  setCurrentUser,
   isLoggedIn,
   setIsLoggedIn,
   userinfodata,
@@ -16,6 +14,7 @@ const LoginPopup = ({
   handleLogin,
 }) => {
   const [loginTab, setLoginTab] = useState(true);
+  const [isErrMsg, setIsErrMsg] = useState(false);
   return (
     <div className="loginpopup-container">
       <div className="loginpopup-closebtn-container">
@@ -47,11 +46,14 @@ const LoginPopup = ({
       {/* Logintab */}
       {loginTab ? (
         <LoginForm
+          isErrMsg={isErrMsg}
+          setIsErrMsg={setIsErrMsg}
           handleLogin={handleLogin}
           userinfodata={userinfodata}
           setuserinfodata={setuserinfodata}
           isLoggedIn={isLoggedIn}
           setIsLoggedIn={setIsLoggedIn}
+          setIsLoginPopup={setIsLoginPopup}
         />
       ) : (
         <SigninForm setLoginTab={(val) => setLoginTab(val)} />

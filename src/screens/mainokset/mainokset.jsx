@@ -16,9 +16,10 @@ const Mainokset = ({
   currentMainosTab,
   setCurrentMainosTab,
   userAds,
+  setIsLoginPopup,
 }) => {
   if (!isLoggedIn) {
-    return <Navigate to="/" />;
+    return <Navigate to="/esittely" />;
   }
   return (
     <>
@@ -31,7 +32,7 @@ const Mainokset = ({
             onClick={() => setCurrentMainosTab(0)}
             style={
               currentMainosTab === 0
-                ? { borderBottom: "4px solid black" }
+                ? { borderBottom: "4px solid #343a40" }
                 : null
             }
             className="mainokset-tab-tyonalla-btn"
@@ -42,7 +43,7 @@ const Mainokset = ({
             onClick={() => setCurrentMainosTab(1)}
             style={
               currentMainosTab === 1
-                ? { borderBottom: "4px solid black" }
+                ? { borderBottom: "4px solid #343a40" }
                 : null
             }
             className="mainokset-tab-nakyvilla-btn"
@@ -53,7 +54,7 @@ const Mainokset = ({
             onClick={() => setCurrentMainosTab(2)}
             style={
               currentMainosTab === 2
-                ? { borderBottom: "4px solid black" }
+                ? { borderBottom: "4px solid #343a40" }
                 : null
             }
             className="mainokset-tab-tulossa-btn"
@@ -64,7 +65,7 @@ const Mainokset = ({
             onClick={() => setCurrentMainosTab(3)}
             style={
               currentMainosTab === 3
-                ? { borderBottom: "4px solid black" }
+                ? { borderBottom: "4px solid #343a40" }
                 : null
             }
             className="mainokset-tab-arkisto-btn"
@@ -85,7 +86,11 @@ const Mainokset = ({
         ) : null}
         {/* <Footer /> */}
       </div>
-      <MyNav logout={logout} />
+      <MyNav
+        isLoggedIn={isLoggedIn}
+        logout={logout}
+        setIsLoginPopup={setIsLoginPopup}
+      />
     </>
   );
 };

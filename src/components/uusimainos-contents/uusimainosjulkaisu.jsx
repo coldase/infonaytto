@@ -122,6 +122,7 @@ const UusiMainosJulkaisu = ({
         }
         disabled={
           adname === null ||
+          adname === "" ||
           selectedDayRange.from === null ||
           selectedDayRange.to === null ||
           mybuttons.length === 0 ||
@@ -132,6 +133,7 @@ const UusiMainosJulkaisu = ({
         className="uusimainosjulkaisu-julkaise-btn"
         style={
           adname === null ||
+          adname === "" ||
           selectedDayRange.from === null ||
           selectedDayRange.to === null ||
           mybuttons.length === 0 ||

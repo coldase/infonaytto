@@ -10,10 +10,8 @@ const Esittely = ({
   isshowmap,
   setisshowmap,
   mainospaikat,
+  setIsLoginPopup,
 }) => {
-  if (!isLoggedIn) {
-    return <Navigate to="/" />;
-  }
   return (
     <>
       <div className="esittely-container">
@@ -71,7 +69,11 @@ const Esittely = ({
           mainospaikat={mainospaikat}
         />
       ) : null}
-      <MyNav logout={logout} />
+      <MyNav
+        isLoggedIn={isLoggedIn}
+        logout={logout}
+        setIsLoginPopup={setIsLoginPopup}
+      />
     </>
   );
 };

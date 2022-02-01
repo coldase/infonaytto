@@ -3,13 +3,24 @@
 }
 
 .formitem input {
-  width: 60%;
+  width: 100%;
   border: none;
   font-size: 18px;
   padding: 5px 0px;
-  margin-top: 25px;
+  margin-top: 15px;
   font-weight: 500;
-  border-bottom: 1px solid black;
+  background-color: var(--main-grey);
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.formitem input::placeholder {
+  color: #fff;
+  opacity: 0.5;
+}
+
+.loginpopup-logintab-header {
+  text-align: center;
 }
 
 .loginpopup-logintab-container {
@@ -23,7 +34,7 @@
 .loginpopup-logintab-header {
   margin-bottom: 10px;
   font-size: 35px;
-  opacity: 0.7;
+  /* opacity: 0.7; */
 }
 
 @media only screen and (max-width: 666px) {
@@ -43,14 +54,15 @@
   border-radius: 5px;
   margin-top: 0px;
   display: flex;
-  background-color: royalblue;
+  background-color: #fff;
+
   width: 130px;
   height: 40px;
   justify-content: center;
 }
 .login-btn p {
   align-self: center;
-  color: #fff;
+  color: black;
 }
 
 .login-btn:hover {
@@ -58,13 +70,18 @@
 }
 
 .login-errmsg {
-  color: red;
+  color: #fff;
+  font-weight: 500;
   font-size: 16px;
   position: relative;
   margin: 0;
+  align-self: center;
 }
 
 .login-errmsg-container {
-  margin: 10px 0px;
+  display: flex;
+  justify-content: center;
+  /* background-color: red; */
+  margin: 15px 0px;
   height: 20px;
 }

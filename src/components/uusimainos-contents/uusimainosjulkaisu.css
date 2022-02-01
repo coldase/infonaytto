@@ -15,6 +15,7 @@
 
 .jotainputtuu-container p {
   font-size: 50px;
+  color: var(--main-grey);
   margin: 0;
 }
 
@@ -27,6 +28,7 @@
   /* background-color: red; */
 }
 .adnameinput-container h5 {
+  color: var(--main-grey);
   align-self: center;
   font-size: 20px;
   margin: 10px;
@@ -64,11 +66,12 @@
   align-self: center;
   height: 400px;
   width: 100%;
-  border: 2px solid black;
+  border: 2px solid var(--main-grey);
   border-radius: 5px;
 }
 .julkaisu-kuva-puuttuu p {
   align-self: center;
+  color: var(--main-grey);
   font-family: var(--headerfont);
   font-size: 80px;
 }
@@ -83,6 +86,7 @@
 
 .uusimainosjulkaisu-info-container h2 {
   align-self: center;
+  color: var(--main-grey);
 }
 
 .uusimainosjulkaisu-ajat-container {
@@ -96,15 +100,18 @@
 .uusimainosjulkaisu-paivamaara p {
   font-size: 30px;
   margin: 0 10px;
+  color: var(--main-grey);
 }
 
 .uusimainosjulkaisu-paikat-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: 25px;
 }
 .uusimainosjulkaisu-paikat-container p {
   align-self: center;
+  color: var(--main-grey);
   margin: 2px;
   font-size: 20px;
   /* font-weight: 500; */

@@ -34,6 +34,7 @@
 }
 
 .tulossa-empty-container h5 {
+  color: var(--main-grey);
   text-align: center;
   font-family: var(--headerfont);
   font-size: 70px;

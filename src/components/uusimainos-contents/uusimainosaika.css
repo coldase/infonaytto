@@ -10,6 +10,7 @@
 .paivamaarat-headers {
   display: flex;
   align-self: center;
+  color: var(--main-grey);
 }
 .paivamaarat {
   display: flex;
@@ -18,6 +19,7 @@
 
 .paivamaarat h1 {
   margin: 20px 10px;
+  color: var(--main-grey);
 }
 
 .responsive-calendar {

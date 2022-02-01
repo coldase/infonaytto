@@ -2,9 +2,10 @@
 import "./homescreen.css";
 import { useState } from "react";
 import LoginPopup from "../../components/loginpopup/loginpopup";
-import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import QuestionSection from "../../components/ukk/question-section/questionsection";
 import Footer from "../../components/footer/footer";
+import { Navigate } from "react-router-dom";
 
 //someicons
 // import {
@@ -15,19 +16,10 @@ import Footer from "../../components/footer/footer";
 //   BsYoutube,
 // } from "react-icons/bs";
 
-const HomeScreen = ({
-  isLoggedIn,
-  setIsLoggedIn,
-  userinfodata,
-  setuserinfodata,
-  handleLogin,
-}) => {
-  const [isLoginPopup, setIsLoginPopup] = useState(false);
-
+const HomeScreen = ({ isLoggedIn }) => {
   if (isLoggedIn) {
-    return <Navigate to="/esittely" />;
+    return <Navigate to="/profiili" />;
   }
-
   return (
     <>
       <div className="homescreen-container">
@@ -37,21 +29,12 @@ const HomeScreen = ({
         <div className="homescreen-content">
           <div className="homescreen-content-1">
             <h1>INFONÄYTTÖ</h1>
-            <div
-              onClick={() => setIsLoginPopup(true)}
-              className="homescreen-aloita-btn"
-            >
+            <Link to="/esittely" className="homescreen-aloita-btn">
               <p>Aloita tästä</p>
-            </div>
+            </Link>
             <QuestionSection />
           </div>
-          {isLoginPopup ? (
-            <LoginPopup
-              handleLogin={handleLogin}
-              isLoginPopup={isLoginPopup}
-              setIsLoginPopup={(val) => setIsLoginPopup(val)}
-            />
-          ) : null}
+
           <div className="homescreen-content-2">
             <div className="homescreen-kokemus-container">
               <p>

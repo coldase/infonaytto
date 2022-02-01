@@ -37,6 +37,7 @@
   text-align: center;
   font-family: var(--headerfont);
   font-size: 70px;
+  color: var(--main-grey);
   font-weight: 500;
   line-height: 1.1;
   align-self: center;

@@ -7,12 +7,14 @@
 
 .uusimainospaikka-container h1 {
   align-self: center;
+  color: var(--main-grey);
   margin: 20px 0 5px 0;
 }
 .uusimainospaikka-container h2 {
   align-self: center;
   font-size: 20px;
   margin: 0px 0 70px 0;
+  color: var(--main-grey);
 }
 
 .uusimainos-paikka-card-container {
@@ -82,4 +84,5 @@
 .uusimainos-mapbtn p {
   align-self: center;
   padding: 0px 10px;
+  color: #fff;
 }

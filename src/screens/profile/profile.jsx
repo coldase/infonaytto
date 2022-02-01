@@ -5,9 +5,15 @@ import ProfileCard from "../../components/profilecard/profilecard";
 import ProfileOmatMainokset from "../../components/profileomatmainokset/profileomatmainokset";
 // import Footer from "../../components/footer/footer";
 
-const Profile = ({ isLoggedIn, logout, setCurrentMainosTab, userinfodata }) => {
+const Profile = ({
+  isLoggedIn,
+  logout,
+  setCurrentMainosTab,
+  userinfodata,
+  setIsLoginPopup,
+}) => {
   if (!isLoggedIn) {
-    return <Navigate to="/" />;
+    return <Navigate to="/esittely" />;
   }
   return (
     <>
@@ -19,7 +25,11 @@ const Profile = ({ isLoggedIn, logout, setCurrentMainosTab, userinfodata }) => {
 
         {/* <Footer /> */}
       </div>
-      <MyNav logout={logout} />
+      <MyNav
+        isLoggedIn={isLoggedIn}
+        logout={logout}
+        setIsLoginPopup={setIsLoginPopup}
+      />
     </>
   );
 };

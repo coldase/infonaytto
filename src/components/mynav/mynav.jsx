@@ -4,14 +4,14 @@ import { AiFillInfoCircle } from "react-icons/ai";
 import { MdShoppingCart, MdCollections } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
 
-import { FiLogOut } from "react-icons/fi";
+import { FiLogOut, FiLogIn } from "react-icons/fi";
 import { useState } from "react";
 
-const MyNav = ({ logout }) => {
+const MyNav = ({ logout, isLoggedIn, setIsLoginPopup }) => {
   const [navOpen, setNavOpen] = useState(false);
 
   const handleLogout = () => {
-    logout(); // window.location.href = "/";
+    logout();
   };
 
   return (
@@ -32,12 +32,14 @@ const MyNav = ({ logout }) => {
               <p>Uusi mainos</p>
             </div>
           </Link>
-          <Link to="/mainokset">
-            <div className="navlink">
-              <MdCollections style={{ alignSelf: "center" }} size={50} />
-              <p>Mainokseni</p>
-            </div>
-          </Link>
+          {isLoggedIn ? (
+            <Link to="/mainokset">
+              <div className="navlink">
+                <MdCollections style={{ alignSelf: "center" }} size={50} />
+                <p>Mainokseni</p>
+              </div>
+            </Link>
+          ) : null}
           <Link to="/esittely">
             <div className="navlink">
               <AiFillInfoCircle style={{ alignSelf: "center" }} size={50} />
@@ -45,16 +47,31 @@ const MyNav = ({ logout }) => {
             </div>
           </Link>
           <div className="navseparator"></div>
-          <Link to="/profiili">
-            <div className="navlink">
-              <FaUserCircle style={{ alignSelf: "center" }} size={50} />
-              <p>Profiili</p>
+          {isLoggedIn ? (
+            <Link to="/profiili">
+              <div className="navlink">
+                <FaUserCircle style={{ alignSelf: "center" }} size={50} />
+                <p>Profiili</p>
+              </div>
+            </Link>
+          ) : null}
+          {isLoggedIn ? (
+            <div
+              className="navlink"
+              onClick={navOpen ? () => handleLogout() : null}
+            >
+              <FiLogIn style={{ alignSelf: "center" }} size={50} />
+              <p>Kirjaudu ulos</p>
             </div>
-          </Link>
-          <div className="navlink" onClick={navOpen ? handleLogout : null}>
-            <FiLogOut style={{ alignSelf: "center" }} size={50} />
-            <p>Logout</p>
-          </div>
+          ) : (
+            <div
+              className="navlink"
+              onClick={navOpen ? () => setIsLoginPopup(true) : null}
+            >
+              <FiLogOut style={{ alignSelf: "center" }} size={50} />
+              <p>Kirjaudu sisään</p>
+            </div>
+          )}
         </div>
       ) : (
         <div className="mynav">
@@ -64,19 +81,33 @@ const MyNav = ({ logout }) => {
           <div className="navlink">
             <MdShoppingCart style={{ alignSelf: "center" }} size={50} />
           </div>
-          <div className="navlink">
-            <MdCollections style={{ alignSelf: "center" }} size={50} />
-          </div>
+          {isLoggedIn ? (
+            <div className="navlink">
+              <MdCollections style={{ alignSelf: "center" }} size={50} />
+            </div>
+          ) : null}
           <div className="navlink">
             <AiFillInfoCircle style={{ alignSelf: "center" }} size={50} />
           </div>
           <div className="navseparator"></div>
-          <div className="navlink">
-            <FaUserCircle style={{ alignSelf: "center" }} size={50} />
-          </div>
-          <div className="navlink" onClick={navOpen ? handleLogout : null}>
-            <FiLogOut style={{ alignSelf: "center" }} size={50} />
-          </div>
+          {isLoggedIn ? (
+            <div className="navlink">
+              <FaUserCircle style={{ alignSelf: "center" }} size={50} />
+            </div>
+          ) : null}
+
+          {isLoggedIn ? (
+            <div className="navlink" onClick={navOpen ? handleLogout : null}>
+              <FiLogIn style={{ alignSelf: "center" }} size={50} />
+            </div>
+          ) : (
+            <div
+              className="navlink"
+              onClick={navOpen ? setIsLoginPopup(true) : null}
+            >
+              <FiLogOut style={{ alignSelf: "center" }} size={50} />
+            </div>
+          )}
         </div>
       )}
     </div>
