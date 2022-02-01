@@ -7,7 +7,13 @@ import { FaUserCircle } from "react-icons/fa";
 import { FiLogOut, FiLogIn } from "react-icons/fi";
 import { useState } from "react";
 
-const MyNav = ({ logout, isLoggedIn, setIsLoginPopup, setLoginTab }) => {
+const MyNav = ({
+  logout,
+  isLoggedIn,
+  setIsLoginPopup,
+  setLoginTab,
+  setisshowmap,
+}) => {
   const [navOpen, setNavOpen] = useState(false);
 
   const handleLogout = () => {
@@ -16,7 +22,10 @@ const MyNav = ({ logout, isLoggedIn, setIsLoginPopup, setLoginTab }) => {
 
   return (
     <div
-      onClick={() => setNavOpen(!navOpen)}
+      onClick={() => {
+        setisshowmap(false);
+        setNavOpen(!navOpen);
+      }}
       onMouseEnter={() => setNavOpen(true)}
       onMouseLeave={() => setNavOpen(false)}
     >

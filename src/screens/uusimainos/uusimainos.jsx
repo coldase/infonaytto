@@ -43,7 +43,10 @@ const UusiMainos = ({
 
   return (
     <>
-      <div className="uusimainos-container">
+      <div
+        onClick={isshowmap ? () => setisshowmap(false) : null}
+        className="uusimainos-container"
+      >
         <div className="uusimainos-header">
           <h1>Uusi mainos</h1>
         </div>
@@ -117,6 +120,7 @@ const UusiMainos = ({
         isLoggedIn={isLoggedIn}
         logout={logout}
         setIsLoginPopup={setIsLoginPopup}
+        setisshowmap={setisshowmap}
       />
     </>
   );

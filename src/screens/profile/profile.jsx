@@ -12,6 +12,7 @@ const Profile = ({
   userinfodata,
   setIsLoginPopup,
   setLoginTab,
+  setisshowmap,
 }) => {
   if (!isLoggedIn) {
     return <Navigate to="/esittely" />;
@@ -31,6 +32,7 @@ const Profile = ({
         isLoggedIn={isLoggedIn}
         logout={logout}
         setIsLoginPopup={setIsLoginPopup}
+        setisshowmap={setisshowmap}
       />
     </>
   );

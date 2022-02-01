@@ -103,6 +103,7 @@ const App = () => {
           setuserinfodata({});
           localStorage.removeItem("token");
           setupdatehelper(!updatehelper);
+          setisshowmap(false);
         }
       })
       .catch((err) => console.log(err));
@@ -121,7 +122,7 @@ const App = () => {
   }, [userinfodata, updatehelper]);
 
   return (
-    <>
+    <div>
       <Routes>
         <Route
           path="/"
@@ -145,7 +146,7 @@ const App = () => {
               isLoggedIn={isLoggedIn}
               logout={logout}
               isshowmap={isshowmap}
-              setisshowmap={setisshowmap}
+              setisshowmap={(value) => setisshowmap(value)}
               mainospaikat={mainospaikat}
               setIsLoginPopup={setIsLoginPopup}
             />
@@ -158,6 +159,7 @@ const App = () => {
               setLoginTab={setLoginTab}
               update={() => setupdatehelper(!updatehelper)}
               userAds={userAds}
+              setisshowmap={(value) => setisshowmap(value)}
               isLoggedIn={isLoggedIn}
               logout={logout}
               currentMainosTab={currentMainosTab}
@@ -173,7 +175,7 @@ const App = () => {
             <Esittely
               setLoginTab={setLoginTab}
               isshowmap={isshowmap}
-              setisshowmap={setisshowmap}
+              setisshowmap={(value) => setisshowmap(value)}
               isLoggedIn={isLoggedIn}
               logout={logout}
               setIsLoginPopup={setIsLoginPopup}
@@ -185,6 +187,7 @@ const App = () => {
           path="/profiili"
           element={
             <Profile
+              setisshowmap={(value) => setisshowmap(value)}
               userinfodata={userinfodata}
               isLoggedIn={isLoggedIn}
               logout={logout}
@@ -206,7 +209,7 @@ const App = () => {
           handleLogin={handleLogin}
         />
       ) : null}
-    </>
+    </div>
   );
 };
 export default App;

@@ -15,7 +15,10 @@ const Esittely = ({
 }) => {
   return (
     <>
-      <div className="esittely-container">
+      <div
+        onClick={isshowmap ? () => setisshowmap(false) : null}
+        className="esittely-container"
+      >
         <div className="esittely-content">
           <h1 className="esittely-header">ESITTELY</h1>
           <p className="esittely-text">
@@ -58,9 +61,15 @@ const Esittely = ({
             need to be sure there isn't anything embarrassing hidden in the
             middle of text
           </p>
-          <Link className="aloitatasta-btn" to="/profiili">
-            <p>Aloita tästä</p>
-          </Link>
+          {isLoggedIn ? (
+            <Link className="aloitatasta-btn" to="/profiili">
+              <p>Aloita tästä</p>
+            </Link>
+          ) : (
+            <Link className="aloitatasta-btn" to="/uusimainos">
+              <p>Aloita tästä</p>
+            </Link>
+          )}
         </div>
         <Footer />
       </div>
@@ -75,6 +84,7 @@ const Esittely = ({
         isLoggedIn={isLoggedIn}
         logout={logout}
         setIsLoginPopup={setIsLoginPopup}
+        setisshowmap={setisshowmap}
       />
     </>
   );
