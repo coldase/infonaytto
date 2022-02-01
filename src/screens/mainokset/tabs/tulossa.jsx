@@ -1,5 +1,6 @@
 import "./tulossa.css";
 import OmatMainoksetCard from "../../../components/omatmainoksetcard/omatmainoksetcard";
+import { Link } from "react-router-dom";
 
 const Tulossa = ({ userAds, update }) => {
   const filterAds = (ads) => {
@@ -21,19 +22,22 @@ const Tulossa = ({ userAds, update }) => {
 
   return (
     <div className="tulossa-container">
-      <div className="nakyvilla-card-container">
-        {userAds
-          ? filterAds(userAds).map((item) => {
-              return (
-                <OmatMainoksetCard
-                  key={item.ad_id}
-                  item={item}
-                  update={update}
-                />
-              );
-            })
-          : null}
-      </div>
+      {filterAds(userAds).length !== 0 ? (
+        <div className="tulossa-card-container">
+          {filterAds(userAds).map((item) => {
+            return (
+              <OmatMainoksetCard key={item.ad_id} item={item} update={update} />
+            );
+          })}
+        </div>
+      ) : (
+        <div className="tulossa-empty-container">
+          <h5>Sinulta ei ole uusia mainoksia luvassa!</h5>
+          <Link to="/uusimainos" className="tulossa-empty-uusimainos-btn">
+            <p>uusi mainos</p>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

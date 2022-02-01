@@ -85,7 +85,8 @@
 .uusimainoskuva-omakuva-preview {
   align-self: center;
   margin-bottom: 20px;
-  width: 400px;
-  min-width: 80%;
+  /* width: 400px; */
+  /* min-width: 80%; */
   max-width: 90%;
+  max-height: 400px;
 }

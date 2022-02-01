@@ -1,5 +1,7 @@
 import "./nakyvilla.css";
 import OmatMainoksetCard from "../../../components/omatmainoksetcard/omatmainoksetcard";
+import { Link } from "react-router-dom";
+
 const Nakyvilla = ({ userAds, update }) => {
   const filterAds = (ads) => {
     let temp = [];
@@ -19,19 +21,22 @@ const Nakyvilla = ({ userAds, update }) => {
   };
   return (
     <div className="nakyvilla-container">
-      <div className="nakyvilla-card-container">
-        {userAds
-          ? filterAds(userAds).map((item) => {
-              return (
-                <OmatMainoksetCard
-                  key={item.ad_id}
-                  item={item}
-                  update={update}
-                />
-              );
-            })
-          : null}
-      </div>
+      {filterAds(userAds).length !== 0 ? (
+        <div className="nakyvilla-card-container">
+          {filterAds(userAds).map((item) => {
+            return (
+              <OmatMainoksetCard key={item.ad_id} item={item} update={update} />
+            );
+          })}
+        </div>
+      ) : (
+        <div className="nakyvilla-empty-container">
+          <h5>Mainoksiasi ei näy katukuvassa!</h5>
+          <Link to="/uusimainos" className="nakyvilla-empty-uusimainos-btn">
+            <p>Lisää mainos</p>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

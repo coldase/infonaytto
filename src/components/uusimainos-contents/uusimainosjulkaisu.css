@@ -58,6 +58,20 @@
   max-width: 100%;
 }
 
+.julkaisu-kuva-puuttuu {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height: 400px;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.julkaisu-kuva-puuttuu p {
+  align-self: center;
+  font-family: var(--headerfont);
+  font-size: 80px;
+}
 .uusimainosjulkaisu-info-container {
   display: flex;
   flex-direction: column;
@@ -69,6 +83,11 @@
 
 .uusimainosjulkaisu-info-container h2 {
   align-self: center;
+}
+
+.uusimainosjulkaisu-ajat-container {
+  display: flex;
+  flex-direction: column;
 }
 .uusimainosjulkaisu-paivamaara {
   display: flex;
@@ -86,6 +105,9 @@
 }
 .uusimainosjulkaisu-paikat-container p {
   align-self: center;
+  margin: 2px;
+  font-size: 20px;
+  /* font-weight: 500; */
 }
 
 .uusimainosjulkaisu-julkaise-btn {

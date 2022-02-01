@@ -1,6 +1,6 @@
 import "./arkisto.css";
 import OmatMainoksetCard from "../../../components/omatmainoksetcard/omatmainoksetcard";
-
+import { Link } from "react-router-dom";
 const Arkisto = ({ userAds, update }) => {
   const filterAds = (ads) => {
     let temp = [];
@@ -21,19 +21,22 @@ const Arkisto = ({ userAds, update }) => {
 
   return (
     <div className="arkisto-container">
-      <div className="arkisto-card-container">
-        {userAds
-          ? filterAds(userAds).map((item) => {
-              return (
-                <OmatMainoksetCard
-                  update={update}
-                  key={item.ad_id}
-                  item={item}
-                />
-              );
-            })
-          : null}
-      </div>
+      {filterAds(userAds).length !== 0 ? (
+        <div className="arkisto-card-container">
+          {filterAds(userAds).map((item) => {
+            return (
+              <OmatMainoksetCard key={item.ad_id} item={item} update={update} />
+            );
+          })}
+        </div>
+      ) : (
+        <div className="arkisto-empty-container">
+          <h5>Arkistosi humisee tyhjyyttään!</h5>
+          <Link to="/uusimainos" className="arkisto-empty-uusimainos-btn">
+            <p>Aloita mainostus</p>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

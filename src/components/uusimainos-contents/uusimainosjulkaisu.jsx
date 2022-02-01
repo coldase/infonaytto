@@ -55,11 +55,7 @@ const UusiMainosJulkaisu = ({
       {selectedDayRange.from === null ||
       selectedDayRange.to === null ||
       mybuttons.length === 0 ||
-      myimg === null ? (
-        <div className="jotainputtuu-container">
-          <p>Jotain puuttuu</p>
-        </div>
-      ) : (
+      myimg === null ? null : (
         <div className="adnameinput-container">
           <h5>Anna mainokselle nimi</h5>
           <input
@@ -80,33 +76,45 @@ const UusiMainosJulkaisu = ({
               className="julkaisu-kuva-preview"
               src={URL.createObjectURL(myimg)}
             />
-          ) : null}
+          ) : (
+            <div className="julkaisu-kuva-puuttuu">
+              <p>Kuva puuttuu!</p>
+            </div>
+          )}
         </div>
 
-        {selectedDayRange.from !== null && selectedDayRange.to !== null ? (
-          <div className="uusimainosjulkaisu-info-container">
-            <h2>Mainosta näytetään</h2>
-            <div className="uusimainosjulkaisu-paivamaara">
-              <p>
-                {selectedDayRange.from.day}.{selectedDayRange.from.month}.
-                {selectedDayRange.from.year}
-              </p>
-              <p>-</p>
-              <p>
-                {selectedDayRange.to.day}.{selectedDayRange.to.month}.
-                {selectedDayRange.to.year}
-              </p>
+        <div className="uusimainosjulkaisu-info-container">
+          {selectedDayRange.from !== null && selectedDayRange.to !== null ? (
+            <div className="uusimainosjulkaisu-ajat-container">
+              <h2>Mainosta näytetään</h2>
+              <div className="uusimainosjulkaisu-paivamaara">
+                <p>
+                  {selectedDayRange.from.day}.{selectedDayRange.from.month}.
+                  {selectedDayRange.from.year}
+                </p>
+                <p>-</p>
+                <p>
+                  {selectedDayRange.to.day}.{selectedDayRange.to.month}.
+                  {selectedDayRange.to.year}
+                </p>
+              </div>
             </div>
-            <h2>Paikassa</h2>
+          ) : (
+            <h2>Ajankohta puuttuu!</h2>
+          )}
+          {mybuttons.length !== 0 ? (
             <div className="uusimainosjulkaisu-paikat-container">
+              <h2>Paikassa</h2>
               {mybuttons
                 ? mybuttons.map((item) => {
                     return <p key={item}>{item}</p>;
                   })
                 : null}
             </div>
-          </div>
-        ) : null}
+          ) : (
+            <h2>Alueet puuttuu!</h2>
+          )}
+        </div>
       </div>
       <button
         onClick={() =>
