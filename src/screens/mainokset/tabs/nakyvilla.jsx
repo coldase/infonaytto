@@ -28,26 +28,6 @@ const Nakyvilla = ({ userAds, update }) => {
               <OmatMainoksetCard key={item.ad_id} item={item} update={update} />
             );
           })}
-          {filterAds(userAds).map((item) => {
-            return (
-              <OmatMainoksetCard key={item.ad_id} item={item} update={update} />
-            );
-          })}
-          {filterAds(userAds).map((item) => {
-            return (
-              <OmatMainoksetCard key={item.ad_id} item={item} update={update} />
-            );
-          })}
-          {filterAds(userAds).map((item) => {
-            return (
-              <OmatMainoksetCard key={item.ad_id} item={item} update={update} />
-            );
-          })}
-          {filterAds(userAds).map((item) => {
-            return (
-              <OmatMainoksetCard key={item.ad_id} item={item} update={update} />
-            );
-          })}
         </div>
       ) : (
         <div className="nakyvilla-empty-container">
