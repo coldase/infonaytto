@@ -55,6 +55,8 @@
   width: 100%;
   height: 130px;
   overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
 }
 
 .omatmainokset-card-alueet-container::-webkit-scrollbar {

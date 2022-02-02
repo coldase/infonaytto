@@ -44,11 +44,10 @@ const App = () => {
     })
       .then((res) => {
         if (res.data === "success") {
-          console.log("loggedin");
+          setIsLoggedIn(true);
         } else {
           localStorage.removeItem("token");
           setIsLoggedIn(false);
-          console.log("token removed!");
         }
       })
       .catch((err) => console.log(err));
@@ -79,7 +78,6 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log("Checking!");
     check_if_token_is_logged_in(localStorage.getItem("token"));
   }, []);
 
