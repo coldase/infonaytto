@@ -33,6 +33,27 @@ const App = () => {
     "Puistot",
   ];
 
+  const check_if_token_is_logged_in = async (token) => {
+    let formdata = new FormData();
+    formdata.append("token", token);
+
+    await axios({
+      method: "POST",
+      url: process.env.REACT_APP_BACK_URL + "api/check_if_token_loggedin.php",
+      data: formdata,
+    })
+      .then((res) => {
+        if (res.data === "success") {
+          console.log("loggedin");
+        } else {
+          localStorage.removeItem("token");
+          setIsLoggedIn(false);
+          console.log("token removed!");
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
   const handleLogin = async (email, pwd) => {
     let formdata = new FormData();
     formdata.append("email", email);
@@ -56,6 +77,11 @@ const App = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  useEffect(() => {
+    console.log("Checking!");
+    check_if_token_is_logged_in(localStorage.getItem("token"));
+  }, []);
 
   useEffect(() => {
     if (isLoggedIn === true) {
