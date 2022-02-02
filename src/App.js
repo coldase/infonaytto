@@ -87,9 +87,9 @@ const App = () => {
     }
   }, [isLoggedIn]);
 
-  const handleGetInfoData = async ($token) => {
+  const handleGetInfoData = async (token) => {
     let formdata = new FormData();
-    formdata.append("token", $token);
+    formdata.append("token", token);
     await axios({
       method: "POST",
       url: process.env.REACT_APP_BACK_URL + "api/get_userinfo_data.php",

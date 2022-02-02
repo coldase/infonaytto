@@ -1,5 +1,7 @@
 //Import styles
 import "./homescreen.css";
+import { useState } from "react";
+import LoginPopup from "../../components/loginpopup/loginpopup";
 import { Link } from "react-router-dom";
 import QuestionSection from "../../components/ukk/question-section/questionsection";
 import Footer from "../../components/footer/footer";
@@ -24,14 +26,14 @@ const HomeScreen = ({ isLoggedIn }) => {
         <div className="homescreen-header">
           {/* <h1>SALON MAINOSPAIKAT OY</h1> */}
         </div>
-        <div className="homescreen-content">
-          <div className="homescreen-content-1">
-            <h1>INFONÄYTTÖ</h1>
-            <Link to="/esittely" className="homescreen-aloita-btn">
-              <p>Aloita tästä</p>
-            </Link>
-            <QuestionSection />
-          </div>
+        {/* <div className="homescreen-content"> */}
+        <div className="homescreen-content-1">
+          <h1>INFONÄYTTÖ</h1>
+          <Link to="/esittely" className="homescreen-aloita-btn">
+            <p>Aloita tästä</p>
+          </Link>
+          <QuestionSection />
+          {/* </div> */}
 
           <div className="homescreen-content-2">
             <div className="homescreen-kokemus-container">
@@ -57,9 +59,9 @@ const HomeScreen = ({ isLoggedIn }) => {
               <p>- Isaac Newton</p>
             </div>
           </div>
-          <Footer />
         </div>
       </div>
+      <Footer />
     </>
   );
 };

@@ -1,9 +1,10 @@
 .homescreen-container {
   display: flex;
   flex-direction: column;
-  background: url("../../assets/images/bg.jpg");
+  background: url("../../assets/images/newbg.png");
   background-position: center;
   background-size: cover;
+  height: 2100px;
 }
 
 .homescreen-header {
@@ -43,11 +44,13 @@
 .homescreen-content-1 h1 {
   color: #fff;
   align-self: center;
-  font-size: 4vw;
+  font-size: 5vw;
+  font-weight: 200;
+  font-family: var(--headerfont);
 }
 
 .homescreen-content-2 {
-  margin: 100px 0 50px 0;
+  margin: 50px 0 50px 0;
   display: flex;
   justify-content: center;
   align-self: center;
