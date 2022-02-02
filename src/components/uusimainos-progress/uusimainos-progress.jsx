@@ -5,31 +5,31 @@ const UusiMainosProgress = ({ currentStep, setCurrentStep }) => {
     <div className="uusimainos-progress-container">
       <div
         onClick={() => setCurrentStep(0)}
-        style={currentStep >= 0 ? { opacity: 1 } : { opacity: 0.5 }}
-        className="uusimainos-progress-step"
+        className={"uusimainos-progress-step"}
+        style={currentStep === 0 ? { borderBottom: "4px solid black" } : null}
       >
-        <p>Kuva</p>
+        <p style={currentStep === 0 ? { color: "#343a40" } : null}>Pohja</p>
       </div>
       <div
         onClick={() => setCurrentStep(1)}
-        style={currentStep >= 1 ? { opacity: 1 } : { opacity: 0.5 }}
+        style={currentStep === 1 ? { borderBottom: "4px solid black" } : null}
         className="uusimainos-progress-step"
       >
-        <p>Paikka</p>
+        <p style={currentStep === 1 ? { color: "#343a40" } : null}>Paikka</p>
       </div>
       <div
         onClick={() => setCurrentStep(2)}
-        style={currentStep >= 2 ? { opacity: 1 } : { opacity: 0.5 }}
+        style={currentStep === 2 ? { borderBottom: "4px solid black" } : null}
         className="uusimainos-progress-step"
       >
-        <p>Aika</p>
+        <p style={currentStep === 2 ? { color: "#343a40" } : null}>Aika</p>
       </div>
       <div
         onClick={() => setCurrentStep(3)}
-        style={currentStep >= 3 ? { opacity: 1 } : { opacity: 0.5 }}
+        style={currentStep === 3 ? { borderBottom: "4px solid black" } : null}
         className="uusimainos-progress-step"
       >
-        <p>Julkaisu</p>
+        <p style={currentStep === 3 ? { color: "#343a40" } : null}>Julkaisu</p>
       </div>
     </div>
   );

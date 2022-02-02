@@ -1,7 +1,5 @@
 //Import styles
 import "./homescreen.css";
-import { useState } from "react";
-import LoginPopup from "../../components/loginpopup/loginpopup";
 import { Link } from "react-router-dom";
 import QuestionSection from "../../components/ukk/question-section/questionsection";
 import Footer from "../../components/footer/footer";

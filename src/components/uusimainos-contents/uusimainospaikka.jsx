@@ -1,5 +1,4 @@
 import "./uusimainospaikka.css";
-import { useState } from "react";
 
 const UusiMainosPaikka = ({
   mybuttons,

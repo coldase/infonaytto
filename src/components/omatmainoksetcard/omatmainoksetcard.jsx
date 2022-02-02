@@ -46,7 +46,7 @@ const OmatMainoksetCard = ({ item, update }) => {
           onClick={() => handleDelBtn(item.ad_id)}
         />
         <p className="omatmainokset-card-name">{item.name}</p>
-        <p className="omatmainokset-card-title">Ollut näkyvissä</p>
+        <p className="omatmainokset-card-title">Näkyvissä</p>
         <p className="omatmainokset-card-date">
           {formatDate(item.start_date)} - {formatDate(item.end_date)}
         </p>

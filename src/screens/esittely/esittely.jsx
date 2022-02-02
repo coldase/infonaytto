@@ -44,12 +44,17 @@ const Esittely = ({
             making it over 2000 years old. Richard McClintock, a Latin professor
             at Hampden-Sydney College in Virginia.
           </p>
-          <div
-            onClick={() => setisshowmap(true)}
-            className="katsonaytot-kartalta-btn"
-          >
-            <p>Katso näytöt kartalta</p>
-          </div>
+          {!isLoggedIn ? (
+            <div
+              onClick={() => {
+                setIsLoginPopup(true);
+                setLoginTab(true);
+              }}
+              className="katsonaytot-kartalta-btn"
+            >
+              <p>Kirjaudu sisään</p>
+            </div>
+          ) : null}
         </div>
         <div className="esittely-content2">
           <h1 className="esittely-header2">OTSIKKO</h1>

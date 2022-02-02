@@ -1,5 +1,7 @@
 .uusimainos-progress-container {
-  height: 100px;
+  /* height: 100px; */
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .uusimainos-progress-container {
@@ -11,14 +13,15 @@
   display: flex;
   justify-content: center;
   width: 150px;
-  background-color: #343a40;
+  /* color: var(--light-blue); */
+  /* background-color: #343a40; */
   height: 70px;
   margin: 0 20px;
-  border-radius: 10px;
   cursor: pointer;
 }
 .uusimainos-progress-step p {
+  color: var(--main-light-blue);
   align-self: center;
-  color: white;
-  font-size: 30px;
+  font-family: var(--headerfont);
+  font-size: 60px;
 }

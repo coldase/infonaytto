@@ -9,9 +9,9 @@ const MyMap = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
   // 60.385,23.129
-  const [lng, setLng] = useState(23.129);
-  const [lat, setLat] = useState(60.385);
-  const [zoom, setZoom] = useState(15);
+  const [lng] = useState(23.129);
+  const [lat] = useState(60.385);
+  const [zoom] = useState(15);
 
   useEffect(() => {
     if (map.current) return; // initialize map only once

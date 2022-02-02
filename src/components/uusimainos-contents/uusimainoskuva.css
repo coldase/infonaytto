@@ -4,62 +4,24 @@
   width: 80%;
   display: flex;
   align-self: center;
-  flex-direction: row;
-  /* background-color: red; */
-  margin: 20px 0 50px 0;
-}
-
-.uusimainoskuva-pohja-container {
-  display: flex;
   flex-direction: column;
-  /* margin: 30px 0; */
-  width: 50%;
-  align-self: center;
-  /* background-color: blue; */
-}
-
-.uusimainoskuva-pohja-container h1 {
-  align-self: center;
-  margin-top: 20px;
-  color: var(--main-grey);
-}
-
-.uusimainoskuva-pohjat {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 480px;
-  /* height: 100%; */
-  flex-wrap: wrap;
-  align-self: center;
-  overflow-y: scroll;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-.uusimainoskuva-pohjat::-webkit-scrollbar {
-  display: none;
-}
-
-.uusimainoskuva-pohja-card {
-  margin: 5px;
-  min-height: 130px;
-  min-width: 230px;
-  background-color: var(--main-grey);
-  border-radius: 5px;
+  margin-bottom: 50px;
 }
 
 .uusimainoskuva-omakuva-container {
   display: flex;
-  width: 50%;
+  align-self: center;
   flex-direction: column;
   height: 100%;
 }
 
-.uusimainoskuva-omakuva-container h1 {
+.uusimainoskuva-omakuva-container > p {
   align-self: center;
   margin-top: 20px;
   color: var(--main-grey);
+  font-family: var(--headerfont);
+  font-size: 50px;
+  margin-bottom: 10px;
 }
 
 .uusimainoskuva-omakuva-lisaa-btn {
@@ -82,6 +44,7 @@
   font-size: 20px;
   margin: 0;
   justify-content: center;
+
   color: #fff;
 }
 
@@ -92,4 +55,71 @@
   /* min-width: 80%; */
   max-width: 90%;
   max-height: 400px;
+}
+
+.uusimainoskuva-apua-content {
+  /* background-color: red; */
+  display: flex;
+  align-self: center;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 200px;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.uusimainoskuva-apua-content > p {
+  align-self: center;
+}
+
+.uusimainoskuva-apua-btn {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: var(--main-grey);
+  cursor: pointer;
+}
+.uusimainoskuva-apua-btn:hover {
+  opacity: 0.8;
+}
+
+.uusimainoskuva-apua-btn > p {
+  margin: 0;
+  padding: 15px 40px;
+  align-self: center;
+  color: #fff;
+}
+
+.uusimainoskuva-logos {
+  width: 400px;
+  align-self: center;
+}
+
+#uusimainosinfo {
+  font-family: var(--mainfont);
+  font-size: 30px;
+  margin: 0;
+}
+
+#uusimainosinfoheader {
+  margin-bottom: -10px;
+}
+
+.uusimainos-exp-box {
+  width: 220px;
+  display: flex;
+  margin-top: 20px;
+  align-self: center;
+  justify-content: center;
+  border: 1px solid #aaa;
+  /* border-radius: 5px; */
+}
+.uusimainos-exp-box p {
+  font-size: 14px;
+  align-self: center;
+  text-align: center;
+  margin: 0;
+  padding: 10px 10px;
 }
