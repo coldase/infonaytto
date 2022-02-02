@@ -18,8 +18,8 @@ const UusiMainosPaikka = ({
   return (
     <>
       <div className="uusimainospaikka-container">
-        <h1>Haluan että mainostani näytetään</h1>
-        <h2>Valitse vähintään yksi alue</h2>
+        <p>Haluan että mainostani näytetään</p>
+        <h5>Valitse vähintään yksi alue</h5>
         <div className="uusimainos-paikka-card-container">
           {mainospaikat.map((item) => (
             <div

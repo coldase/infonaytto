@@ -5,12 +5,15 @@
   align-self: center;
 }
 
-.uusimainospaikka-container h1 {
+.uusimainospaikka-container > p {
   align-self: center;
   color: var(--main-grey);
+  font-family: var(--headerfont);
+  font-size: 50px;
+
   margin: 20px 0 5px 0;
 }
-.uusimainospaikka-container h2 {
+.uusimainospaikka-container h5 {
   align-self: center;
   font-size: 20px;
   margin: 0px 0 70px 0;

@@ -17,33 +17,51 @@
 .paivamaarat {
   display: flex;
   align-self: center;
+  /* height: 250px; */
+  /* background-color: red; */
 }
 
-.paivamaarat h1 {
-  margin: 20px 10px;
+.paivamaarat-headers p {
+  display: flex;
+  align-self: center;
+  color: var(--main-grey);
+  font-family: var(--headerfont);
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.paivamaarat p {
+  margin: 5px 10px 15px 0;
+  font-size: 50px;
   color: var(--main-grey);
 }
 
-.responsive-calendar {
-  font-size: 13px !important; /* default to 10px */
-  /* background-color: rgb(26, 24, 24) !important; */
-  /* color: white !important; */
-}
-
-.DatePicker__input::placeholder {
-  font-size: 22px;
-}
-
-.DatePicker__input {
-  cursor: pointer;
-  margin: auto;
-  display: flex;
-  text-align: center;
+.my-custom-input-class {
+  background-color: var(--main-grey);
+  border: none;
   align-self: center;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  padding: 15px 15px;
+  color: white;
+  border-radius: 5px;
+}
+
+.my-custom-input-class:hover {
+  opacity: 0.8;
+}
+
+.my-custom-input-class:focus {
+  border: none;
+}
+
+.mainosaikabtn {
+  display: flex;
   justify-content: center;
-  height: 30px !important;
-  color: var(--main-blue) !important;
-  background-color: var(--main-blue) !important;
-  border: none !important;
-  border-radius: 10px;
+  width: 100%;
+}
+
+.my-custom-input-class::placeholder {
+  color: #fff;
 }
