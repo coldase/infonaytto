@@ -29,7 +29,7 @@ const App = () => {
     "Terveyspalvelut",
     "Ruokakaupat",
     "Liikenne",
-    "Yleisötapahtumat",
+    "Yleisotapahtumat",
     "Puistot",
   ];
 
