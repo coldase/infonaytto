@@ -153,6 +153,7 @@ const App = () => {
       <Routes>
         <Route
           path="/"
+          exact
           element={
             <HomeScreen
               userinfodata={userinfodata}
@@ -165,7 +166,6 @@ const App = () => {
         />
         <Route
           path="/uusimainos"
-          exact
           element={
             <UusiMainos
               setLoginTab={setLoginTab}
@@ -183,7 +183,6 @@ const App = () => {
         {isLoggedIn ? (
           <Route
             path="/mainokset"
-            exact
             element={
               <Mainokset
                 setLoginTab={setLoginTab}
@@ -202,7 +201,6 @@ const App = () => {
 
         <Route
           path="/esittely"
-          exact
           element={
             <Esittely
               setLoginTab={setLoginTab}
@@ -218,7 +216,6 @@ const App = () => {
         {isLoggedIn ? (
           <Route
             path="/profiili"
-            exact
             element={
               <Profile
                 setisshowmap={(value) => setisshowmap(value)}
