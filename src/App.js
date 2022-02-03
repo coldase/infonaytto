@@ -45,9 +45,11 @@ const App = () => {
       .then((res) => {
         if (res.data === "success") {
           setIsLoggedIn(true);
+          console.log("Loggedin");
         } else {
           localStorage.removeItem("token");
           setIsLoggedIn(false);
+          console.log("Not Logged in");
         }
       })
       .catch((err) => console.log(err));
@@ -128,6 +130,7 @@ const App = () => {
           localStorage.removeItem("token");
           setupdatehelper(!updatehelper);
           setisshowmap(false);
+          navigate("/esittely");
         }
       })
       .catch((err) => console.log(err));
@@ -162,6 +165,7 @@ const App = () => {
         />
         <Route
           path="/uusimainos"
+          exact
           element={
             <UusiMainos
               setLoginTab={setLoginTab}
@@ -176,25 +180,29 @@ const App = () => {
             />
           }
         />
-        <Route
-          path="/mainokset"
-          element={
-            <Mainokset
-              setLoginTab={setLoginTab}
-              update={() => setupdatehelper(!updatehelper)}
-              userAds={userAds}
-              setisshowmap={(value) => setisshowmap(value)}
-              isLoggedIn={isLoggedIn}
-              logout={logout}
-              currentMainosTab={currentMainosTab}
-              setCurrentMainosTab={setCurrentMainosTab}
-              setIsLoginPopup={setIsLoginPopup}
-            />
-          }
-        />
+        {isLoggedIn ? (
+          <Route
+            path="/mainokset"
+            exact
+            element={
+              <Mainokset
+                setLoginTab={setLoginTab}
+                update={() => setupdatehelper(!updatehelper)}
+                userAds={userAds}
+                setisshowmap={(value) => setisshowmap(value)}
+                isLoggedIn={isLoggedIn}
+                logout={logout}
+                currentMainosTab={currentMainosTab}
+                setCurrentMainosTab={setCurrentMainosTab}
+                setIsLoginPopup={setIsLoginPopup}
+              />
+            }
+          />
+        ) : null}
 
         <Route
           path="/esittely"
+          exact
           element={
             <Esittely
               setLoginTab={setLoginTab}
@@ -207,19 +215,22 @@ const App = () => {
             />
           }
         />
-        <Route
-          path="/profiili"
-          element={
-            <Profile
-              setisshowmap={(value) => setisshowmap(value)}
-              userinfodata={userinfodata}
-              isLoggedIn={isLoggedIn}
-              logout={logout}
-              setCurrentMainosTab={setCurrentMainosTab}
-              setIsLoginPopup={setIsLoginPopup}
-            />
-          }
-        />
+        {isLoggedIn ? (
+          <Route
+            path="/profiili"
+            exact
+            element={
+              <Profile
+                setisshowmap={(value) => setisshowmap(value)}
+                userinfodata={userinfodata}
+                isLoggedIn={isLoggedIn}
+                logout={logout}
+                setCurrentMainosTab={setCurrentMainosTab}
+                setIsLoginPopup={setIsLoginPopup}
+              />
+            }
+          />
+        ) : null}
       </Routes>
       {isLoginPopup ? (
         <LoginPopup

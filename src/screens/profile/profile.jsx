@@ -1,8 +1,9 @@
 import "./profile.css";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 import ProfileCard from "../../components/profilecard/profilecard";
 import ProfileOmatMainokset from "../../components/profileomatmainokset/profileomatmainokset";
+
 // import Footer from "../../components/footer/footer";
 
 const Profile = ({
@@ -14,9 +15,12 @@ const Profile = ({
   setLoginTab,
   setisshowmap,
 }) => {
+  const navigate = useNavigate();
+
   if (!isLoggedIn) {
-    return <Navigate to="/esittely" />;
+    navigate("/esittely", { replace: true });
   }
+
   return (
     <>
       <div className="profile-container">

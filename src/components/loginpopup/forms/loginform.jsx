@@ -2,8 +2,8 @@ import "./formstyles.css";
 import { useState } from "react";
 
 const LoginForm = ({ handleLogin, isLoggedIn }) => {
-  const [myemail, setmyemail] = useState("jari@mail.com");
-  const [mypwd, setmypwd] = useState("asd");
+  const [myemail, setmyemail] = useState("");
+  const [mypwd, setmypwd] = useState("");
 
   const errMsg = "Tarkista sähköposti tai salasana";
   const [isErrMsg, setIsErrMsg] = useState(false);

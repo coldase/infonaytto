@@ -1,5 +1,5 @@
 import "./mainokset.css";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 // import Footer from "../../components/footer/footer";
 
@@ -20,9 +20,12 @@ const Mainokset = ({
   setLoginTab,
   setisshowmap,
 }) => {
-  if (!isLoggedIn) {
-    return <Navigate to="/esittely" />;
+  const navigate = useNavigate();
+
+  if (!isLoggedIn && !localStorage.getItem("token")) {
+    navigate("/esittely", { replace: true });
   }
+
   return (
     <>
       <div className="mainokset-container">
