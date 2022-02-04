@@ -15,7 +15,7 @@ const App = () => {
   const [userinfodata, setuserinfodata] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isshowmap, setisshowmap] = useState(false);
-  // const [authToken, setAuthToken] = useState("");
+  const [authToken, setAuthToken] = useState("");
   const [userAds, setUserAds] = useState([]);
   const [isLoginPopup, setIsLoginPopup] = useState(false);
   const [loginTab, setLoginTab] = useState(true);
@@ -50,7 +50,6 @@ const App = () => {
           localStorage.removeItem("token");
           setIsLoggedIn(false);
           console.log("Not Logged in");
-          navigate("/esittely", { replace: true });
         }
       })
       .catch((err) => console.log(err));
@@ -70,7 +69,7 @@ const App = () => {
           localStorage.setItem("token", res.data.token);
           setuserinfodata(res.data);
           setIsLoggedIn(true);
-          // setAuthToken(res.data.token);
+          setAuthToken(res.data.token);
           navigate("/profiili", { replace: true });
           return true;
         } else {
@@ -79,6 +78,10 @@ const App = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  useEffect(() => {
+    check_if_token_is_logged_in(localStorage.getItem("token"));
+  }, []);
 
   useEffect(() => {
     if (isLoggedIn === true) {
@@ -137,7 +140,7 @@ const App = () => {
     if (localStorage.getItem("token")) {
       handleGetInfoData(localStorage.getItem("token"));
       setIsLoggedIn(true);
-      // setAuthToken(localStorage.getItem("token"));
+      setAuthToken(localStorage.getItem("token"));
     }
   }, []);
 
@@ -181,9 +184,6 @@ const App = () => {
           path="/mainokset"
           element={
             <Mainokset
-              check_if_token_is_logged_in={() =>
-                check_if_token_is_logged_in(localStorage.getItem("token"))
-              }
               setLoginTab={setLoginTab}
               update={() => setupdatehelper(!updatehelper)}
               userAds={userAds}
@@ -215,9 +215,6 @@ const App = () => {
           path="/profiili"
           element={
             <Profile
-              check_if_token_is_logged_in={() =>
-                check_if_token_is_logged_in(localStorage.getItem("token"))
-              }
               setisshowmap={(value) => setisshowmap(value)}
               userinfodata={userinfodata}
               isLoggedIn={isLoggedIn}
