@@ -1,5 +1,5 @@
 import "./mainokset.css";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import MyNav from "../../components/mynav/mynav";
 // import Footer from "../../components/footer/footer";
 
@@ -19,12 +19,12 @@ const Mainokset = ({
   setIsLoginPopup,
   setLoginTab,
   setisshowmap,
+  check_if_token_is_logged_in,
 }) => {
-  const navigate = useNavigate();
-
-  if (!isLoggedIn && !localStorage.getItem("token")) {
-    navigate("/esittely", { replace: true });
-  }
+  useEffect(() => {
+    check_if_token_is_logged_in();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

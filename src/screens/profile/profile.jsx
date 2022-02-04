@@ -1,8 +1,8 @@
 import "./profile.css";
-import { useNavigate } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 import ProfileCard from "../../components/profilecard/profilecard";
 import ProfileOmatMainokset from "../../components/profileomatmainokset/profileomatmainokset";
+import { useEffect } from "react/cjs/react.development";
 
 // import Footer from "../../components/footer/footer";
 
@@ -14,12 +14,12 @@ const Profile = ({
   setIsLoginPopup,
   setLoginTab,
   setisshowmap,
+  check_if_token_is_logged_in,
 }) => {
-  const navigate = useNavigate();
-
-  if (!isLoggedIn) {
-    navigate("/esittely", { replace: true });
-  }
+  useEffect(() => {
+    check_if_token_is_logged_in();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
