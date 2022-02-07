@@ -23,7 +23,7 @@ const App = () => {
 
   const [updatehelper, setupdatehelper] = useState(true);
 
-  let mainospaikat = [
+  const [mainospaikat, setmainospaikat] = useState([
     "Koulutus",
     "Liikuntapaikat",
     "Terveyspalvelut",
@@ -31,7 +31,16 @@ const App = () => {
     "Liikenne",
     "Yleisotapahtumat",
     "Puistot",
-  ];
+  ]);
+
+  const get_categories = async () => {
+    axios({
+      method: "GET",
+      url: process.env.REACT_APP_BACK_URL + "api/get_categories.php",
+    })
+      .then((res) => setmainospaikat(res.data.map((item) => item.name)))
+      .catch((err) => console.log(err));
+  };
 
   const check_if_token_is_logged_in = async (token) => {
     let formdata = new FormData();
@@ -45,11 +54,9 @@ const App = () => {
       .then((res) => {
         if (res.data === "success") {
           setIsLoggedIn(true);
-          console.log("Loggedin");
         } else {
           localStorage.removeItem("token");
           setIsLoggedIn(false);
-          console.log("Not Logged in");
         }
       })
       .catch((err) => console.log(err));
@@ -78,10 +85,6 @@ const App = () => {
       })
       .catch((err) => console.log(err));
   };
-
-  useEffect(() => {
-    check_if_token_is_logged_in(localStorage.getItem("token"));
-  }, []);
 
   useEffect(() => {
     if (isLoggedIn === true) {
@@ -142,6 +145,9 @@ const App = () => {
       setIsLoggedIn(true);
       setAuthToken(localStorage.getItem("token"));
     }
+
+    check_if_token_is_logged_in(localStorage.getItem("token"));
+    get_categories();
   }, []);
 
   useEffect(() => {
