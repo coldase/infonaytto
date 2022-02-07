@@ -22,7 +22,7 @@ const QuestionSection = () => {
       "Lähde liikkeelle viestistäsi ja sen hyödystä liiketoiminnallesi.  Unohda alussa tekniikka ja keskity sisältöön ja mitä haluat viestiä vastaanottajiin. Infonäytöillä voit kasvattaa myyntiä, vahvistaa brändiäsi, Viestiä organisaation tiedotteita, lisätä asiakastyytyväistyyttä tai tehostat tilojesi käyttöä. – digital signage​",
     ],
     [
-      "Mikä on hyvä mainos?​",
+      "Mikä on hyvä mainos?",
       "Hyvä mainos koostuu selkeästä kuvasta/logosta ja tekstistä. Viestisi on selkeä ja lyhyt, pitkää tekstiä ei ehdi lukemaan. Yhteystiedoista kannattaa laittaa se helpoiten muistettava, esimerkiksi verkkosivujen osoite. Teksti on selkeä ja luettava sekä sen koko riittävän iso. Vältä pieniä yksityiskohtia sekä kokovalkoista taustaa. Kirkkaat ja voimakkaat värit kiinnittävät huomion, mutta liian levoton tausta vie huomion viestiltäsi. – Visiopalo",
     ],
   ]);
