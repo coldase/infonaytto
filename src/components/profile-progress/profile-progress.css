@@ -1,25 +1,22 @@
-.uusimainos-progress-container {
+.profile-progress-container {
   /* height: 100px; */
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.uusimainos-progress-container {
+.profile-progress-container {
   display: flex;
   justify-content: center;
 }
 
-.uusimainos-progress-step {
+.profile-progress-step {
   display: flex;
   justify-content: center;
-  width: 150px;
-  /* color: var(--light-blue); */
-  /* background-color: #343a40; */
   height: 70px;
-  margin: 0 30px;
+  margin: 0 50px;
   cursor: pointer;
 }
-.uusimainos-progress-step p {
+.profile-progress-step p {
   color: var(--main-light-blue);
   align-self: center;
   font-family: var(--headerfont);

@@ -4,7 +4,7 @@
   background: url("../../assets/images/newbg.png");
   background-position: center;
   background-size: cover;
-  height: 2100px;
+  height: 2400px;
 }
 
 .homescreen-header {
@@ -36,7 +36,7 @@
   margin-top: 50px;
   justify-content: center;
   align-self: center;
-  width: 65%;
+  width: 75%;
   /* height: 700px; */
   /* background-color: rgb(240, 214, 198); */
   flex-direction: column;
@@ -52,20 +52,21 @@
 .homescreen-content-2 {
   margin: 50px 0 50px 0;
   display: flex;
-  justify-content: center;
+  /* justify-content: space-between; */
   align-self: center;
-  width: 80%;
+  width: 100%;
 }
 .homescreen-kokemus-container {
   display: flex;
   flex-direction: column;
-  width: 300px;
   margin: 0 50px;
+  /* background-color: red; */
 }
 .homescreen-kokemus-container p {
-  font-size: 22px;
+  font-size: 20px;
   margin: 0;
   color: #fff;
+  text-align: center;
 }
 .homescreen-kokemus-container p:first-child {
   margin-bottom: 20px;

@@ -69,7 +69,7 @@ const MyNav = ({
               className="navlink"
               onClick={navOpen ? () => handleLogout() : null}
             >
-              <FiLogIn style={{ alignSelf: "center" }} size={50} />
+              <FiLogOut style={{ alignSelf: "center" }} size={50} />
               <p>Kirjaudu ulos</p>
             </div>
           ) : (
@@ -84,7 +84,7 @@ const MyNav = ({
                   : null
               }
             >
-              <FiLogOut style={{ alignSelf: "center" }} size={50} />
+              <FiLogIn style={{ alignSelf: "center" }} size={50} />
               <p>Kirjaudu sisään</p>
             </div>
           )}
@@ -114,7 +114,7 @@ const MyNav = ({
 
           {isLoggedIn ? (
             <div className="navlink" onClick={navOpen ? handleLogout : null}>
-              <FiLogIn style={{ alignSelf: "center" }} size={50} />
+              <FiLogOut style={{ alignSelf: "center" }} size={50} />
             </div>
           ) : (
             <div
@@ -128,7 +128,7 @@ const MyNav = ({
                   : null
               }
             >
-              <FiLogOut style={{ alignSelf: "center" }} size={50} />
+              <FiLogIn style={{ alignSelf: "center" }} size={50} />
             </div>
           )}
         </div>

@@ -1,35 +1,54 @@
 import "./profile.css";
 import { useNavigate } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
-import ProfileCard from "../../components/profilecard/profilecard";
-import ProfileOmatMainokset from "../../components/profileomatmainokset/profileomatmainokset";
-
 // import Footer from "../../components/footer/footer";
+
+import ProfileProgress from "../../components/profile-progress/profile-progress";
+import Mainokseni from "./tabs/mainokseni.jsx";
+import Tietoni from "./tabs/tietoni.jsx";
+import Tilaukseni from "./tabs/tilaukseni.jsx";
 
 const Profile = ({
   isLoggedIn,
+  update,
   logout,
-  setCurrentMainosTab,
-  userinfodata,
+  currentProfileTab,
+  setCurrentProfileTab,
   setIsLoginPopup,
   setLoginTab,
   setisshowmap,
+  userinfodata,
+  userAds,
+  setCurrentMainosTab,
 }) => {
   const navigate = useNavigate();
 
-  if (!isLoggedIn) {
+  if (!isLoggedIn && !localStorage.getItem("token")) {
     navigate("/esittely", { replace: true });
   }
 
   return (
     <>
       <div className="profile-container">
-        <div className="profile-content">
-          <ProfileCard userinfodata={userinfodata} />
-          <ProfileOmatMainokset setCurrentMainosTab={setCurrentMainosTab} />
+        <div className="profile-header">
+          <h1>asiakasprofiili</h1>
         </div>
-
-        {/* <Footer /> */}
+        <ProfileProgress
+          currentStep={currentProfileTab}
+          setCurrentStep={setCurrentProfileTab}
+        />
+        <div className="profile-content">
+          {currentProfileTab === 0 ? (
+            <Mainokseni
+              userAds={userAds}
+              setCurrentMainosTab={setCurrentMainosTab}
+            />
+          ) : null}
+          {currentProfileTab === 1 ? (
+            <Tietoni userinfodata={userinfodata} />
+          ) : null}
+          {currentProfileTab === 2 ? <Tilaukseni /> : null}
+        </div>
       </div>
       <MyNav
         setLoginTab={setLoginTab}

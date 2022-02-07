@@ -1,0 +1,41 @@
+.tietoni-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  /* background-color: red; */
+  min-width: 600px;
+  /* max-width: 80%; */
+  width: 55%;
+  flex-direction: column;
+}
+
+.tietoni-btn-container {
+  display: flex;
+  margin-top: 10px;
+  /* align-self: center; */
+  /* background-color: red; */
+}
+
+.tietoni-btn {
+  background-color: var(--main-blue);
+  margin: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.tietoni-btn:last-child {
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.tietoni-btn:hover {
+  opacity: 0.8;
+}
+
+.tietoni-btn > p {
+  padding: 10px 15px;
+  color: #fff;
+  margin: 0;
+  font-size: 20px;
+}

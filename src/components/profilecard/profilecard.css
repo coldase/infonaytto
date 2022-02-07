@@ -1,49 +1,54 @@
-.mainokset-profile-container {
-  height: 100%;
-  margin-right: 50px;
-  margin-top: 50px;
+.profile-card-container {
+  display: flex;
+  width: 100%;
+  background-color: var(--main-grey);
+  /* padding: 20px 20px; */
+  border-radius: 10px;
+  justify-content: center;
+  align-self: center;
 }
 
-.mainokset-profile-card-header {
-  font-size: 80px;
-  margin: 0;
-  color: #fff;
-  font-family: var(--headerfont);
-  font-weight: 200;
-  letter-spacing: 1px;
-  color: var(--main-grey);
+.grp1 {
+  width: 50%;
+  padding: 20px;
 }
 
-.mainokset-profile-card {
-  background-color: #343a40;
-  border-radius: 5px;
-  padding: 10px 20px;
-}
-
-.mainokset-profile-card-header-container {
-  margin: 0;
-}
-.mainokset-profile-card-header-container h1 {
-  margin: 0;
-  font-weight: 400;
-  font-size: 30px;
-  color: #fff;
-  border-bottom: 2px solid #fff;
-}
-.mainokset-profile-card-header-container p {
-  color: #fff;
-  margin: 0;
+.grp1 > p {
   font-size: 25px;
+  margin: 15px 0;
+  font-weight: 500;
+  color: #fff;
 }
-.mainokset-profile-card-header-container .grp {
-  margin-bottom: 20px;
-  padding-bottom: 5px;
+.grp2 {
+  width: 50%;
+  padding: 20px;
 }
-.mainokset-profile-card-header-container .grp1 {
-  margin-top: 10px;
-  margin-bottom: 40px;
+.grp2 > p {
+  font-size: 25px;
+  margin: 15px 0;
+  font-weight: 500;
+  color: #fff;
 }
-/* TOGGLE */
-.mainokset-profile-card-data-container {
-  /* display: none; */
+
+.input-grp {
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+.input-grp > label {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.input-grp > input {
+  padding: 5px 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#laskutustapa-grp {
+  margin-top: 25px;
 }

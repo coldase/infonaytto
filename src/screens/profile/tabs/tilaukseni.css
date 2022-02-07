@@ -1,0 +1,14 @@
+.tilaukseni-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  background-color: var(--main-blue);
+  border-radius: 10px;
+  width: 55%;
+  height: 500px;
+}
+
+.tilaukseni-container > p {
+  font-size: 30px;
+  color: #fff;
+}

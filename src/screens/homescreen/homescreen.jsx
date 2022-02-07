@@ -36,25 +36,34 @@ const HomeScreen = ({ isLoggedIn }) => {
           <div className="homescreen-content-2">
             <div className="homescreen-kokemus-container">
               <p>
-                "Two things are infinite: the universe and human stupidity; and
-                I'm not sure about the universe."
+                "Liikkuvan kuvan ansiosta näyttöjen huomioarvo on erinomainen ja
+                tulokset näkyivät heti selvästi tuotteiden myynnissä. Olemme
+                säästyneet julisteiden painattamiselta ja voimme olla varmoja
+                siitä, että oikea tieto on oikeaan aikaan esillä."​
               </p>
-              <p>- Albert Einstein</p>
             </div>
             <div className="homescreen-kokemus-container">
               <p>
-                "Have the courage to follow your heart and intuition. They
-                somehow already know what you truly want to become. Everything
-                else is secondary."
+                "Nopeus on ykkönen. Kaikki hoituu reaaliajassa, joten
+                materiaalit voi tehdä itse ja virheet saa heti korjattua.
+                Ohjelmointi ja ajastus tuo helpotusta arkeen kun ei tarvitse
+                koko ajan päivystää."
               </p>
-              <p>- Steve Jobs</p>
             </div>
             <div className="homescreen-kokemus-container">
               <p>
-                "I can calculate the motion of heavenly bodies but not the
-                madness of people."
+                "Näyttöjen avulla voidaan tehdä kohdennettua mainontaa eri
+                asiakasryhmille. Diginäytöt soveltuvat hienosti yhden päivän tai
+                vaikka kuukauden voimassa oleviin tarjouksiin."
               </p>
-              <p>- Isaac Newton</p>
+            </div>
+            <div className="homescreen-kokemus-container">
+              <p>
+                "Infonäytöillä tuodaan tehokas viestintä myös niille, joilla ei
+                ole pääsyä yrityksen intraan. Infonäyttöjä voidaan hallinnoida
+                sekä etänä valtakunnallisella tasolla että paikallisesti
+                terminaali- ja varastopäälliköiden toimesta."
+              </p>
             </div>
           </div>
         </div>

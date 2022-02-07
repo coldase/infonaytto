@@ -12,6 +12,7 @@ import LoginPopup from "./components/loginpopup/loginpopup";
 
 const App = () => {
   const [currentMainosTab, setCurrentMainosTab] = useState(0);
+  const [currentProfileTab, setCurrentProfileTab] = useState(0);
   const [userinfodata, setuserinfodata] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isshowmap, setisshowmap] = useState(false);
@@ -227,6 +228,9 @@ const App = () => {
               logout={logout}
               setCurrentMainosTab={setCurrentMainosTab}
               setIsLoginPopup={setIsLoginPopup}
+              setCurrentProfileTab={setCurrentProfileTab}
+              currentProfileTab={currentProfileTab}
+              userAds={userAds}
             />
           }
         />
