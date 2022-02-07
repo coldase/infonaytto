@@ -35,7 +35,7 @@ const App = () => {
   ]);
 
   const get_categories = async () => {
-    axios({
+    await axios({
       method: "GET",
       url: process.env.REACT_APP_BACK_URL + "api/get_categories.php",
     })
