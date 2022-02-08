@@ -16,7 +16,7 @@ const UusiMainosKuva = ({ setmyimg, myimg }) => {
       {!showmainostoimistotab ? (
         <div className="uusimainoskuva-container">
           <div className="uusimainoskuva-omakuva-container">
-            <p>Lisää oma mainoskuva</p>
+            <p>Minulla on jo mainos:</p>
             {myimg ? (
               <img
                 alt="mainoskuva-preview"
@@ -28,7 +28,7 @@ const UusiMainosKuva = ({ setmyimg, myimg }) => {
               onClick={handle_btn}
               className="uusimainoskuva-omakuva-lisaa-btn"
             >
-              {myimg !== null ? <p>Vaihda kuva</p> : <p>Valitse kuva</p>}
+              {myimg !== null ? <p>VAIHDA</p> : <p>LATAA MAINOS</p>}
             </div>
 
             <input
@@ -42,12 +42,12 @@ const UusiMainosKuva = ({ setmyimg, myimg }) => {
             />
           </div>
           <div className="uusimainoskuva-apua-content">
-            <p>Tarvitsetko apua kuvan luomisessa?</p>
+            <p>TARVITSEN APUA:</p>
             <div
               onClick={() => setshowmainostoimistotab(true)}
               className="uusimainoskuva-apua-btn"
             >
-              <p>Paina tästä</p>
+              <p>OTA YHTEYTTÄ</p>
             </div>
           </div>
         </div>

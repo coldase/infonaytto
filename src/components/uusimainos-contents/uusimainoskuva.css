@@ -17,23 +17,23 @@
 
 .uusimainoskuva-omakuva-container > p {
   align-self: center;
-  margin-top: 20px;
+  margin-top: 30px;
   color: var(--main-grey);
   font-family: var(--headerfont);
-  font-size: 50px;
+  font-size: 40px;
   margin-bottom: 10px;
 }
 
 .uusimainoskuva-omakuva-lisaa-btn {
   cursor: pointer;
   align-self: center;
-  width: 200px;
-  height: 50px;
+  width: 250px;
+  height: 100px;
   display: flex;
   justify-content: center;
   color: #fff;
   border-radius: 5px;
-  background-color: var(--main-grey);
+  background-color: var(--main-light-blue);
 }
 .uusimainoskuva-omakuva-lisaa-btn:hover {
   opacity: 0.8;
@@ -41,10 +41,9 @@
 
 .uusimainoskuva-omakuva-lisaa-btn p {
   align-self: center;
-  font-size: 20px;
+  font-size: 25px;
   margin: 0;
   justify-content: center;
-
   color: #fff;
 }
 
@@ -63,32 +62,40 @@
   align-self: center;
   width: 100%;
   flex-direction: column;
-  margin-top: 200px;
+  margin-top: 100px;
   justify-content: center;
   font-size: 20px;
 }
 
 .uusimainoskuva-apua-content > p {
   align-self: center;
+  margin-top: 30px;
+  color: var(--main-grey);
+  font-family: var(--headerfont);
+  font-size: 40px;
+  margin-bottom: 10px;
 }
 
 .uusimainoskuva-apua-btn {
+  cursor: pointer;
+  align-self: center;
+  width: 250px;
+  height: 100px;
   display: flex;
   justify-content: center;
-  align-self: center;
+  color: #fff;
   border-radius: 5px;
-  margin-bottom: 20px;
-  background-color: var(--main-grey);
-  cursor: pointer;
+  background-color: var(--main-light-blue);
 }
 .uusimainoskuva-apua-btn:hover {
   opacity: 0.8;
 }
 
 .uusimainoskuva-apua-btn > p {
-  margin: 0;
-  padding: 15px 40px;
   align-self: center;
+  font-size: 25px;
+  margin: 0;
+  justify-content: center;
   color: #fff;
 }
 

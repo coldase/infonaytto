@@ -1,91 +1,75 @@
 .uusimainosjulkaisu-container {
-  width: 80%;
+  width: 40%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-self: center;
-}
-
-.jotainputtuu-container {
-  margin-top: 50px;
-  margin-bottom: -50px;
-  display: flex;
+  /* background-color: red; */
   justify-content: center;
-  /* background: red; */
-}
-
-.jotainputtuu-container p {
-  font-size: 50px;
-  color: var(--main-grey);
-  margin: 0;
 }
 
 .uusimainosjulkaisu-image-container {
   display: flex;
+  align-self: center;
+  flex-direction: column;
   justify-content: center;
-  width: 50%;
-  height: 500px;
+  width: 100%;
+  /* height: 400px; */
+  border-bottom: 3px solid var(--main-light-blue);
+}
+
+.uusimainosjulkaisu-image-container > p {
+  color: var(--main-grey);
+  font-family: var(--headerfont);
+  align-self: center;
+  font-size: 40px;
+  margin: 10px;
 }
 .uusimainosjulkaisu-image-container img {
   align-self: center;
-  max-height: 400px;
-  max-width: 100%;
+  max-height: 300px;
+  width: 70%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.julkaisu-vaihda-btn {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--main-grey);
+  margin-bottom: 30px;
+  /* margin-bottom: 20px; */
+}
+
+.julkaisu-vaihda-btn:hover {
+  opacity: 0.8;
+}
+
+.julkaisu-vaihda-btn > p {
+  align-self: center;
+  color: #fff;
+  margin: 0;
 }
 
 .julkaisu-kuva-puuttuu {
   display: flex;
   justify-content: center;
   align-self: center;
-  height: 400px;
-  width: 100%;
+  height: 300px;
+  width: 70%;
   border: 2px solid var(--main-grey);
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 .julkaisu-kuva-puuttuu p {
   align-self: center;
   color: var(--main-grey);
   font-family: var(--headerfont);
   font-size: 80px;
-}
-.uusimainosjulkaisu-info-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-  width: 50%;
-  height: 100%;
-}
-
-.uusimainosjulkaisu-info-container h2 {
-  align-self: center;
-  color: var(--main-grey);
-}
-
-.uusimainosjulkaisu-ajat-container {
-  display: flex;
-  flex-direction: column;
-}
-.uusimainosjulkaisu-paivamaara {
-  display: flex;
-  align-self: center;
-}
-.uusimainosjulkaisu-paivamaara p {
-  font-size: 30px;
-  margin: 0 10px;
-  color: var(--main-grey);
-}
-
-.uusimainosjulkaisu-paikat-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 25px;
-}
-.uusimainosjulkaisu-paikat-container p {
-  align-self: center;
-  color: var(--main-grey);
-  margin: 2px;
-  font-size: 20px;
-  /* font-weight: 500; */
 }
 
 .uusimainosjulkaisu-julkaise-btn {
@@ -100,6 +84,131 @@
   cursor: pointer;
 }
 
+.uusimainosjulkaisu-paikat-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+  border-bottom: 3px solid var(--main-light-blue);
+}
+
+.uusimainosjulkaisu-paikat-container > p {
+  color: var(--main-grey);
+  font-family: var(--headerfont);
+  align-self: center;
+  font-size: 40px;
+  margin: 20px;
+}
+
+.paikat-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* width: 00px; */
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.uusimainosjulkaisu-paikat-card {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  width: 200px;
+  background-color: var(--main-blue);
+  height: 50px;
+  border-radius: 5px;
+}
+.uusimainosjulkaisu-paikat-card > p {
+  align-self: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
 .uusimainosjulkaisu-julkaise-btn:hover {
   opacity: 0.8;
+}
+
+.adnameinput-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  /* width: 20%; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  /* background-color: red; */
+  /* height: 200px; */
+  width: 100%;
+  border-bottom: 3px solid var(--main-light-blue);
+  /* background-color: red; */
+}
+.adnameinput-container > p {
+  color: var(--main-grey);
+  font-family: var(--headerfont);
+  align-self: center;
+  font-size: 40px;
+  margin: 10px;
+}
+.adnameinput-container input {
+  align-self: center;
+  font-size: 20px;
+  width: 270px;
+  text-align: center;
+  border: none;
+  background: none;
+  border-bottom: 3px solid grey;
+  margin: 0px;
+}
+
+.adnameinput-container input:focus {
+  outline: none;
+}
+
+.uusimainosjulkaisu-ajat-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+  border-bottom: 3px solid var(--main-light-blue);
+}
+
+.uusimainosjulkaisu-ajat-container > p {
+  color: var(--main-grey);
+  font-family: var(--headerfont);
+  align-self: center;
+  font-size: 40px;
+  margin: 10px;
+}
+
+.uusimainosjulkaisu-ajat-aika {
+  display: flex;
+  justify-content: center;
+}
+.uusimainosjulkaisu-ajat-aika > p {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px;
+}
+
+.uusimainosjulkaisu-julkaise-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.uusimainosjulkaisu-julkaise-container > p {
+  color: var(--main-grey);
+  font-family: var(--headerfont);
+  align-self: center;
+  font-size: 40px;
+  margin: 10px;
 }

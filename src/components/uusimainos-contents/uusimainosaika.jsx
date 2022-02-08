@@ -1,8 +1,13 @@
 import "./uusimainosaika.css";
 import "@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css";
-import DatePicker from "@hassanmojab/react-modern-calendar-datepicker";
+import Calendar from "@hassanmojab/react-modern-calendar-datepicker";
 
-const UusiMainosAika = ({ selectedDayRange, setSelectedDayRange }) => {
+const UusiMainosAika = ({
+  selectedDayRange,
+  selectedPaketti,
+  handleOnChange,
+  setSelectedPaketti,
+}) => {
   const renderCustomInput = ({ ref }) => (
     <input
       readOnly
@@ -14,16 +19,8 @@ const UusiMainosAika = ({ selectedDayRange, setSelectedDayRange }) => {
 
   return (
     <div className="uusimainosaika-container">
-      <div className="paivamaarat-headers">
-        {selectedDayRange.from === null && selectedDayRange.to === null ? (
-          <p>Valitse ajankohta</p>
-        ) : (
-          <p>Mainosta näytetään</p>
-        )}
-      </div>
-
-      <div className="paivamaarat">
-        {selectedDayRange.from !== null && selectedDayRange.to !== null ? (
+      {/* <div className="paivamaarat">
+        {selectedDayRange.to !== null ? (
           <>
             <p>
               {selectedDayRange.from.day}.{selectedDayRange.from.month}.
@@ -35,14 +32,74 @@ const UusiMainosAika = ({ selectedDayRange, setSelectedDayRange }) => {
               {selectedDayRange.to.year}
             </p>
           </>
-        ) : null}
+        ) : (
+          <p>Ei valittua aikaa</p>
+        )}
+      </div> */}
+      <div className="paivamaarat-headers">
+        <p>1. Valitse paketti:</p>
       </div>
+      <div className="paivamaara-paketti-container">
+        <div
+          onClick={() => setSelectedPaketti(0)}
+          className={
+            selectedPaketti === 0
+              ? "selected-paketti"
+              : "paivamaara-paketti-card"
+          }
+        >
+          <p>Valitse vapaasti</p>
+          <p>0.00€</p>
+        </div>
+        <div
+          onClick={() => setSelectedPaketti(1)}
+          className={
+            selectedPaketti === 1
+              ? "selected-paketti"
+              : "paivamaara-paketti-card"
+          }
+        >
+          <p>1 Viikko</p>
+          <p>0.00€</p>
+        </div>
+        <div
+          onClick={() => setSelectedPaketti(2)}
+          className={
+            selectedPaketti === 2
+              ? "selected-paketti"
+              : "paivamaara-paketti-card"
+          }
+        >
+          <p>1 Kuukausi</p>
+          <p>0.00€</p>
+        </div>
+        <div
+          onClick={() => setSelectedPaketti(3)}
+          className={
+            selectedPaketti === 3
+              ? "selected-paketti"
+              : "paivamaara-paketti-card"
+          }
+        >
+          <p>3 kuukautta</p>
+          <p>0.00€</p>
+        </div>
+      </div>
+
+      <div className="paivamaarat-headers">
+        {selectedPaketti === 0 ? (
+          <p>2. Valitse ajankohta:</p>
+        ) : (
+          <p>2. Valise aloituspäivä:</p>
+        )}
+      </div>
+
       <div className="mainosaikabtn">
-        <DatePicker
+        <Calendar
           renderInput={renderCustomInput}
           calendarClassName="responsive-calendar"
           value={selectedDayRange}
-          onChange={setSelectedDayRange}
+          onChange={(val) => handleOnChange(val)}
           inputPlaceholder={" "}
           shouldHighlightWeekends
           colorPrimary="#0fbcf9"

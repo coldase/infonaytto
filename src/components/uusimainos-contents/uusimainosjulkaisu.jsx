@@ -11,6 +11,7 @@ const UusiMainosJulkaisu = ({
   setadname,
   adname,
   update,
+  setCurrentStep,
 }) => {
   const navigate = useNavigate();
   const handleSendData = async (image, alueet, pvm, id, myadname) => {
@@ -52,12 +53,9 @@ const UusiMainosJulkaisu = ({
 
   return (
     <>
-      {selectedDayRange.from === null ||
-      selectedDayRange.to === null ||
-      mybuttons.length === 0 ||
-      myimg === null ? null : (
+      <div className="uusimainosjulkaisu-container">
         <div className="adnameinput-container">
-          <h5>Anna mainokselle nimi</h5>
+          <p>1. mainoksesi nimi</p>
           <input
             maxLength={18}
             onChange={(e) => setadname(e.target.value)}
@@ -66,10 +64,8 @@ const UusiMainosJulkaisu = ({
             placeholder="max 18 merkkiä"
           />
         </div>
-      )}
-
-      <div className="uusimainosjulkaisu-container">
         <div className="uusimainosjulkaisu-image-container">
+          <p>2. Lataamasi kuva</p>
           {myimg ? (
             <img
               alt="julkaisu-preview"
@@ -81,69 +77,82 @@ const UusiMainosJulkaisu = ({
               <p>Kuva puuttuu!</p>
             </div>
           )}
+          <div
+            onClick={() => setCurrentStep(0)}
+            className="julkaisu-vaihda-btn"
+          >
+            <p>Vaihda</p>
+          </div>
         </div>
-
-        <div className="uusimainosjulkaisu-info-container">
-          {selectedDayRange.from !== null && selectedDayRange.to !== null ? (
-            <div className="uusimainosjulkaisu-ajat-container">
-              <h2>Mainosta näytetään</h2>
-              <div className="uusimainosjulkaisu-paivamaara">
-                <p>
-                  {selectedDayRange.from.day}.{selectedDayRange.from.month}.
-                  {selectedDayRange.from.year}
-                </p>
-                <p>-</p>
-                <p>
-                  {selectedDayRange.to.day}.{selectedDayRange.to.month}.
-                  {selectedDayRange.to.year}
-                </p>
+        <div className="uusimainosjulkaisu-paikat-container">
+          <p>3. Valitsemasi kategoriat</p>
+          <div className="paikat-container">
+            {mybuttons.map((cate) => (
+              <div className="uusimainosjulkaisu-paikat-card">
+                <p>{cate}</p>
               </div>
+            ))}
+          </div>
+          <div
+            onClick={() => setCurrentStep(1)}
+            className="julkaisu-vaihda-btn"
+          >
+            <p>Vaihda</p>
+          </div>
+        </div>
+        <div className="uusimainosjulkaisu-ajat-container">
+          <p>4. Julkaisu ajankohta</p>
+          {selectedDayRange.from ? (
+            <div className="uusimainosjulkaisu-ajat-aika">
+              <p>
+                {selectedDayRange.from.day}.{selectedDayRange.from.month}.
+                {selectedDayRange.from.year === selectedDayRange.to.year
+                  ? ""
+                  : selectedDayRange.from.year}{" "}
+                - {selectedDayRange.to.day}.{selectedDayRange.to.month}.
+                {selectedDayRange.to.year}
+              </p>
             </div>
-          ) : (
-            <h2>Ajankohta puuttuu!</h2>
-          )}
-          {mybuttons.length !== 0 ? (
-            <div className="uusimainosjulkaisu-paikat-container">
-              <h2>Paikassa</h2>
-              {mybuttons
-                ? mybuttons.map((item) => {
-                    return <p key={item}>{item}</p>;
-                  })
-                : null}
-            </div>
-          ) : (
-            <h2>Alueet puuttuu!</h2>
-          )}
+          ) : null}
+          <div
+            onClick={() => setCurrentStep(2)}
+            className="julkaisu-vaihda-btn"
+          >
+            <p>Vaihda</p>
+          </div>
+        </div>
+        <div className="uusimainosjulkaisu-julkaise-container">
+          <p>5. Tallenna ja julkaise</p>
+          <button
+            onClick={() =>
+              handleSendData(myimg, mybuttons, selectedDayRange, userid, adname)
+            }
+            disabled={
+              adname === null ||
+              adname === "" ||
+              selectedDayRange.from === null ||
+              selectedDayRange.to === null ||
+              mybuttons.length === 0 ||
+              myimg === null
+                ? true
+                : false
+            }
+            className="uusimainosjulkaisu-julkaise-btn"
+            style={
+              adname === null ||
+              adname === "" ||
+              selectedDayRange.from === null ||
+              selectedDayRange.to === null ||
+              mybuttons.length === 0 ||
+              myimg === null
+                ? { opacity: 0.5 }
+                : null
+            }
+          >
+            <p>Julkaise</p>
+          </button>
         </div>
       </div>
-      <button
-        onClick={() =>
-          handleSendData(myimg, mybuttons, selectedDayRange, userid, adname)
-        }
-        disabled={
-          adname === null ||
-          adname === "" ||
-          selectedDayRange.from === null ||
-          selectedDayRange.to === null ||
-          mybuttons.length === 0 ||
-          myimg === null
-            ? true
-            : false
-        }
-        className="uusimainosjulkaisu-julkaise-btn"
-        style={
-          adname === null ||
-          adname === "" ||
-          selectedDayRange.from === null ||
-          selectedDayRange.to === null ||
-          mybuttons.length === 0 ||
-          myimg === null
-            ? { opacity: 0.5 }
-            : null
-        }
-      >
-        <p>Julkaise mainos</p>
-      </button>
     </>
   );
 };

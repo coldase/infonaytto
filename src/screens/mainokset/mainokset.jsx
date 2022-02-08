@@ -31,7 +31,10 @@ const Mainokset = ({
     <>
       <div className="mainokset-container">
         <div className="mainokset-header">
-          <h1>OMAT MAINOKSET</h1>
+          {currentMainosTab === 0 ? <h1>Työnalla olevat mainokset</h1> : null}
+          {currentMainosTab === 1 ? <h1>Näkyvillä olevat mainokset</h1> : null}
+          {currentMainosTab === 2 ? <h1>Tulossa olevat mainokset</h1> : null}
+          {currentMainosTab === 3 ? <h1>Menneet mainokset</h1> : null}
         </div>
         <MainoksetProgress
           currentStep={currentMainosTab}

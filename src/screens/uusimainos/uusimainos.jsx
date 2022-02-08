@@ -1,6 +1,6 @@
 import "./uusimainos.css";
 import MyNav from "../../components/mynav/mynav";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import UusiMainosProgress from "../../components/uusimainos-progress/uusimainos-progress";
 import UusiMainosKuva from "../../components/uusimainos-contents/uusimainoskuva";
@@ -24,22 +24,59 @@ const UusiMainos = ({
   const [currentStep, setCurrentStep] = useState(0);
 
   const [myimg, setmyimg] = useState(null);
+  const [selectedPaketti, setSelectedPaketti] = useState(0);
+
   const [mybuttons, setmybuttons] = useState([]);
   const [selectedDayRange, setSelectedDayRange] = useState({
     from: null,
     to: null,
   });
 
+  const setToday = () => {
+    let date = new Date();
+    let d = date.getDate();
+    let m = date.getMonth() + 1;
+    let y = date.getFullYear();
+    setSelectedDayRange({
+      from: {
+        day: d,
+        month: m,
+        year: y,
+      },
+      to: null,
+    });
+  };
+
   const [adname, setadname] = useState(null);
 
   const clearInputs = () => {
     setmyimg(null);
     setmybuttons([]);
-    setSelectedDayRange({
-      from: null,
-      to: null,
-    });
+    setSelectedDayRange({ from: null, to: null });
   };
+
+  const handleOnChange = (val) => {
+    let temp = null;
+    if (selectedPaketti === 0) {
+      temp = val;
+    } else if (selectedPaketti === 1) {
+      val.to = { ...val.from, day: val.from.day + 7 };
+      temp = val;
+    } else if (selectedPaketti === 2) {
+      val.to = { ...val.from, month: val.from.month + 1 };
+      temp = val;
+    } else if (selectedPaketti === 3) {
+      val.to = { ...val.from, month: val.from.month + 3 };
+      temp = val;
+    }
+    setSelectedDayRange(temp);
+  };
+
+  useEffect(() => {
+    if (selectedDayRange.from) {
+      handleOnChange(selectedDayRange);
+    }
+  }, [selectedPaketti]);
 
   return (
     <>
@@ -48,7 +85,10 @@ const UusiMainos = ({
         className="uusimainos-container"
       >
         <div className="uusimainos-header">
-          <h1>Uusi mainos</h1>
+          {currentStep === 0 ? <h1>Uusi mainos</h1> : null}
+          {currentStep === 1 ? <h1>Valitse missä mainos näkyy</h1> : null}
+          {currentStep === 2 ? <h1>Valitse ajankohta</h1> : null}
+          {currentStep === 3 ? <h1>Julkaise mainos</h1> : null}
         </div>
         {isLoggedIn ? (
           <div>
@@ -73,12 +113,16 @@ const UusiMainos = ({
               ) : null}
               {currentStep === 2 ? (
                 <UusiMainosAika
+                  handleOnChange={handleOnChange}
+                  selectedPaketti={selectedPaketti}
+                  setSelectedPaketti={setSelectedPaketti}
                   selectedDayRange={selectedDayRange}
                   setSelectedDayRange={setSelectedDayRange}
                 />
               ) : null}
               {currentStep === 3 ? (
                 <UusiMainosJulkaisu
+                  setCurrentStep={setCurrentStep}
                   update={update}
                   setadname={setadname}
                   adname={adname}
