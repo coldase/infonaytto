@@ -1,3 +1,30 @@
+.mainokseni-con {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mainokseni-arkisto-btn {
+  margin-top: 50px;
+  border-radius: 5px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-grey);
+  align-self: center;
+  cursor: pointer;
+}
+.mainokseni-arkisto-btn:hover {
+  opacity: 0.8;
+}
+
+.mainokseni-arkisto-btn > p {
+  color: #fff;
+  font-size: 20px;
+  margin: 10px 10px;
+  align-self: center;
+}
+
 .mainokseni-container {
   display: flex;
   align-self: center;

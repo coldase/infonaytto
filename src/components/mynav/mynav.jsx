@@ -3,6 +3,7 @@ import "./mynav.css";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { MdShoppingCart, MdCollections } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 import { FiLogOut, FiLogIn } from "react-icons/fi";
 import { useState } from "react";
@@ -15,6 +16,7 @@ const MyNav = ({
   setisshowmap,
 }) => {
   const [navOpen, setNavOpen] = useState(false);
+  const location = useLocation();
 
   const handleLogout = () => {
     logout();
@@ -36,21 +38,34 @@ const MyNav = ({
           </div>
 
           <Link to={"/uusimainos"}>
-            <div className="navlink">
+            <div
+              className="navlink"
+              style={
+                location.pathname === "/uusimainos" ? { opacity: 1 } : null
+              }
+            >
               <MdShoppingCart style={{ alignSelf: "center" }} size={50} />
               <p>Uusi mainos</p>
             </div>
           </Link>
           {isLoggedIn ? (
             <Link to="/mainokset">
-              <div className="navlink">
+              <div
+                className="navlink"
+                style={
+                  location.pathname === "/mainokset" ? { opacity: 1 } : null
+                }
+              >
                 <MdCollections style={{ alignSelf: "center" }} size={50} />
                 <p>Mainokseni</p>
               </div>
             </Link>
           ) : null}
           <Link to="/esittely">
-            <div className="navlink">
+            <div
+              className="navlink"
+              style={location.pathname === "/esittely" ? { opacity: 1 } : null}
+            >
               <AiFillInfoCircle style={{ alignSelf: "center" }} size={50} />
               <p>Esittely</p>
             </div>
@@ -58,7 +73,12 @@ const MyNav = ({
           <div className="navseparator"></div>
           {isLoggedIn ? (
             <Link to="/profiili">
-              <div className="navlink">
+              <div
+                className="navlink"
+                style={
+                  location.pathname === "/profiili" ? { opacity: 1 } : null
+                }
+              >
                 <FaUserCircle style={{ alignSelf: "center" }} size={50} />
                 <p>Profiili</p>
               </div>
@@ -94,20 +114,32 @@ const MyNav = ({
           <div className="navheader">
             <p>iN</p>
           </div>
-          <div className="navlink">
+          <div
+            className="navlink"
+            style={location.pathname === "/uusimainos" ? { opacity: 1 } : null}
+          >
             <MdShoppingCart style={{ alignSelf: "center" }} size={50} />
           </div>
           {isLoggedIn ? (
-            <div className="navlink">
+            <div
+              className="navlink"
+              style={location.pathname === "/mainokset" ? { opacity: 1 } : null}
+            >
               <MdCollections style={{ alignSelf: "center" }} size={50} />
             </div>
           ) : null}
-          <div className="navlink">
+          <div
+            className="navlink"
+            style={location.pathname === "/esittely" ? { opacity: 1 } : null}
+          >
             <AiFillInfoCircle style={{ alignSelf: "center" }} size={50} />
           </div>
           <div className="navseparator"></div>
           {isLoggedIn ? (
-            <div className="navlink">
+            <div
+              className="navlink"
+              style={location.pathname === "/profiili" ? { opacity: 1 } : null}
+            >
               <FaUserCircle style={{ alignSelf: "center" }} size={50} />
             </div>
           ) : null}

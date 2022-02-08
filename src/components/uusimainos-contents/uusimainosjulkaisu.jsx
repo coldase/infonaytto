@@ -88,7 +88,7 @@ const UusiMainosJulkaisu = ({
           <p>3. Valitsemasi kategoriat</p>
           <div className="paikat-container">
             {mybuttons.map((cate) => (
-              <div className="uusimainosjulkaisu-paikat-card">
+              <div key={cate} className="uusimainosjulkaisu-paikat-card">
                 <p>{cate}</p>
               </div>
             ))}

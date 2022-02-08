@@ -12,30 +12,13 @@ const UusiMainosAika = ({
     <input
       readOnly
       ref={ref} // necessary
-      placeholder={"Valitse päivät"}
+      placeholder={selectedDayRange.to !== null ? "Vaihda" : "Valitse"}
       className="my-custom-input-class" // a styling class
     />
   );
 
   return (
     <div className="uusimainosaika-container">
-      {/* <div className="paivamaarat">
-        {selectedDayRange.to !== null ? (
-          <>
-            <p>
-              {selectedDayRange.from.day}.{selectedDayRange.from.month}.
-              {selectedDayRange.from.year}
-            </p>
-            <p> - </p>
-            <p>
-              {selectedDayRange.to.day}.{selectedDayRange.to.month}.
-              {selectedDayRange.to.year}
-            </p>
-          </>
-        ) : (
-          <p>Ei valittua aikaa</p>
-        )}
-      </div> */}
       <div className="paivamaarat-headers">
         <p>1. Valitse paketti:</p>
       </div>
@@ -87,13 +70,49 @@ const UusiMainosAika = ({
       </div>
 
       <div className="paivamaarat-headers">
-        {selectedPaketti === 0 ? (
-          <p>2. Valitse ajankohta:</p>
+        {selectedDayRange.to == null || selectedDayRange.from === null ? (
+          <>
+            {selectedPaketti === 0 ? (
+              <p>2. Valitse ajankohta:</p>
+            ) : (
+              <p>2. Valitse aloituspäivä:</p>
+            )}
+          </>
         ) : (
-          <p>2. Valise aloituspäivä:</p>
+          <>
+            <p>2. Mainoksen ajankohta</p>
+          </>
         )}
       </div>
-
+      <div className="paivamaarat">
+        {selectedDayRange.to !== null && selectedDayRange.from !== null ? (
+          <div className="ajat-cont">
+            <p>
+              {selectedDayRange.from.day < 10
+                ? "0" + selectedDayRange.from.day
+                : selectedDayRange.from.day}
+              .
+              {selectedDayRange.from.month < 10
+                ? "0" + selectedDayRange.from.month
+                : selectedDayRange.from.month}
+              .{selectedDayRange.from.year}
+            </p>
+            <p> - </p>
+            <p>
+              {selectedDayRange.to.day < 10
+                ? "0" + selectedDayRange.to.day
+                : selectedDayRange.to.day}
+              .
+              {selectedDayRange.to.month < 10
+                ? "0" + selectedDayRange.to.month
+                : selectedDayRange.to.month}
+              .{selectedDayRange.to.year}
+            </p>
+          </div>
+        ) : (
+          <div className="ajat-cont"></div>
+        )}
+      </div>
       <div className="mainosaikabtn">
         <Calendar
           renderInput={renderCustomInput}

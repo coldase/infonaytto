@@ -32,21 +32,6 @@ const UusiMainos = ({
     to: null,
   });
 
-  const setToday = () => {
-    let date = new Date();
-    let d = date.getDate();
-    let m = date.getMonth() + 1;
-    let y = date.getFullYear();
-    setSelectedDayRange({
-      from: {
-        day: d,
-        month: m,
-        year: y,
-      },
-      to: null,
-    });
-  };
-
   const [adname, setadname] = useState(null);
 
   const clearInputs = () => {
@@ -73,9 +58,7 @@ const UusiMainos = ({
   };
 
   useEffect(() => {
-    if (selectedDayRange.from) {
-      handleOnChange(selectedDayRange);
-    }
+    setSelectedDayRange({ from: null, to: null });
   }, [selectedPaketti]);
 
   return (

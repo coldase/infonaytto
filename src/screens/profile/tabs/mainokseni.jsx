@@ -34,43 +34,52 @@ const Mainokseni = ({ setCurrentMainosTab, userAds }) => {
   };
 
   return (
-    <div className="mainokseni-container">
-      <div className="mainokseni-grp">
-        <Link
-          to="/mainokset"
-          onClick={() => setCurrentMainosTab(1)}
-          className="mainokseni-btn"
-        >
-          <p>NÄKYVILLÄ</p>
-        </Link>
-        <div className="mainokseni-info">
-          <p>{filterNakyvilla(userAds)}kpl</p>
+    <div className="mainokseni-con">
+      <div className="mainokseni-container">
+        <div className="mainokseni-grp">
+          <Link
+            to="/mainokset"
+            onClick={() => setCurrentMainosTab(1)}
+            className="mainokseni-btn"
+          >
+            <p>NÄKYVILLÄ</p>
+          </Link>
+          <div className="mainokseni-info">
+            <p>{filterNakyvilla(userAds)}kpl</p>
+          </div>
+        </div>
+        <div className="mainokseni-grp">
+          <Link
+            to="/mainokset"
+            onClick={() => setCurrentMainosTab(2)}
+            className="mainokseni-btn"
+          >
+            <p>TULEVAT</p>
+          </Link>
+          <div className="mainokseni-info">
+            <p>{filterTulossa(userAds).length}kpl</p>
+          </div>
+        </div>
+        <div className="mainokseni-grp">
+          <Link
+            to="/uusimainos"
+            id="mainokseni-uusimainosbtn"
+            className="mainokseni-btn"
+          >
+            <p>UUSIMAINOS</p>
+          </Link>
+          <div className="mainokseni-info">
+            <p>alkaen 9,95€/3pv</p>
+          </div>
         </div>
       </div>
-      <div className="mainokseni-grp">
-        <Link
-          to="/mainokset"
-          onClick={() => setCurrentMainosTab(2)}
-          className="mainokseni-btn"
-        >
-          <p>TULEVAT</p>
-        </Link>
-        <div className="mainokseni-info">
-          <p>{filterTulossa(userAds).length}kpl</p>
-        </div>
-      </div>
-      <div className="mainokseni-grp">
-        <Link
-          to="/uusimainos"
-          id="mainokseni-uusimainosbtn"
-          className="mainokseni-btn"
-        >
-          <p>UUSIMAINOS</p>
-        </Link>
-        <div className="mainokseni-info">
-          <p>alkaen 9,95€/3pv</p>
-        </div>
-      </div>
+      <Link
+        to="/mainokset"
+        onClick={() => setCurrentMainosTab(3)}
+        className="mainokseni-arkisto-btn"
+      >
+        <p>Arkisto</p>
+      </Link>
     </div>
   );
 };

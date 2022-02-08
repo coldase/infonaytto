@@ -28,7 +28,11 @@ const UusiMainosKuva = ({ setmyimg, myimg }) => {
               onClick={handle_btn}
               className="uusimainoskuva-omakuva-lisaa-btn"
             >
-              {myimg !== null ? <p>VAIHDA</p> : <p>LATAA MAINOS</p>}
+              {myimg !== null && myimg !== undefined ? (
+                <p>VAIHDA</p>
+              ) : (
+                <p>LATAA MAINOS</p>
+              )}
             </div>
 
             <input
