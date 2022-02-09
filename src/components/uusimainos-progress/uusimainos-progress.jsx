@@ -1,10 +1,17 @@
 import "./uusimainos-progress.css";
 
-const UusiMainosProgress = ({ currentStep, setCurrentStep }) => {
+const UusiMainosProgress = ({
+  currentStep,
+  setCurrentStep,
+  setshowmainostoimistotab,
+}) => {
   return (
     <div className="uusimainos-progress-container">
       <div
-        onClick={() => setCurrentStep(0)}
+        onClick={() => {
+          setCurrentStep(0);
+          setshowmainostoimistotab(false);
+        }}
         className={"uusimainos-progress-step"}
         style={currentStep === 0 ? { borderBottom: "4px solid black" } : null}
       >

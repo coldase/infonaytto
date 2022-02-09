@@ -1,6 +1,8 @@
 import "./uusimainosjulkaisu.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Kiitos from "../kiitos/kiitos";
 
 const UusiMainosJulkaisu = ({
   myimg,
@@ -14,6 +16,18 @@ const UusiMainosJulkaisu = ({
   setCurrentStep,
 }) => {
   const navigate = useNavigate();
+
+  const handleTimer = () => {
+    setshowkiitosjulkaisu(true);
+    const timeout = setTimeout(() => {
+      clearInputs();
+      update();
+      setshowkiitosjulkaisu(false);
+      navigate("/profiili", { replace: true });
+      return () => clearTimeout(timeout);
+    }, 2500);
+  };
+
   const handleSendData = async (image, alueet, pvm, id, myadname) => {
     let mystartdate = `${pvm.from.year}-${
       pvm.from.month < 10 ? "0" + pvm.from.month : pvm.from.month
@@ -41,15 +55,15 @@ const UusiMainosJulkaisu = ({
     })
       .then((res) => {
         if (res.data === "success") {
-          clearInputs();
-          update();
-          navigate("/profiili", { replace: true });
+          handleTimer();
         } else {
           alert("ERROR");
         }
       })
       .catch((err) => console.log(err));
   };
+
+  const [showkiitosjulkaisu, setshowkiitosjulkaisu] = useState(false);
 
   return (
     <>
@@ -147,7 +161,8 @@ const UusiMainosJulkaisu = ({
               selectedDayRange.from === null ||
               selectedDayRange.to === null ||
               mybuttons.length === 0 ||
-              myimg === null
+              myimg === null ||
+              myimg === undefined
                 ? true
                 : false
             }
@@ -158,7 +173,8 @@ const UusiMainosJulkaisu = ({
               selectedDayRange.from === null ||
               selectedDayRange.to === null ||
               mybuttons.length === 0 ||
-              myimg === null
+              myimg === null ||
+              myimg === undefined
                 ? { opacity: 0.5 }
                 : null
             }
@@ -167,6 +183,7 @@ const UusiMainosJulkaisu = ({
           </button>
         </div>
       </div>
+      {showkiitosjulkaisu ? <Kiitos type="julkaisu" /> : null}
     </>
   );
 };

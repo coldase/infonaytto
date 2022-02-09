@@ -1,15 +1,18 @@
 import "./uusimainoskuva.css";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import KukeLogo from "../../assets/images/kukelogo.png";
 import CanvaLogo from "../../assets/images/canvalogo.png";
 
-const UusiMainosKuva = ({ setmyimg, myimg }) => {
+const UusiMainosKuva = ({
+  setmyimg,
+  myimg,
+  showmainostoimistotab,
+  setshowmainostoimistotab,
+}) => {
   const inputFile = useRef(null);
   const handle_btn = () => {
     inputFile.current.click();
   };
-
-  const [showmainostoimistotab, setshowmainostoimistotab] = useState(false);
 
   return (
     <>

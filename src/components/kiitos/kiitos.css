@@ -1,0 +1,29 @@
+.kiitos-container {
+  position: fixed;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* width: 500px; */
+  /* height: 300px; */
+  border-radius: 5px;
+  background-color: var(--main-blue);
+  background-color: var(--main-white);
+  justify-content: center;
+}
+
+.kiitos-julkaisu-container {
+  /* background-color: red; */
+  display: flex;
+  width: 500px;
+}
+
+.kiitos-julkaisu-container > p {
+  text-align: center;
+  font-family: var(--headerfont);
+  color: var(--main-grey);
+  font-size: 70px;
+  align-self: center;
+}

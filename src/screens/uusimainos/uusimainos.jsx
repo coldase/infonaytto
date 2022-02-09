@@ -25,6 +25,7 @@ const UusiMainos = ({
 
   const [myimg, setmyimg] = useState(null);
   const [selectedPaketti, setSelectedPaketti] = useState(0);
+  const [showmainostoimistotab, setshowmainostoimistotab] = useState(false);
 
   const [mybuttons, setmybuttons] = useState([]);
   const [selectedDayRange, setSelectedDayRange] = useState({
@@ -78,10 +79,14 @@ const UusiMainos = ({
             <UusiMainosProgress
               currentStep={currentStep}
               setCurrentStep={setCurrentStep}
+              showmainostoimistotab={showmainostoimistotab}
+              setshowmainostoimistotab={setshowmainostoimistotab}
             />
             <div className="uusimainos-content">
               {currentStep === 0 ? (
                 <UusiMainosKuva
+                  showmainostoimistotab={showmainostoimistotab}
+                  setshowmainostoimistotab={setshowmainostoimistotab}
                   setmyimg={(img) => setmyimg(img)}
                   myimg={myimg}
                 />

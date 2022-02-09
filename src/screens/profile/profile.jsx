@@ -28,6 +28,8 @@ const Profile = ({
     if (!isLoggedIn && !localStorage.getItem("token")) {
       navigate("/esittely", { replace: true });
     }
+
+    setCurrentProfileTab(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
