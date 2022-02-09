@@ -8,9 +8,9 @@ import HttpsRedirect from "react-https-redirect";
 
 ReactDOM.render(
   <Router basename="/">
-    {/* <HttpsRedirect> */}
-    <App />
-    {/* </HttpsRedirect> */}
+    <HttpsRedirect>
+      <App />
+    </HttpsRedirect>
   </Router>,
   document.getElementById("root")
 );
