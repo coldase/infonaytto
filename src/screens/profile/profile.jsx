@@ -2,6 +2,7 @@ import "./profile.css";
 import { useNavigate } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 // import Footer from "../../components/footer/footer";
+import { useEffect } from "react";
 
 import ProfileProgress from "../../components/profile-progress/profile-progress";
 import Mainokseni from "./tabs/mainokseni.jsx";
@@ -23,9 +24,12 @@ const Profile = ({
 }) => {
   const navigate = useNavigate();
 
-  if (!isLoggedIn && !localStorage.getItem("token")) {
-    navigate("/esittely", { replace: true });
-  }
+  useEffect(() => {
+    if (!isLoggedIn && !localStorage.getItem("token")) {
+      navigate("/esittely", { replace: true });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

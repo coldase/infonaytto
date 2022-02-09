@@ -40,26 +40,14 @@
 }
 
 .selected {
-  background-color: var(--main-blue);
+  background-color: var(--main-pink);
 }
 .uusimainos-paikka-card p {
   margin: 0;
   font-size: 20px;
   color: #fff;
   align-self: center;
-}
-
-.uusimainos-paikka-card p:first-child {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.uusimainos-paikka-card p:nth-child(2) {
-  margin-top: 10px;
-  font-size: 15px;
-}
-.uusimainos-paikka-card p:last-child {
-  font-size: 13px;
-  margin-bottom: 20px;
+  padding: 20px;
 }
 
 .uusimainos-mapbtn-container {

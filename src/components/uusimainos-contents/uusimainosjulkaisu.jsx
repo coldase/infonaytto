@@ -81,44 +81,58 @@ const UusiMainosJulkaisu = ({
             onClick={() => setCurrentStep(0)}
             className="julkaisu-vaihda-btn"
           >
-            <p>Vaihda</p>
+            {myimg !== null && myimg !== undefined ? (
+              <p>Vaihda</p>
+            ) : (
+              <p>Lisää</p>
+            )}
           </div>
         </div>
         <div className="uusimainosjulkaisu-paikat-container">
           <p>3. Valitsemasi kategoriat</p>
           <div className="paikat-container">
-            {mybuttons.map((cate) => (
-              <div key={cate} className="uusimainosjulkaisu-paikat-card">
-                <p>{cate}</p>
-              </div>
-            ))}
+            {mybuttons.length !== 0 ? (
+              <>
+                {mybuttons.map((cate) => (
+                  <div key={cate} className="uusimainosjulkaisu-paikat-card">
+                    <p>{cate}</p>
+                  </div>
+                ))}
+              </>
+            ) : (
+              <p className="julkaisu-puttuu-text">Kategoriat puuttuu</p>
+            )}
           </div>
           <div
             onClick={() => setCurrentStep(1)}
             className="julkaisu-vaihda-btn"
           >
-            <p>Vaihda</p>
+            {mybuttons.length === 0 ? <p>Lisää</p> : <p>Vaihda</p>}
           </div>
         </div>
         <div className="uusimainosjulkaisu-ajat-container">
           <p>4. Julkaisu ajankohta</p>
-          {selectedDayRange.from ? (
-            <div className="uusimainosjulkaisu-ajat-aika">
-              <p>
-                {selectedDayRange.from.day}.{selectedDayRange.from.month}.
-                {selectedDayRange.from.year === selectedDayRange.to.year
-                  ? ""
-                  : selectedDayRange.from.year}{" "}
-                - {selectedDayRange.to.day}.{selectedDayRange.to.month}.
-                {selectedDayRange.to.year}
-              </p>
-            </div>
-          ) : null}
+          <div className="uusimainosjulkaisu-aika-ajat-container">
+            {selectedDayRange.from ? (
+              <div className="uusimainosjulkaisu-ajat-aika">
+                <p>
+                  {selectedDayRange.from.day}.{selectedDayRange.from.month}.
+                  {selectedDayRange.from.year === selectedDayRange.to.year
+                    ? ""
+                    : selectedDayRange.from.year}{" "}
+                  - {selectedDayRange.to.day}.{selectedDayRange.to.month}.
+                  {selectedDayRange.to.year}
+                </p>
+              </div>
+            ) : (
+              <p className="julkaisu-puttuu-text">Ajankohta puuttuu</p>
+            )}
+          </div>
           <div
             onClick={() => setCurrentStep(2)}
             className="julkaisu-vaihda-btn"
           >
-            <p>Vaihda</p>
+            {selectedDayRange.from ? <p>Vaihda</p> : <p>Lisää</p>}
           </div>
         </div>
         <div className="uusimainosjulkaisu-julkaise-container">

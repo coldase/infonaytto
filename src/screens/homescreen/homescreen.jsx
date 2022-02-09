@@ -16,7 +16,7 @@ import { Navigate } from "react-router-dom";
 
 const HomeScreen = ({ isLoggedIn }) => {
   if (isLoggedIn) {
-    return <Navigate to="/profiili" />;
+    return <Navigate to="/esittely" />;
   }
   return (
     <>

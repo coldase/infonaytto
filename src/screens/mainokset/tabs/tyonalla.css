@@ -58,7 +58,7 @@
   cursor: pointer;
 }
 .tyonalla-empty-uusimainos-btn:hover {
-  opacity: 0.8;
+  background-color: var(--main-pink);
 }
 .tyonalla-empty-uusimainos-btn p {
   justify-content: center;

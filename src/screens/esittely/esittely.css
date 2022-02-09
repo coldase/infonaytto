@@ -149,3 +149,113 @@
     align-self: center;
   }
 }
+
+.kirjautunut-esittely-container {
+  display: flex;
+  margin-left: 5%;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 50px;
+  /* height: 500px; */
+  /* background-color: red; */
+}
+
+.kirjautunut-esittely-header {
+  /* display: flex; */
+  font-size: 80px;
+  color: var(--main-grey);
+  font-family: var(--headerfont);
+  font-weight: 200;
+  align-self: center;
+  margin: 0;
+}
+
+.kirjautunut-esittely-infocard-container {
+  margin-top: 20px;
+  display: flex;
+  align-self: center;
+  /* height: 200px; */
+  /* background-color: red; */
+  width: 90%;
+  justify-content: space-between;
+  /* flex-direction: column; */
+}
+
+.kirjautunut-esittely-infocard {
+  display: flex;
+  width: 32%;
+  height: 500px;
+  border: 2px solid #888;
+  /* background-color: blue; */
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.kirjautunut-esittely-infocard-image-container {
+  align-self: center;
+  width: 90%;
+  height: 35%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.kirjautunut-esittely-infocard-image-container > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.kirjautunut-esittely-infocard-text-container {
+  /* background-color: yellow; */
+  align-self: center;
+  width: 90%;
+}
+
+.kirjautunut-esittely-infocard-text-container > p {
+  margin: 15px 0;
+  font-size: 23px;
+  font-weight: 500;
+  color: #555;
+}
+
+.kirjautunut-esittely-infocard-text-hinnat {
+  margin-top: 20px;
+}
+
+.kirjautunut-esittely-infocard-text-hinnat > p {
+  font-size: 23px;
+  font-weight: 500;
+  color: #555;
+  margin: 5px 0;
+}
+
+.kirjautunut-esittely-btn-container {
+  /* background-color: red; */
+  width: 90%;
+  margin-top: 30px;
+  align-self: center;
+  height: 150px;
+  justify-content: center;
+  display: flex;
+}
+
+.kirjautunut-esittely-btn {
+  justify-content: center;
+  display: flex;
+  width: 220px;
+  background-color: var(--main-light-blue);
+  margin: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.kirjautunut-esittely-btn:hover {
+  background-color: var(--main-pink);
+}
+
+.kirjautunut-esittely-btn > p {
+  align-self: center;
+  font-size: 25px;
+  color: #fff;
+}

@@ -9,6 +9,7 @@ import Nakyvilla from "./tabs/nakyvilla";
 import Tulossa from "./tabs/tulossa";
 import Arkisto from "./tabs/arkisto";
 import MainoksetProgress from "../../components/mainokset-progress/mainokset-progress";
+import { useEffect } from "react";
 
 const Mainokset = ({
   isLoggedIn,
@@ -23,9 +24,12 @@ const Mainokset = ({
 }) => {
   const navigate = useNavigate();
 
-  if (!isLoggedIn && !localStorage.getItem("token")) {
-    navigate("/esittely", { replace: true });
-  }
+  useEffect((isLoggedIn) => {
+    if (!isLoggedIn && !localStorage.getItem("token")) {
+      navigate("/esittely", { replace: true });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

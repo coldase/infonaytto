@@ -78,7 +78,7 @@ const App = () => {
           setuserinfodata(res.data);
           setIsLoggedIn(true);
           setAuthToken(res.data.token);
-          navigate("/profiili", { replace: true });
+          navigate("/esittely", { replace: true });
           return true;
         } else {
           return false;

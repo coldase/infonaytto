@@ -21,7 +21,7 @@
   color: var(--main-grey);
   font-family: var(--headerfont);
   align-self: center;
-  font-size: 40px;
+  font-size: 50px;
   margin: 10px;
 }
 .uusimainosjulkaisu-image-container img {
@@ -98,7 +98,7 @@
   color: var(--main-grey);
   font-family: var(--headerfont);
   align-self: center;
-  font-size: 40px;
+  font-size: 50px;
   margin: 20px;
 }
 
@@ -150,7 +150,7 @@
   color: var(--main-grey);
   font-family: var(--headerfont);
   align-self: center;
-  font-size: 40px;
+  font-size: 50px;
   margin: 10px;
 }
 .adnameinput-container input {
@@ -160,7 +160,7 @@
   text-align: center;
   border: none;
   background: none;
-  border-bottom: 3px solid grey;
+  border-bottom: 3px solid #777;
   margin: 0px;
 }
 
@@ -182,7 +182,7 @@
   color: var(--main-grey);
   font-family: var(--headerfont);
   align-self: center;
-  font-size: 40px;
+  font-size: 50px;
   margin: 10px;
 }
 
@@ -191,7 +191,7 @@
   justify-content: center;
 }
 .uusimainosjulkaisu-ajat-aika > p {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 600;
   margin: 10px;
 }
@@ -209,6 +209,27 @@
   color: var(--main-grey);
   font-family: var(--headerfont);
   align-self: center;
-  font-size: 40px;
+  font-size: 50px;
   margin: 10px;
+}
+
+.julkaisu-puuttuu-text {
+  font-family: var(--mainfont);
+  font-size: 20px;
+}
+
+.uusimainosjulkaisu-aika-ajat-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.uusimainosjulkaisu-aika-ajat-container > p {
+  font-family: var(--mainfont);
+  font-size: 20px;
+}
+
+.paikat-container > p {
+  font-family: var(--mainfont);
+  font-size: 20px;
 }

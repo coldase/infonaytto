@@ -27,6 +27,9 @@ const UusiMainosKuva = ({ setmyimg, myimg }) => {
             <div
               onClick={handle_btn}
               className="uusimainoskuva-omakuva-lisaa-btn"
+              style={
+                myimg !== null && myimg !== undefined ? { height: 60 } : null
+              }
             >
               {myimg !== null && myimg !== undefined ? (
                 <p>VAIHDA</p>

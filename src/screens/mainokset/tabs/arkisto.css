@@ -58,7 +58,7 @@
   cursor: pointer;
 }
 .arkisto-empty-uusimainos-btn:hover {
-  opacity: 0.8;
+  background-color: var(--main-pink);
 }
 .arkisto-empty-uusimainos-btn p {
   justify-content: center;

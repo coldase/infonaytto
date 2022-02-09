@@ -30,8 +30,8 @@ const UusiMainosPaikka = ({
               }`}
             >
               <p>{item}</p>
-              <p>Näyttöjä</p>
-              <p>12</p>
+              {/* <p>Näyttöjä</p>
+              <p>12</p> */}
             </div>
           ))}
         </div>
