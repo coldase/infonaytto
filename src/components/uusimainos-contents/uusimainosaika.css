@@ -42,6 +42,7 @@
   font-size: 20px;
   text-align: center;
   padding: 15px 15px;
+  /* margin-top: 150px; */
   color: white;
   border-radius: 5px;
 }
@@ -111,7 +112,8 @@
 }
 .responsive-calendar {
   font-size: 15px !important;
-  top: 150px !important;
+  top: 100px !important;
+  align-self: center !important;
   box-shadow: 0px 0px 5px black !important;
 }
 

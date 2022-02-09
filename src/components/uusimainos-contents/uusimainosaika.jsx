@@ -1,6 +1,6 @@
 import "./uusimainosaika.css";
-import "@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css";
 import Calendar from "@hassanmojab/react-modern-calendar-datepicker";
+import "@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css";
 
 const UusiMainosAika = ({
   selectedDayRange,
@@ -115,6 +115,7 @@ const UusiMainosAika = ({
       </div>
       <div className="mainosaikabtn">
         <Calendar
+          calendarPopperPosition={"top"}
           renderInput={renderCustomInput}
           calendarClassName="responsive-calendar"
           value={selectedDayRange}
