@@ -10,7 +10,7 @@
 .nakyvilla-card-container {
   display: flex;
   justify-content: center;
-  width: 90%;
+  width: 100%;
   height: 100%;
   flex-wrap: wrap;
   overflow-y: scroll;

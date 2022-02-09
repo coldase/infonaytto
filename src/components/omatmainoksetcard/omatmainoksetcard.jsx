@@ -1,8 +1,12 @@
 import "./omatmainoksetcard.css";
 import axios from "axios";
 import { IoMdTrash } from "react-icons/io";
+import { useState } from "react";
+import PoistaMainosPopup from "./poistamainospopup";
 
 const OmatMainoksetCard = ({ item, update }) => {
+  const [showpoistamainospopup, setshowpoistamainospopup] = useState(false);
+
   const alueet = item.ad_type.split(",");
   const formatDate = (date) => {
     let l = date.split("-");
@@ -20,16 +24,10 @@ const OmatMainoksetCard = ({ item, update }) => {
       .then((res) => {
         if (res.data === "success") {
           update();
+          setshowpoistamainospopup(false);
         }
       })
       .catch((err) => console.log(err));
-  };
-
-  const handleDelBtn = (id) => {
-    let choice = window.confirm("Haluatko varmasti poistaa mainoksen?");
-    if (choice) {
-      deleteAd(id);
-    }
   };
 
   return (
@@ -43,9 +41,11 @@ const OmatMainoksetCard = ({ item, update }) => {
       >
         <IoMdTrash
           className="omatmainokset-card-trash-icon"
-          onClick={() => handleDelBtn(item.ad_id)}
+          onClick={() => setshowpoistamainospopup(true)}
         />
-        <p className="omatmainokset-card-name">{item.name}</p>
+        <div className="omatmainokset-card-name-container">
+          <p className="omatmainokset-card-name">{item.name}</p>
+        </div>
         <p className="omatmainokset-card-title">Näkyvissä</p>
         <p className="omatmainokset-card-date">
           {formatDate(item.start_date)} - {formatDate(item.end_date)}
@@ -59,6 +59,13 @@ const OmatMainoksetCard = ({ item, update }) => {
           ))}
         </div>
       </div>
+      {showpoistamainospopup ? (
+        <PoistaMainosPopup
+          handleDel={() => deleteAd(item.ad_id)}
+          item={item}
+          close={() => setshowpoistamainospopup(false)}
+        />
+      ) : null}
     </div>
   );
 };

@@ -1,0 +1,50 @@
+.poistamainospopup-container {
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: fixed;
+  width: 500px;
+  height: 350px;
+  border-radius: 10px;
+  background-color: var(--main-blue);
+  box-shadow: 0 0 2px 1px black;
+}
+
+.poistamainospopup-container > p {
+  width: 90%;
+  margin: 30px 0 0 0;
+  font-family: var(--headerfont);
+  font-size: 40px;
+  color: #fff;
+  align-self: center;
+  text-align: center;
+}
+.poistamainospopup-btn-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.poistamainospopup-btn {
+  cursor: pointer;
+  width: 25%;
+  margin: 0 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-light-blue);
+  border-radius: 5px;
+}
+
+.poistamainospopup-btn:hover {
+  background-color: var(--main-pink);
+}
+
+.poistamainospopup-btn > p {
+  color: #fff;
+  align-self: center;
+}

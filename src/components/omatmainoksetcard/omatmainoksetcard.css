@@ -31,8 +31,21 @@
   align-self: center;
 }
 
+.omatmainokset-card-name-container {
+  display: flex;
+  /* height: 100%; */
+  /* justify-content: center; */
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
+  /* background-color: red; */
+  /* width: 89%; */
+}
+
 .omatmainokset-card-name {
   font-size: 30px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  justify-content: center;
   margin: 0;
   color: #fff;
   font-weight: 500;
