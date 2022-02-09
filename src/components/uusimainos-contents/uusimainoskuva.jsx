@@ -85,7 +85,7 @@ const UusiMainosKuva = ({
           </div>
           <div className="uusimainoskuva-container">
             <div className="uusimainoskuva-omakuva-container">
-              <p>Lataa suunnitteluohjelma</p>
+              <p>Lataa ilmainen suunnitteluohjelma</p>
               <img
                 className="uusimainoskuva-logos"
                 src={CanvaLogo}
