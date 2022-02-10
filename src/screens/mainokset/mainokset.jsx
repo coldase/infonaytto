@@ -24,7 +24,7 @@ const Mainokset = ({
 }) => {
   const navigate = useNavigate();
 
-  useEffect((isLoggedIn) => {
+  useEffect(() => {
     if (!isLoggedIn && !localStorage.getItem("token")) {
       navigate("/esittely", { replace: true });
     }
