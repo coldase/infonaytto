@@ -25,30 +25,36 @@ const Esittely = ({
           className="esittely-container"
         >
           <div className="esittely-content">
-            <h1 className="esittely-header">ESITTELY</h1>
+            <h1 className="esittely-header">LISÄTIETOJA</h1>
             <p className="esittely-text">
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration in some form, by
-              injected humour, or randomised words which don't look even
-              slightly believable. If you are going to use a passage of Lorem
-              Ipsum, you need to be sure there isn't anything embarrassing
-              hidden in the middle of text All the Lorem Ipsum generators on the
-              Internet tend to repeat predefined chunks as necessary, making
-              this the first true generator
+              Infonäytöt ovat etäohjattujen näyttöjen avulla toteutettua
+              sähköistä viestintää. Näyttöjä voidaan asentaa erilaisiin
+              ympäristöihin tarpeeseen ja kohdeyleisöön sopiviksi. Ne tuovat
+              tiloihin ketterästi muunneltavaa opastusta sekä virikettä ja
+              pelillisyyttä kuvan ja tekstin muodossa. Sisältöjen luonti ja
+              hallinta on helppoa ja tavoitat kohderyhmäsi juuri sillä
+              sekunnilla kuin haluat. Sillä sisältöjen ajoittaminen ennakkoon
+              helpottaa jatkuvaa ja oikea-aikaista sisällön jakamista, joka on
+              yhtä helppoa kuin kalenterin selailu.
             </p>
             <p className="esittely-text">
-              It uses a dictionary of over 200 Latin words, combined with a
-              handful of model sentence structures, to generate Lorem Ipsum
-              which looks reasonable. The generated Lorem Ipsum is therefore
-              always free from repetition, injected humour, or
-              non-characteristic words etc contrary to popular belief, Lorem
-              Ipsum is not simply random text.
+              Sisältöjen luonti ja hallinta on helppoa ja tavoitat kohderyhmäsi
+              juuri sillä sekunnilla kuin haluat. Sillä sisältöjen ajoittaminen
+              ennakkoon helpottaa jatkuvaa ja oikea-aikaista sisällön jakamista,
+              joka on yhtä helppoa kuin kalenterin selailu.
             </p>
             <p className="esittely-text">
-              Contrary to popular belief, Lorem Ipsum is not simply random text.
-              It has roots in a piece of classical Latin literature from 45 BC,
-              making it over 2000 years old. Richard McClintock, a Latin
-              professor at Hampden-Sydney College in Virginia.
+              Kaikki sisältö ei toimi kaikille. Tästä syystä voit valita
+              näyttökohtaisesti missä sisältösi näkyy jotta juuri
+              oikeakohdeyleisö saavutetaan
+            </p>
+            <p className="esittely-text">
+              Voit jakaa sisältöä olemassa oleviin näyttöihin tai lisätä
+              näyttöjä lisää. Omia infonäyttöjä voit lisätä helposti. Tähän
+              käyvät jo olemassa olevan näyttösi joissa on selain ja näin ohjata
+              siihen sisältöä. Tällöin sinun tulee valita mitä mainoksia
+              kohdeyleisösi haluaa nähdä vai haluatko että näytöt ovat vain
+              omassa käytössäsi.
             </p>
             {!isLoggedIn ? (
               <div
@@ -63,7 +69,7 @@ const Esittely = ({
             ) : null}
           </div>
           <div className="esittely-content2">
-            <h1 className="esittely-header2">OTSIKKO</h1>
+            {/* <h1 className="esittely-header2">OTSIKKO</h1>
             <p className="esittely-text2">
               There are many variations of passages of Lorem Ipsum available,
               but the majority have suffered alteration in some form, by
@@ -80,7 +86,7 @@ const Esittely = ({
               <Link className="aloitatasta-btn" to="/uusimainos">
                 <p>Aloita tästä</p>
               </Link>
-            )}
+            )} */}
           </div>
           <Footer />
         </div>
