@@ -10,7 +10,11 @@ const OmatMainoksetCard = ({ item, update }) => {
   const alueet = item.ad_type.split(",");
   const formatDate = (date) => {
     let l = date.split("-");
-    return `${l[2]}.${l[1]}.${l[0]}`;
+    if (l[0] < 3000) {
+      return `${l[2]}.${l[1]}.${l[0]}`;
+    } else {
+      return "Pysyvä";
+    }
   };
 
   const deleteAd = async (adid) => {

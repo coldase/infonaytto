@@ -54,6 +54,12 @@ const UusiMainos = ({
     } else if (selectedPaketti === 3) {
       val.to = { ...val.from, month: val.from.month + 3 };
       temp = val;
+    } else if (selectedPaketti === 4) {
+      val.to = { ...val.from, year: val.from.year + 1 };
+      temp = val;
+    } else if (selectedPaketti === 5) {
+      val.to = { ...val.from, year: val.from.year + 1000 };
+      temp = val;
     }
     setSelectedDayRange(temp);
   };

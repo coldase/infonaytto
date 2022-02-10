@@ -115,7 +115,10 @@ const App = () => {
       url: process.env.REACT_APP_BACK_URL + "api/get_ads_by_user.php",
       data: formdata,
     })
-      .then((res) => setUserAds(res.data))
+      .then((res) => {
+        setUserAds(res.data);
+        console.log(res);
+      })
       .catch((err) => console.log(err));
   };
 

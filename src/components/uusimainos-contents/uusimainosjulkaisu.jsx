@@ -134,8 +134,15 @@ const UusiMainosJulkaisu = ({
                   {selectedDayRange.from.year === selectedDayRange.to.year
                     ? ""
                     : selectedDayRange.from.year}{" "}
-                  - {selectedDayRange.to.day}.{selectedDayRange.to.month}.
-                  {selectedDayRange.to.year}
+                  -{" "}
+                  {selectedDayRange.to.year < 3000 ? (
+                    <>
+                      {selectedDayRange.to.day}.{selectedDayRange.to.month}.
+                      {selectedDayRange.to.year}
+                    </>
+                  ) : (
+                    <>Pysyvä</>
+                  )}
                 </p>
               </div>
             ) : (

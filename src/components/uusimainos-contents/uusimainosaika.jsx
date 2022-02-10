@@ -32,7 +32,6 @@ const UusiMainosAika = ({
           }
         >
           <p>Valitse vapaasti</p>
-          <p>0.00€</p>
         </div>
         <div
           onClick={() => setSelectedPaketti(1)}
@@ -43,7 +42,6 @@ const UusiMainosAika = ({
           }
         >
           <p>1 Viikko</p>
-          <p>0.00€</p>
         </div>
         <div
           onClick={() => setSelectedPaketti(2)}
@@ -54,7 +52,6 @@ const UusiMainosAika = ({
           }
         >
           <p>1 Kuukausi</p>
-          <p>0.00€</p>
         </div>
         <div
           onClick={() => setSelectedPaketti(3)}
@@ -65,7 +62,26 @@ const UusiMainosAika = ({
           }
         >
           <p>3 kuukautta</p>
-          <p>0.00€</p>
+        </div>
+        <div
+          onClick={() => setSelectedPaketti(4)}
+          className={
+            selectedPaketti === 4
+              ? "selected-paketti"
+              : "paivamaara-paketti-card"
+          }
+        >
+          <p>1 Vuosi</p>
+        </div>
+        <div
+          onClick={() => setSelectedPaketti(5)}
+          className={
+            selectedPaketti === 5
+              ? "selected-paketti"
+              : "paivamaara-paketti-card"
+          }
+        >
+          <p>Pysyvä</p>
         </div>
       </div>
 
@@ -80,7 +96,11 @@ const UusiMainosAika = ({
           </>
         ) : (
           <>
-            <p>2. Mainoksen ajankohta</p>
+            {selectedPaketti !== 5 ? (
+              <p>2. Mainoksen ajankohta</p>
+            ) : (
+              <p>2. Mainoksen aloitus päivämäärä</p>
+            )}
           </>
         )}
       </div>
@@ -97,17 +117,21 @@ const UusiMainosAika = ({
                 : selectedDayRange.from.month}
               .{selectedDayRange.from.year}
             </p>
-            <p> - </p>
-            <p>
-              {selectedDayRange.to.day < 10
-                ? "0" + selectedDayRange.to.day
-                : selectedDayRange.to.day}
-              .
-              {selectedDayRange.to.month < 10
-                ? "0" + selectedDayRange.to.month
-                : selectedDayRange.to.month}
-              .{selectedDayRange.to.year}
-            </p>
+            {selectedDayRange.to.year < 3000 ? (
+              <>
+                <p> - </p>
+                <p>
+                  {selectedDayRange.to.day < 10
+                    ? "0" + selectedDayRange.to.day
+                    : selectedDayRange.to.day}
+                  .
+                  {selectedDayRange.to.month < 10
+                    ? "0" + selectedDayRange.to.month
+                    : selectedDayRange.to.month}
+                  .{selectedDayRange.to.year}
+                </p>
+              </>
+            ) : null}
           </div>
         ) : (
           <div className="ajat-cont"></div>
