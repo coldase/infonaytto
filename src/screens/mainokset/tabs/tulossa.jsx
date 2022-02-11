@@ -2,7 +2,7 @@ import "./tulossa.css";
 import OmatMainoksetCard from "../../../components/omatmainoksetcard/omatmainoksetcard";
 import { Link } from "react-router-dom";
 
-const Tulossa = ({ userAds, update }) => {
+const Tulossa = ({ userAds, update, mainospaikat }) => {
   const filterAds = (ads) => {
     let temp = [];
     let datenow = Date.now();
@@ -26,7 +26,12 @@ const Tulossa = ({ userAds, update }) => {
         <div className="tulossa-card-container">
           {filterAds(userAds).map((item) => {
             return (
-              <OmatMainoksetCard key={item.ad_id} item={item} update={update} />
+              <OmatMainoksetCard
+                key={item.ad_id}
+                item={item}
+                update={update}
+                mainospaikat={mainospaikat}
+              />
             );
           })}
         </div>

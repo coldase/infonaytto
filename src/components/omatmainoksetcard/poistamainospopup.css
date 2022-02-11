@@ -10,8 +10,9 @@
   width: 500px;
   height: 350px;
   border-radius: 10px;
-  background-color: var(--main-blue);
-  box-shadow: 0 0 2px 1px black;
+  background-color: var(--main-light-blue);
+  box-shadow: 0 0 0.5px 1px black;
+  z-index: 100;
 }
 
 .poistamainospopup-container > p {
@@ -36,7 +37,7 @@
   height: 40px;
   display: flex;
   justify-content: center;
-  background-color: var(--main-light-blue);
+  background-color: var(--main-blue);
   border-radius: 5px;
 }
 

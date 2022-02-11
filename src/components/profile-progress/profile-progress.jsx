@@ -19,7 +19,7 @@ const ProfileProgress = ({ currentStep, setCurrentStep }) => {
       >
         <p style={currentStep === 1 ? { color: "#343a40" } : null}>Tietoni</p>
       </div>
-      <div
+      {/* <div
         onClick={() => setCurrentStep(2)}
         style={currentStep === 2 ? { borderBottom: "4px solid black" } : null}
         className="profile-progress-step"
@@ -27,7 +27,7 @@ const ProfileProgress = ({ currentStep, setCurrentStep }) => {
         <p style={currentStep === 2 ? { color: "#343a40" } : null}>
           Tilaukseni
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import "./arkisto.css";
 import OmatMainoksetCard from "../../../components/omatmainoksetcard/omatmainoksetcard";
 import { Link } from "react-router-dom";
-const Arkisto = ({ userAds, update }) => {
+const Arkisto = ({ userAds, update, mainospaikat }) => {
   const filterAds = (ads) => {
     let temp = [];
     let datenow = Date.now();
@@ -25,7 +25,13 @@ const Arkisto = ({ userAds, update }) => {
         <div className="arkisto-card-container">
           {filterAds(userAds).map((item) => {
             return (
-              <OmatMainoksetCard key={item.ad_id} item={item} update={update} />
+              <OmatMainoksetCard
+                canDelete={true}
+                key={item.ad_id}
+                item={item}
+                update={update}
+                mainospaikat={mainospaikat}
+              />
             );
           })}
         </div>

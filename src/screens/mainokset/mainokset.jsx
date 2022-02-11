@@ -21,6 +21,7 @@ const Mainokset = ({
   setIsLoginPopup,
   setLoginTab,
   setisshowmap,
+  mainospaikat,
 }) => {
   const navigate = useNavigate();
 
@@ -47,13 +48,25 @@ const Mainokset = ({
 
         {currentMainosTab === 0 ? <Tyonalla /> : null}
         {currentMainosTab === 1 ? (
-          <Nakyvilla userAds={userAds} update={update} />
+          <Nakyvilla
+            mainospaikat={mainospaikat}
+            userAds={userAds}
+            update={update}
+          />
         ) : null}
         {currentMainosTab === 2 ? (
-          <Tulossa userAds={userAds} update={update} />
+          <Tulossa
+            mainospaikat={mainospaikat}
+            userAds={userAds}
+            update={update}
+          />
         ) : null}
         {currentMainosTab === 3 ? (
-          <Arkisto userAds={userAds} update={update} />
+          <Arkisto
+            mainospaikat={mainospaikat}
+            userAds={userAds}
+            update={update}
+          />
         ) : null}
         {/* <Footer /> */}
       </div>

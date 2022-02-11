@@ -9,9 +9,9 @@ const Tietoni = ({ userinfodata }) => {
         <div className="tietoni-btn" onClick={() => alert("Under development")}>
           <p>Vaihda salasana</p>
         </div>
-        <div className="tietoni-btn" onClick={() => alert("Under development")}>
+        {/* <div className="tietoni-btn" onClick={() => alert("Under development")}>
           <p>Vaihda laskutustapa</p>
-        </div>
+        </div> */}
         <div className="tietoni-btn" onClick={() => alert("Under development")}>
           <p>Vahvista muutokset</p>
         </div>

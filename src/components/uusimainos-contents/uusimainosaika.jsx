@@ -33,6 +33,7 @@ const UusiMainosAika = ({
         >
           <p>Valitse vapaasti</p>
         </div>
+
         <div
           onClick={() => setSelectedPaketti(1)}
           className={
@@ -41,7 +42,7 @@ const UusiMainosAika = ({
               : "paivamaara-paketti-card"
           }
         >
-          <p>1 Viikko</p>
+          <p>1 Kuukausi</p>
         </div>
         <div
           onClick={() => setSelectedPaketti(2)}
@@ -51,32 +52,13 @@ const UusiMainosAika = ({
               : "paivamaara-paketti-card"
           }
         >
-          <p>1 Kuukausi</p>
+          <p>6 kuukautta</p>
         </div>
+
         <div
           onClick={() => setSelectedPaketti(3)}
           className={
             selectedPaketti === 3
-              ? "selected-paketti"
-              : "paivamaara-paketti-card"
-          }
-        >
-          <p>3 kuukautta</p>
-        </div>
-        <div
-          onClick={() => setSelectedPaketti(4)}
-          className={
-            selectedPaketti === 4
-              ? "selected-paketti"
-              : "paivamaara-paketti-card"
-          }
-        >
-          <p>1 Vuosi</p>
-        </div>
-        <div
-          onClick={() => setSelectedPaketti(5)}
-          className={
-            selectedPaketti === 5
               ? "selected-paketti"
               : "paivamaara-paketti-card"
           }
@@ -96,7 +78,7 @@ const UusiMainosAika = ({
           </>
         ) : (
           <>
-            {selectedPaketti !== 5 ? (
+            {selectedPaketti !== 3 ? (
               <p>2. Mainoksen ajankohta</p>
             ) : (
               <p>2. Mainoksen aloitus päivämäärä</p>

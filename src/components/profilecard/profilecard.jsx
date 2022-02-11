@@ -52,7 +52,7 @@ const ProfileCard = ({ userinfodata }) => {
             defaultValue={userinfodata.ytunnus}
           />
         </div>
-        <p>Laskutustapa:</p>
+        {/* <p>Laskutustapa:</p>
         <div id="laskutustapa-grp" className="input-grp">
           <label htmlFor="sahkoposti2">Sähköposti</label>
           <input
@@ -60,7 +60,7 @@ const ProfileCard = ({ userinfodata }) => {
             name="sahkoposti2"
             defaultValue={userinfodata.email}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

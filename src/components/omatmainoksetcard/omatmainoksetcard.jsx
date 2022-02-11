@@ -1,11 +1,13 @@
 import "./omatmainoksetcard.css";
 import axios from "axios";
-import { IoMdTrash } from "react-icons/io";
+import { RiPencilFill } from "react-icons/ri";
 import { useState } from "react";
 import PoistaMainosPopup from "./poistamainospopup";
+import MainoksenMuokkaus from "../mainoksenmuokkaus/mainoksenmuokkaus";
 
-const OmatMainoksetCard = ({ item, update }) => {
+const OmatMainoksetCard = ({ item, update, mainospaikat, canDelete }) => {
   const [showpoistamainospopup, setshowpoistamainospopup] = useState(false);
+  const [showmainoksenmuokkaus, setshowmainoksenmuokkaus] = useState(false);
 
   const alueet = item.ad_type.split(",");
   const formatDate = (date) => {
@@ -15,6 +17,10 @@ const OmatMainoksetCard = ({ item, update }) => {
     } else {
       return "Pysyvä";
     }
+  };
+
+  const openMuokkaus = () => {
+    setshowmainoksenmuokkaus(true);
   };
 
   const deleteAd = async (adid) => {
@@ -39,13 +45,11 @@ const OmatMainoksetCard = ({ item, update }) => {
       <div className="omatmainokset-card-image-container">
         <img alt={item.name} src={`data:image/png;base64, ${item.image}`} />
       </div>
-      <div
-        // onClick={() => deleteAd(item.ad_id)}
-        className="omatmainokset-card-info-container"
-      >
-        <IoMdTrash
+      <div className="omatmainokset-card-info-container">
+        {/* <button onClick={() => openMuokkaus()}>Muokkaa</button> */}
+        <RiPencilFill
           className="omatmainokset-card-trash-icon"
-          onClick={() => setshowpoistamainospopup(true)}
+          onClick={() => openMuokkaus(true)}
         />
         <div className="omatmainokset-card-name-container">
           <p className="omatmainokset-card-name">{item.name}</p>
@@ -68,6 +72,18 @@ const OmatMainoksetCard = ({ item, update }) => {
           handleDel={() => deleteAd(item.ad_id)}
           item={item}
           close={() => setshowpoistamainospopup(false)}
+        />
+      ) : null}
+
+      {showmainoksenmuokkaus ? (
+        <MainoksenMuokkaus
+          canDelete={canDelete}
+          setshowpoistamainospopup={setshowpoistamainospopup}
+          deleteAd={() => deleteAd(item.ad_id)}
+          update={update}
+          mainospaikat={mainospaikat}
+          item={item}
+          close={() => setshowmainoksenmuokkaus(false)}
         />
       ) : null}
     </div>

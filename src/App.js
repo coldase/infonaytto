@@ -117,7 +117,6 @@ const App = () => {
     })
       .then((res) => {
         setUserAds(res.data);
-        console.log(res);
       })
       .catch((err) => console.log(err));
   };
@@ -194,6 +193,7 @@ const App = () => {
           path="/mainokset"
           element={
             <Mainokset
+              mainospaikat={mainospaikat}
               setLoginTab={setLoginTab}
               update={() => setupdatehelper(!updatehelper)}
               userAds={userAds}
