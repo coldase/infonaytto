@@ -155,7 +155,12 @@ const App = () => {
 
   useEffect(() => {
     handleGetAdData(userinfodata.userid, localStorage.getItem("token"));
-  }, [userinfodata, updatehelper]);
+  }, [userinfodata]);
+
+  useEffect(() => {
+    handleGetInfoData(localStorage.getItem("token"));
+    handleGetAdData(userinfodata.userid, localStorage.getItem("token"));
+  }, [updatehelper]);
 
   return (
     <div>
@@ -234,6 +239,7 @@ const App = () => {
               setCurrentProfileTab={setCurrentProfileTab}
               currentProfileTab={currentProfileTab}
               userAds={userAds}
+              update={() => setupdatehelper(!updatehelper)}
             />
           }
         />

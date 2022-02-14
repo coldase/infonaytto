@@ -2,6 +2,8 @@ import "./mainoksenmuokkaus.css";
 import Calendar from "@hassanmojab/react-modern-calendar-datepicker";
 import "@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css";
 import { useState, useEffect } from "react";
+import { AiOutlineClose } from "react-icons/ai";
+import axios from "axios";
 const MainoksenMuokkaus = ({
   close,
   item,
@@ -17,6 +19,68 @@ const MainoksenMuokkaus = ({
     to: null,
   });
 
+  const setolddates = () => {
+    const oldstart = item.start_date.split("-");
+    const oldend = item.end_date.split("-");
+
+    const oldstarty = parseInt(oldstart[0]);
+    const oldstartm = parseInt(oldstart[1]);
+    const oldstartd = parseInt(oldstart[2]);
+
+    const oldendy = parseInt(oldend[0]);
+    const oldendm = parseInt(oldend[1]);
+    const oldendd = parseInt(oldend[2]);
+
+    const start = {
+      year: oldstarty,
+      month: oldstartm,
+      day: oldstartd,
+    };
+
+    const end = {
+      year: oldendy,
+      month: oldendm,
+      day: oldendd,
+    };
+
+    setSelectedDayRange({
+      from: start,
+      to: end,
+    });
+  };
+
+  const handleSendData = async (id, alueet, pvm) => {
+    let mystartdate = `${pvm.from.year}-${
+      pvm.from.month < 10 ? "0" + pvm.from.month : pvm.from.month
+    }-${pvm.from.day < 10 ? "0" + pvm.from.day : pvm.from.day}`;
+    let myenddate = `${pvm.to.year}-${
+      pvm.to.month < 10 ? "0" + pvm.to.month : pvm.to.month
+    }-${pvm.to.day < 10 ? "0" + pvm.to.day : pvm.to.day}`;
+
+    let tempalueet = alueet.join(",");
+
+    const formdata = new FormData();
+    formdata.append("ad_id", id);
+    formdata.append("ad_type", tempalueet);
+    formdata.append("start_date", mystartdate);
+    formdata.append("end_date", myenddate);
+
+    await axios({
+      method: "POST",
+      url: process.env.REACT_APP_BACK_URL + "api/update_ad.php",
+      data: formdata,
+    })
+      .then((res) => {
+        if (res.data === "success") {
+          close();
+          update();
+        } else {
+          alert("ERROR");
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
     setSelectedDayRange({
       from: null,
@@ -26,12 +90,9 @@ const MainoksenMuokkaus = ({
 
   useEffect(() => {
     setSelectedPaikat(item.ad_type.split(","));
+    setolddates();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const handleSave = () => {
-    close();
-    update();
-  };
 
   const handleOnChange = (val) => {
     let temp = null;
@@ -61,10 +122,6 @@ const MainoksenMuokkaus = ({
   return (
     <div className="mainoksenmuokkaus-container">
       <p className="mainoksenmuokkau-nimi">{item.name}</p>
-      {/* <div className="mainoksenmuokkaus-image-container">
-        <img src={`data:image/png;base64, ${item.image}`} alt={item.name} />
-      </div> */}
-
       <p className="mainoksenmuokkaus-header">Kategoriat</p>
       <div className="mainoksenmuokkaus-paketti-container">
         {mainospaikat.map((alue) => {
@@ -177,12 +234,27 @@ const MainoksenMuokkaus = ({
         />
       </div>
       <div className="mainoksenmuokkaus-tallenna-btn-container">
-        <div
-          onClick={() => handleSave()}
-          className="mainoksenmuokkaus-tallenna-btn"
+        <button
+          disabled={
+            selectedDayRange.to !== null &&
+            selectedDayRange.from !== null &&
+            selectedPaikat.length > 0
+              ? false
+              : true
+          }
+          onClick={() =>
+            handleSendData(item.ad_id, selectedPaikat, selectedDayRange)
+          }
+          className={
+            selectedDayRange.to !== null &&
+            selectedDayRange.from !== null &&
+            selectedPaikat.length > 0
+              ? "mainoksenmuokkaus-tallenna-btn"
+              : "mainoksenmuokkaus-tallenna-btn-disabled"
+          }
         >
           <p>Tallenna</p>
-        </div>
+        </button>
         {/* {canDelete ? ( */}
         <div
           onClick={() => setshowpoistamainospopup(true)}
@@ -190,7 +262,9 @@ const MainoksenMuokkaus = ({
         >
           <p>Poista</p>
         </div>
+
         {/* ) : null} */}
+        <AiOutlineClose className="close-icon" onClick={() => close()} />
       </div>
     </div>
   );

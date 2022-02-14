@@ -51,7 +51,7 @@ const Profile = ({
             />
           ) : null}
           {currentProfileTab === 1 ? (
-            <Tietoni userinfodata={userinfodata} />
+            <Tietoni userinfodata={userinfodata} update={update} />
           ) : null}
           {currentProfileTab === 2 ? <Tilaukseni /> : null}
         </div>

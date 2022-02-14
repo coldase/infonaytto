@@ -19,9 +19,12 @@
 .tietoni-btn {
   background-color: var(--main-blue);
   margin: 0;
+  display: flex;
   border-radius: 5px;
   cursor: pointer;
   margin-right: 10px;
+  width: 220px;
+  justify-content: center;
 }
 
 .tietoni-btn:last-child {
@@ -34,6 +37,29 @@
 }
 
 .tietoni-btn > p {
+  align-self: center;
+  padding: 10px 15px;
+  color: #fff;
+  margin: 0;
+  font-size: 20px;
+}
+.tietoni-tallennettu-btn {
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-pink);
+  margin: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  width: 220px;
+}
+
+.tietoni-tallennettu-btn:last-child {
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.tietoni-tallennettu-btn > p {
   padding: 10px 15px;
   color: #fff;
   margin: 0;

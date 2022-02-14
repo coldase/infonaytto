@@ -29,7 +29,7 @@
   display: flex;
   align-self: center;
   justify-content: space-between;
-  width: 45%;
+  /* width: 70%; */
 }
 
 .mainokseni-grp {
@@ -43,6 +43,7 @@
   display: flex;
   justify-content: center;
   padding: 20px 10px;
+  min-width: 200px;
   height: 100px;
   background-color: var(--main-light-blue);
   border-radius: 5px;

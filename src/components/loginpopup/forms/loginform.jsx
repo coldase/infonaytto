@@ -22,7 +22,6 @@ const LoginForm = ({ handleLogin, isLoggedIn }) => {
       <h1 className="loginpopup-logintab-header" id="kirjaudusisäänheader">
         Kirjaudu sisään
       </h1>
-
       <div className="loginpopup-logintab-form-container">
         <div className="formitem">
           <input

@@ -4,6 +4,7 @@ import axios from "axios";
 
 const SigninForm = ({ setLoginTab }) => {
   const [ytunnus, setytunnus] = useState("");
+  const [yname, setyname] = useState("");
   const [fname, setfname] = useState("");
   const [lname, setlname] = useState("");
   const [email, setemail] = useState("");
@@ -19,10 +20,12 @@ const SigninForm = ({ setLoginTab }) => {
     mylname,
     myemail,
     mypassword,
-    myphone
+    myphone,
+    myyname
   ) => {
     let formdata = new FormData();
     formdata.append("ytunnus", myytunnus);
+    formdata.append("yname", myyname);
     formdata.append("firstname", myfname);
     formdata.append("lastname", mylname);
     formdata.append("email", myemail);
@@ -54,11 +57,21 @@ const SigninForm = ({ setLoginTab }) => {
       <div className="loginpopup-logintab-form-container">
         <div className="formitem">
           <input
+            onChange={(e) => setyname(e.target.value)}
+            type="text"
+            name="ynimi"
+            placeholder={"Yrityksen nimi"}
+          />
+        </div>
+        <div className="formitem">
+          <input
             onChange={(e) => setytunnus(e.target.value)}
             type="text"
             name="ytunnus"
             placeholder={"Y-tunnus"}
           />
+        </div>
+        <div className="formitem">
           <input
             onChange={(e) => setfname(e.target.value)}
             type="text"
@@ -103,7 +116,9 @@ const SigninForm = ({ setLoginTab }) => {
         </div>
         <div
           className="login-btn"
-          onClick={() => handleSignup(ytunnus, fname, lname, email, pwd, phone)}
+          onClick={() =>
+            handleSignup(ytunnus, fname, lname, email, pwd, phone, yname)
+          }
         >
           <p>Rekisteröidy</p>
         </div>

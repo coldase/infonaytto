@@ -154,6 +154,7 @@
   opacity: 0.8;
 }
 .mainoksenmuokkaus-tallenna-btn {
+  border: none;
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -165,6 +166,8 @@
 }
 .mainoksenmuokkaus-tallenna-btn > p {
   color: #fff;
+  align-self: center;
+  font-size: 16px;
 }
 .mainoksenmuokkaus-poista-btn:hover {
   opacity: 0.8;
@@ -181,4 +184,36 @@
 }
 .mainoksenmuokkaus-poista-btn > p {
   color: #fff;
+  align-self: center;
+  font-size: 16px;
+}
+
+.close-icon {
+  color: #fff;
+  font-size: 35px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.close-icon:hover {
+  opacity: 0.5;
+}
+
+.mainoksenmuokkaus-tallenna-btn-disabled {
+  border: none;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
+  border-radius: 5px;
+  background-color: var(--main-light-blue);
+  opacity: 0.5;
+  /* padding: 0px 10px; */
+  width: 150px;
+}
+.mainoksenmuokkaus-tallenna-btn-disabled > p {
+  color: #fff;
+  align-self: center;
+  font-size: 16px;
 }

@@ -56,6 +56,7 @@ const UusiMainosJulkaisu = ({
       .then((res) => {
         if (res.data === "success") {
           handleTimer();
+          console.log(formdata);
         } else {
           alert("ERROR");
         }
