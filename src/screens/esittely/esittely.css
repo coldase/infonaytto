@@ -108,48 +108,6 @@
   height: 150px;
 }
 
-@media only screen and (max-width: 1050px) {
-  .esittely-content {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    /* background-color: red; */
-    width: 80%;
-    justify-content: center;
-  }
-  .esittely-text {
-    align-self: center;
-    text-align: center;
-  }
-  .esittely-header {
-    text-align: center;
-    margin-left: 0;
-  }
-  .esittely-content2 {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    /* background-color: red; */
-    width: 80%;
-    justify-content: center;
-  }
-  .esittely-text2 {
-    align-self: center;
-    text-align: center;
-  }
-  .esittely-header2 {
-    text-align: center;
-    margin-left: 0;
-  }
-  .aloitatasta-btn {
-    align-self: center;
-    /* justify-content: center; */
-  }
-  .katsonaytot-kartalta-btn {
-    align-self: center;
-  }
-}
-
 .kirjautunut-esittely-container {
   display: flex;
   margin-left: 5%;
@@ -176,6 +134,7 @@
   margin-top: 20px;
   display: flex;
   align-self: center;
+  flex-direction: row;
   /* height: 200px; */
   /* background-color: red; */
   width: 90%;
@@ -186,6 +145,7 @@
 .kirjautunut-esittely-infocard {
   display: flex;
   width: 32%;
+  min-width: 316px;
   height: 500px;
   border: 2px solid #888;
   /* background-color: blue; */
@@ -258,4 +218,64 @@
   align-self: center;
   font-size: 25px;
   color: #fff;
+}
+
+@media only screen and (max-width: 1050px) {
+  .esittely-content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    /* background-color: red; */
+    width: 80%;
+    justify-content: center;
+  }
+  .esittely-text {
+    align-self: center;
+    text-align: center;
+  }
+  .esittely-header {
+    text-align: center;
+    margin-left: 0;
+  }
+  .esittely-content2 {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    /* background-color: red; */
+    width: 80%;
+    justify-content: center;
+  }
+  .esittely-text2 {
+    align-self: center;
+    text-align: center;
+  }
+  .esittely-header2 {
+    text-align: center;
+    margin-left: 0;
+  }
+  .aloitatasta-btn {
+    align-self: center;
+    /* justify-content: center; */
+  }
+  .katsonaytot-kartalta-btn {
+    align-self: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .kirjautunut-esittely-infocard-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .kirjautunut-esittely-header {
+    transform: scale(0.5);
+    text-align: center;
+  }
+  .kirjautunut-esittely-btn-container {
+    width: 100%;
+  }
+  .kirjautunut-esittely-btn {
+    transform: scale(0.8);
+    margin: 0;
+  }
 }
