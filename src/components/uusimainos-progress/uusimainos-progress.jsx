@@ -10,7 +10,7 @@ const UusiMainosProgress = ({
       <div
         onClick={() => {
           setCurrentStep(0);
-          setshowmainostoimistotab(false);
+          setshowmainostoimistotab(0);
         }}
         className={"uusimainos-progress-step"}
         style={currentStep === 0 ? { borderBottom: "4px solid black" } : null}

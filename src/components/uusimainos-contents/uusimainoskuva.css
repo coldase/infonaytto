@@ -132,3 +132,48 @@
   margin: 0;
   padding: 10px 10px;
 }
+
+.uusimainoskuva-kuvatab-container {
+  display: flex;
+  align-self: center;
+  /* background-color: red; */
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.uusimainoskuva-kuvatab-container > p:first-child {
+  font-family: var(--headerfont);
+  align-self: center;
+  font-size: 50px;
+  margin: 0;
+  color: var(--main-grey);
+}
+
+.uusimainoskuva-kuvatab-container > p {
+  font-size: 20px;
+  align-self: center;
+  margin: 0;
+  color: var(--main-grey);
+}
+
+.uusimainoskuva-kuvatab-container > p > span {
+  font-weight: 600;
+}
+.uusimainoskuva-omakuva-preview-empty {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 600px;
+  /* min-width: 80%; */
+  max-width: 90%;
+  border-radius: 5px;
+  height: 300px;
+  border: 2px solid var(--main-grey);
+}
+.uusimainoskuva-omakuva-preview-empty > p {
+  font-family: var(--headerfont);
+  font-size: 5em;
+  align-self: center;
+  color: var(--main-grey);
+}
