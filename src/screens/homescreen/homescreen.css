@@ -111,7 +111,7 @@
 @media only screen and (max-width: 1600px) {
   .homescreen-content-2 {
     flex-wrap: wrap;
-    width: 100%;
+    width: 70%;
   }
   .homescreen-kokemus-container {
     margin: 0;
@@ -121,5 +121,6 @@
 @media only screen and (max-width: 800px) {
   .homescreen-content-1 > h1 {
     font-size: 40px;
+    width: 90%;
   }
 }

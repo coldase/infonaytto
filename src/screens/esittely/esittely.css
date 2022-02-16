@@ -28,8 +28,9 @@
 .katsonaytot-kartalta-btn {
   display: flex;
   justify-content: center;
+  background-color: var(--main-blue);
   width: 230px;
-  border: 2px solid #fff;
+  /* border: 2px solid #fff; */
   /* margin-left: 150px; */
   margin-top: 20px;
   margin-bottom: 50px;
@@ -49,6 +50,8 @@
   opacity: 0.8;
   background-color: rgb(52, 76, 100);
 }
+
+/* kirjaudu */
 .aloitatasta-btn {
   display: flex;
   justify-content: center;
