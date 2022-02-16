@@ -69,3 +69,18 @@
   font-weight: 500;
   color: #fff;
 }
+
+@media only screen and (max-width: 800px) {
+  .arkisto-card-container {
+    /* overflow: hidden; */
+    width: 100%;
+    flex-direction: column;
+  }
+  .arkisto-container {
+    margin: 0;
+    width: 100%;
+  }
+  .arkisto-empty-container {
+    transform: scale(0.7);
+  }
+}

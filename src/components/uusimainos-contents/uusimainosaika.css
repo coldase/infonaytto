@@ -141,3 +141,15 @@
   width: 500px;
   height: 50px;
 }
+
+@media only screen and (max-width: 800px) {
+  .paivamaarat-headers {
+    text-align: center;
+  }
+  .mainosaikabtn {
+    margin-bottom: 20px;
+  }
+  .ajat-cont {
+    width: 100%;
+  }
+}

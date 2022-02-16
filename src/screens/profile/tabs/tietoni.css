@@ -65,3 +65,12 @@
   margin: 0;
   font-size: 20px;
 }
+
+@media only screen and (max-width: 800px) {
+  .tietoni-btn-container {
+    /* transform: scale(0.6); */
+  }
+  .tietoni-container {
+    transform: scale(0.6);
+  }
+}

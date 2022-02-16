@@ -52,3 +52,16 @@
 #laskutustapa-grp {
   margin-top: 25px;
 }
+
+@media only screen and (max-width: 800px) {
+  .profile-card-container {
+    flex-direction: column;
+    margin-top: -20%;
+  }
+  .grp1 {
+    width: 92%;
+  }
+  .grp2 {
+    width: 92%;
+  }
+}

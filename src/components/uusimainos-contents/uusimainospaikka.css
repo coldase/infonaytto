@@ -77,3 +77,9 @@
   padding: 0px 10px;
   color: #fff;
 }
+
+@media only screen and (max-width: 800px) {
+  .uusimainospaikka-container > p {
+    text-align: center;
+  }
+}

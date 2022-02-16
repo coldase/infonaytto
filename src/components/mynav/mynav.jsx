@@ -26,10 +26,20 @@ const MyNav = ({
     <div
       onClick={() => {
         setisshowmap(false);
-        setNavOpen(!navOpen);
+        if (window.innerWidth > 800) {
+          setNavOpen(!navOpen);
+        }
       }}
-      onMouseEnter={() => setNavOpen(true)}
-      onMouseLeave={() => setNavOpen(false)}
+      onMouseEnter={() => {
+        if (window.innerWidth > 800) {
+          setNavOpen(true);
+        }
+      }}
+      onMouseLeave={() => {
+        if (window.innerWidth > 800) {
+          setNavOpen(false);
+        }
+      }}
     >
       {navOpen ? (
         <div className="mynav">
@@ -114,45 +124,51 @@ const MyNav = ({
           <div className="navheader">
             <p>iN</p>
           </div>
-          <div
+          <Link
+            to="/uusimainos"
             className="navlink"
             style={location.pathname === "/uusimainos" ? { opacity: 1 } : null}
           >
             <MdShoppingCart style={{ alignSelf: "center" }} size={50} />
-          </div>
+          </Link>{" "}
           {isLoggedIn ? (
-            <div
+            <Link
+              to="/mainokset"
               className="navlink"
               style={location.pathname === "/mainokset" ? { opacity: 1 } : null}
             >
               <MdCollections style={{ alignSelf: "center" }} size={50} />
-            </div>
+            </Link>
           ) : null}
-          <div
+          <Link
+            to="/esittely"
             className="navlink"
             style={location.pathname === "/esittely" ? { opacity: 1 } : null}
           >
             <AiFillInfoCircle style={{ alignSelf: "center" }} size={50} />
-          </div>
+          </Link>
           <div className="navseparator"></div>
           {isLoggedIn ? (
-            <div
+            <Link
+              to="/profiili"
               className="navlink"
               style={location.pathname === "/profiili" ? { opacity: 1 } : null}
             >
               <FaUserCircle style={{ alignSelf: "center" }} size={50} />
-            </div>
+            </Link>
           ) : null}
-
           {isLoggedIn ? (
-            <div className="navlink" onClick={navOpen ? handleLogout : null}>
+            <div
+              className="navlink"
+              onClick={navOpen || window.innerWidth < 800 ? handleLogout : null}
+            >
               <FiLogOut style={{ alignSelf: "center" }} size={50} />
             </div>
           ) : (
             <div
               className="navlink"
               onClick={
-                navOpen
+                navOpen || window.innerWidth < 800
                   ? () => {
                       setLoginTab(true);
                       setIsLoginPopup(true);

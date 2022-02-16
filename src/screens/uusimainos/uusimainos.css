@@ -90,8 +90,9 @@
   }
 
   .uusimainos-header h1 {
-    margin-top: 90px;
-    font-size: 40px;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 35px;
   }
 
   .uusimainos-empty-login-btn {

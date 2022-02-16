@@ -22,3 +22,13 @@
   font-family: var(--headerfont);
   font-size: 60px;
 }
+
+@media only screen and (max-width: 800px) {
+  .mainokset-progress-step {
+    margin: 10px;
+    /* width: 5px; */
+  }
+  .mainokset-progress-step > p {
+    font-size: 25px;
+  }
+}

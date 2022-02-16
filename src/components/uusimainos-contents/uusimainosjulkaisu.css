@@ -233,3 +233,27 @@
   font-family: var(--mainfont);
   font-size: 20px;
 }
+
+@media only screen and (max-width: 800px) {
+  .uusimainosjulkaisu-container {
+    width: 100%;
+  }
+  .adnameinput-container > p {
+    text-align: center;
+  }
+  .uusimainosjulkaisu-image-container > p {
+    text-align: center;
+  }
+  .uusimainosjulkaisu-paikat-container > p {
+    text-align: center;
+  }
+  .uusimainosjulkaisu-ajat-container > p {
+    text-align: center;
+  }
+  .uusimainosjulkaisu-julkaise-container {
+    text-align: center;
+  }
+  .julkaisu-kuva-puuttuu > p {
+    text-align: center;
+  }
+}

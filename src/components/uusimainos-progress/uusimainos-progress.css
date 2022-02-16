@@ -25,3 +25,12 @@
   font-family: var(--headerfont);
   font-size: 60px;
 }
+
+@media only screen and (max-width: 800px) {
+  .uusimainos-progress-step {
+    width: 25px;
+  }
+  .uusimainos-progress-step > p {
+    font-size: 30px;
+  }
+}

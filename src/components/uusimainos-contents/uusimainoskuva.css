@@ -177,3 +177,16 @@
   align-self: center;
   color: var(--main-grey);
 }
+
+@media only screen and (max-width: 800px) {
+  .uusimainoskuva-omakuva-container > p {
+    text-align: center;
+  }
+  .uusimainoskuva-kuvatab-container > p {
+    text-align: center;
+    transform: scale(0.8);
+  }
+  .uusimainoskuva-omakuva-preview-empty {
+    width: 100%;
+  }
+}

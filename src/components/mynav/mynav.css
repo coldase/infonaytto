@@ -52,18 +52,36 @@
 
 @media only screen and (max-width: 800px) {
   .mynav {
+    justify-content: space-evenly;
+    display: flex;
     padding: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: 100%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    /* bottom: 0; */
+  }
+  .navseparator {
+    display: none;
   }
   .navlink {
-    transform: scale(0.5);
+    transform: scale(0.7);
+    margin-top: 15px;
+    align-items: center;
   }
   .navseparator {
     transform: scale(0.5);
     height: 0;
+    align-items: center;
   }
   .navheader p {
-    transform: scale(0.5);
-    margin-bottom: 10px;
+    transform: scale(0.7);
+    margin-top: 2px;
+    align-items: center;
   }
   .navheader {
   }
