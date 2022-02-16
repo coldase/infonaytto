@@ -263,7 +263,7 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 950px) {
   .kirjautunut-esittely-infocard-container {
     flex-direction: column;
     align-items: center;
@@ -281,6 +281,7 @@
   }
   .kirjautunut-esittely-infocard {
     margin-top: 15px;
+    width: 100%;
   }
   .esittely-header {
     transform: scale(0.5);
