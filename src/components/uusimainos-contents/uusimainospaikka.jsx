@@ -1,20 +1,13 @@
 import "./uusimainospaikka.css";
+import UusimainospaikkaCard from "./uusimainospaikkacard";
 
 const UusiMainosPaikka = ({
   mybuttons,
   setmybuttons,
   setisshowmap,
   mainospaikat,
+  allscreens,
 }) => {
-  const handleCardClick = (item) => {
-    if (mybuttons.includes(item)) {
-      let filteredArray = mybuttons.filter((x) => x !== item);
-      setmybuttons(filteredArray);
-    } else {
-      setmybuttons([...mybuttons, item]);
-    }
-  };
-
   return (
     <>
       <div className="uusimainospaikka-container">
@@ -22,23 +15,19 @@ const UusiMainosPaikka = ({
         <h5>Valitse vähintään yksi kategoria, joka kuvaa mainostasi</h5>
         <div className="uusimainos-paikka-card-container">
           {mainospaikat.map((item) => (
-            <div
+            <UusimainospaikkaCard
+              allscreens={allscreens}
               key={item}
-              onClick={() => handleCardClick(item)}
-              className={`uusimainos-paikka-card ${
-                mybuttons.includes(item) ? "selected" : null
-              }`}
-            >
-              <p>{item}</p>
-              {/* <p>Näyttöjä</p>
-              <p>12</p> */}
-            </div>
+              mybuttons={mybuttons}
+              item={item}
+              setmybuttons={setmybuttons}
+            />
           ))}
         </div>
         <div className="uusimainos-mapbtn-container">
-          <div onClick={() => setisshowmap(true)} className="uusimainos-mapbtn">
+          {/* <div onClick={() => setisshowmap(true)} className="uusimainos-mapbtn">
             <p>Näytä alueet kartalla</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

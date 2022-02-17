@@ -20,6 +20,7 @@ const App = () => {
   const [userAds, setUserAds] = useState([]);
   const [isLoginPopup, setIsLoginPopup] = useState(false);
   const [loginTab, setLoginTab] = useState(true);
+  const [allscreens, setallscreens] = useState([]);
   const navigate = useNavigate();
 
   const [updatehelper, setupdatehelper] = useState(true);
@@ -40,6 +41,15 @@ const App = () => {
       url: process.env.REACT_APP_BACK_URL + "api/get_categories.php",
     })
       .then((res) => setmainospaikat(res.data.map((item) => item.name)))
+      .catch((err) => console.log(err));
+  };
+
+  const get_all_screens = async () => {
+    await axios({
+      method: "GET",
+      url: process.env.REACT_APP_BACK_URL + "api/get_all_screens.php",
+    })
+      .then((res) => setallscreens(res.data))
       .catch((err) => console.log(err));
   };
 
@@ -151,6 +161,7 @@ const App = () => {
 
     check_if_token_is_logged_in(localStorage.getItem("token"));
     get_categories();
+    get_all_screens();
   }, []);
 
   useEffect(() => {
@@ -182,6 +193,7 @@ const App = () => {
           path="/uusimainos"
           element={
             <UusiMainos
+              allscreens={allscreens}
               setLoginTab={setLoginTab}
               update={() => setupdatehelper(!updatehelper)}
               userid={userinfodata.userid}

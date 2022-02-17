@@ -65,8 +65,10 @@
   border-radius: 5px;
   margin-bottom: 20px;
 }
-.julkaisu-kuva-puuttuu p {
+.julkaisu-kuva-puuttuu > p {
   align-self: center;
+  text-align: center;
+
   color: var(--main-grey);
   font-family: var(--headerfont);
   font-size: 80px;
@@ -99,6 +101,8 @@
   font-family: var(--headerfont);
   align-self: center;
   font-size: 50px;
+  text-align: center;
+
   margin: 20px;
 }
 
@@ -184,6 +188,7 @@
   align-self: center;
   font-size: 50px;
   margin: 10px;
+  text-align: center;
 }
 
 .uusimainosjulkaisu-ajat-aika {
@@ -207,6 +212,8 @@
 
 .uusimainosjulkaisu-julkaise-container > p {
   color: var(--main-grey);
+  text-align: center;
+
   font-family: var(--headerfont);
   align-self: center;
   font-size: 50px;

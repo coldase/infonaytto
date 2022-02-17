@@ -126,6 +126,9 @@ const UusiMainosKuva = ({
                 Kuvasuhde: <span>16:9</span>
               </p>
               <p>
+                Kuvan tarkkuus: <span>1920 x 1080px</span>
+              </p>
+              <p>
                 Tiedostomuoto:{" "}
                 {myimg === null ? (
                   <span>jpg, png, gif</span>
@@ -137,9 +140,7 @@ const UusiMainosKuva = ({
                   <span style={{ color: "red" }}>Väärä tiedostomuoto</span>
                 )}
               </p>
-              <p>
-                Resoluutio: <span>1920 x 1080px</span>
-              </p>
+
               <p>
                 Koko:{" "}
                 <span>

@@ -20,6 +20,7 @@ const UusiMainos = ({
   update,
   setIsLoginPopup,
   setLoginTab,
+  allscreens,
 }) => {
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -93,6 +94,7 @@ const UusiMainos = ({
               ) : null}
               {currentStep === 1 ? (
                 <UusiMainosPaikka
+                  allscreens={allscreens}
                   mainospaikat={mainospaikat}
                   mybuttons={mybuttons}
                   setmybuttons={setmybuttons}

@@ -1,0 +1,41 @@
+.uusimainos-paikka-card {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  margin: 10px;
+  height: 100%;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: var(--main-light-blue);
+}
+
+.selected {
+  background-color: var(--main-pink);
+}
+.uusimainos-paikka-card p {
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
+  align-self: center;
+  padding: 20px;
+}
+
+.shownaytot {
+  border-top: 2px solid white;
+  display: flex;
+  width: 90%;
+  align-self: center;
+  flex-direction: column;
+  padding-bottom: 10px;
+  /* height: 20px; */
+
+  /* background-color: red; */
+}
+
+.shownaytot > p {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 0;
+}
