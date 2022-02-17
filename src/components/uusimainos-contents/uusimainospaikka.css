@@ -82,4 +82,7 @@
   .uusimainospaikka-container > p {
     text-align: center;
   }
+  .uusimainospaikka-container > h5 {
+    text-align: center;
+  }
 }

@@ -19,7 +19,7 @@ const UusiMainosPaikka = ({
     <>
       <div className="uusimainospaikka-container">
         <p>Haluan että mainostani näytetään</p>
-        <h5>Valitse vähintään yksi kategoria</h5>
+        <h5>Valitse vähintään yksi kategoria, joka kuvaa mainostasi</h5>
         <div className="uusimainos-paikka-card-container">
           {mainospaikat.map((item) => (
             <div

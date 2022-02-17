@@ -68,9 +68,7 @@ const Mainokseni = ({ setCurrentMainosTab, userAds }) => {
           >
             <p>UUSIMAINOS</p>
           </Link>
-          <div className="mainokseni-info">
-            <p>alkaen 9,95€/3pv</p>
-          </div>
+          <div className="mainokseni-info">{/* <p>alkaen 9,95€/3pv</p> */}</div>
         </div>
       </div>
       <Link

@@ -3,7 +3,7 @@ import ProfileCard from "../../../components/profilecard/profilecard";
 import axios from "axios";
 import { useState } from "react";
 
-const Tietoni = ({ userinfodata, update }) => {
+const Tietoni = ({ userinfodata, update, showSalasana }) => {
   const [fname, setfname] = useState(userinfodata.firstname);
   const [lname, setlname] = useState(userinfodata.lastname);
   const [email, setemail] = useState(userinfodata.email);
@@ -54,48 +54,50 @@ const Tietoni = ({ userinfodata, update }) => {
   };
 
   return (
-    <div className="tietoni-container">
-      <ProfileCard
-        showtiedottallennettu={showtiedottallennettu}
-        userinfodata={userinfodata}
-        setfname={setfname}
-        setlname={setlname}
-        setemail={setemail}
-        setphone={setphone}
-        setyname={setyname}
-        setytunnus={setytunnus}
-      />
-      <div className="tietoni-btn-container">
-        <div className="tietoni-btn" onClick={() => alert("Under development")}>
-          <p>Vaihda salasana</p>
-        </div>
-        {/* <div className="tietoni-btn" onClick={() => alert("Under development")}>
+    <>
+      <div className="tietoni-container">
+        <ProfileCard
+          showtiedottallennettu={showtiedottallennettu}
+          userinfodata={userinfodata}
+          setfname={setfname}
+          setlname={setlname}
+          setemail={setemail}
+          setphone={setphone}
+          setyname={setyname}
+          setytunnus={setytunnus}
+        />
+        <div className="tietoni-btn-container">
+          <div className="tietoni-btn" onClick={() => showSalasana()}>
+            <p>Vaihda salasana</p>
+          </div>
+          {/* <div className="tietoni-btn" onClick={() => alert("Under development")}>
           <p>Vaihda laskutustapa</p>
         </div> */}
-        {!showtiedottallennettu ? (
-          <div
-            onClick={() =>
-              handleUserUpdate(
-                userinfodata.userid,
-                ytunnus,
-                fname,
-                lname,
-                email,
-                phone,
-                yname
-              )
-            }
-            className="tietoni-btn"
-          >
-            <p>Vahvista muutokset</p>
-          </div>
-        ) : (
-          <div className="tietoni-tallennettu-btn">
-            <p>Tiedot tallennettu</p>
-          </div>
-        )}
+          {!showtiedottallennettu ? (
+            <div
+              onClick={() =>
+                handleUserUpdate(
+                  userinfodata.userid,
+                  ytunnus,
+                  fname,
+                  lname,
+                  email,
+                  phone,
+                  yname
+                )
+              }
+              className="tietoni-btn"
+            >
+              <p>Vahvista muutokset</p>
+            </div>
+          ) : (
+            <div className="tietoni-tallennettu-btn">
+              <p>Tiedot tallennettu</p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 export default Tietoni;

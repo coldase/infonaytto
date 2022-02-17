@@ -2,12 +2,13 @@ import "./profile.css";
 import { useNavigate } from "react-router-dom";
 import MyNav from "../../components/mynav/mynav";
 // import Footer from "../../components/footer/footer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import ProfileProgress from "../../components/profile-progress/profile-progress";
 import Mainokseni from "./tabs/mainokseni.jsx";
 import Tietoni from "./tabs/tietoni.jsx";
 import Tilaukseni from "./tabs/tilaukseni.jsx";
+import SalasananVaihto from "../../components/salasananvaihto/salasananvaihto";
 
 const Profile = ({
   isLoggedIn,
@@ -23,6 +24,7 @@ const Profile = ({
   setCurrentMainosTab,
 }) => {
   const navigate = useNavigate();
+  const [showsalasananvaihto, setshowsalasananvaihto] = useState(false);
 
   useEffect(() => {
     if (!isLoggedIn && !localStorage.getItem("token")) {
@@ -51,11 +53,21 @@ const Profile = ({
             />
           ) : null}
           {currentProfileTab === 1 ? (
-            <Tietoni userinfodata={userinfodata} update={update} />
+            <Tietoni
+              userinfodata={userinfodata}
+              update={update}
+              showSalasana={() => setshowsalasananvaihto(true)}
+            />
           ) : null}
           {currentProfileTab === 2 ? <Tilaukseni /> : null}
         </div>
       </div>
+      {showsalasananvaihto ? (
+        <SalasananVaihto
+          userinfodata={userinfodata}
+          closeSalasana={() => setshowsalasananvaihto(false)}
+        />
+      ) : null}
       <MyNav
         setLoginTab={setLoginTab}
         isLoggedIn={isLoggedIn}

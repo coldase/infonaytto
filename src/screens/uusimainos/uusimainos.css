@@ -98,4 +98,7 @@
   .uusimainos-empty-login-btn {
     transform: scale(0.5);
   }
+  .uusimainos-empty-content {
+    width: 100%;
+  }
 }

@@ -25,7 +25,7 @@ const UusiMainos = ({
 
   const [myimg, setmyimg] = useState(null);
   const [selectedPaketti, setSelectedPaketti] = useState(0);
-  const [showmainostoimistotab, setshowmainostoimistotab] = useState(2);
+  const [showmainostoimistotab, setshowmainostoimistotab] = useState(0);
 
   const [mybuttons, setmybuttons] = useState([]);
   const [selectedDayRange, setSelectedDayRange] = useState({

@@ -123,7 +123,7 @@ const Esittely = ({
                 </p>
               </div>
             </div>
-            <div className="kirjautunut-esittely-infocard">
+            {/* <div className="kirjautunut-esittely-infocard">
               <div className="kirjautunut-esittely-infocard-image-container">
                 <img src={WallLogo} alt="wall" />
               </div>
@@ -136,7 +136,7 @@ const Esittely = ({
                   <p>6 KUUKAUTTA 0,00€</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="kirjautunut-esittely-btn-container">
             <Link to="/profiili" className="kirjautunut-esittely-btn">

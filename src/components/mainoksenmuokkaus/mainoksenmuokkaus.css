@@ -223,5 +223,6 @@
   .mainoksenmuokkaus-container {
     min-width: 0;
     width: 100%;
+    transform: scale(0.9);
   }
 }
