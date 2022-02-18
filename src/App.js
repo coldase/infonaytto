@@ -25,15 +25,7 @@ const App = () => {
 
   const [updatehelper, setupdatehelper] = useState(true);
 
-  const [mainospaikat, setmainospaikat] = useState([
-    "Koulutus",
-    "Liikuntapaikat",
-    "Terveyspalvelut",
-    "Ruokakaupat",
-    "Liikenne",
-    "Yleisotapahtumat",
-    "Puistot",
-  ]);
+  const [mainospaikat, setmainospaikat] = useState([]);
 
   const get_categories = async () => {
     await axios({

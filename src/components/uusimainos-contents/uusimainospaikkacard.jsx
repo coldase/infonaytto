@@ -40,7 +40,14 @@ const UusimainospaikkaCard = ({
       <p>{item}</p>
 
       {shownaytot && allscreens.length > 0 ? (
-        <div className="shownaytot">
+        <div
+          className="shownaytot"
+          style={
+            filterScreens(item, allscreens).length > 0
+              ? { borderTop: "2px solid white", paddingBottom: 10 }
+              : null
+          }
+        >
           {filterScreens(item, allscreens).map((it) => (
             <p key={it} className="shownaytot-item">
               {it}
